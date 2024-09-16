@@ -1,0 +1,321 @@
+<app-plantilla-general></app-plantilla-general>
+<div class="contenedor">
+  <div class="miga-de-pan-wrapper">
+    <div class="miga-de-pan">
+      <div class="paleta-de-color" id="paletaDeColor">
+        <a style="color: #9b4cba" [routerLink]="['/home/false']">Home</a>
+      </div>
+      <img
+        class="angle-right-icon"
+        alt=""
+        src="assets/images/angle-right.svg"
+      />
+
+      <div class="paleta-de-color1">Detalle vehículos</div>
+    </div>
+  </div>
+  <div class="frame-parent">
+    <div class="frame-group">
+      <div class="autos-parent">
+        <div class="autos">AUTOS</div>
+        <div class="wrapper">
+          <div class="div">{{ Autos!.length }}</div>
+        </div>
+      </div>
+      <button
+        id="cPBotonPrincipalIconoIzquiContainer"
+        class="cp-boton-principal-icono-izqui"
+        (click)="openDialogAddCar()"
+      >
+        <img
+          class="component-37-icon"
+          src="assets/images/Component 37.svg"
+          alt="añadir"
+        />
+        <div class="div">Agregar Vehículo</div>
+      </button>
+    </div>
+    <div class="mis-vehculos-parent">
+      <div class="mis-vehculos">Mis Vehículos</div>
+      <img class="frame-child" alt="" src="assets/images/Line 38.svg" />
+    </div>
+  </div>
+  <div class="caja">
+    <div *ngFor="let auto of Autos; let i = index">
+      <div class="contarjeta">
+        <div class="group-parent">
+          <img class="frame-item" alt="" src="assets/images/Group 24190.svg" />
+
+          <div class="vehculo-1-parent">
+            <div class="mis-vehculos">Vehículo {{ i + 1 }}</div>
+            <div class="slf337-wrapper">
+              <div class="slf337">{{ auto.placa }}</div>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="tipo-parent">
+              <div class="tipo">Tipo:</div>
+              <div class="camioneta">{{ auto.tipoVehiculo | titlecase }}</div>
+            </div>
+            <div class="tipo-parent">
+              <div class="tipo">Marca:</div>
+              <div class="camioneta">{{ auto.marca | titlecase }}</div>
+            </div>
+            <div class="tipo-parent">
+              <div class="tipo">Modelo:</div>
+              <div class="camioneta">{{ auto.modelo }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-div">
+          <div class="frame-parent1">
+            <div class="desde-parent">
+              <div class="desde">Desde</div>
+              <div class="apr-2024">
+                {{ auto.fechaVigenciaDesde | date : "dd/MMM/yyyy" }}
+              </div>
+            </div>
+            <div class="frame-wrapper">
+              <div
+                class="ellipse-wrapper"
+                [ngClass]="{
+                  'ellipse-container': auto.porcentajePoliza >= 100,
+                  'ellipse-wrapper': auto.porcentajePoliza < 100
+                }"
+                [style.width.px]="(auto.porcentajePoliza * 232) / 100"
+              >
+                <div class="frame-inner"></div>
+              </div>
+            </div>
+            <div class="desde-parent">
+              <div class="desde">Hasta</div>
+              <div class="apr-2024">
+                {{ auto.fechaVigenciaHasta | date : "dd/MMM/yyyy" }}
+              </div>
+            </div>
+          </div>
+          <div class="frame-wrapper1">
+            <div class="frame-parent2">
+              <div class="autos-parent">
+                <div class="estado-de-la">Estado de la Póliza:</div>
+                <div
+                  class="vigente-wrapper"
+                  [ngClass]="{
+                    'vigente-wrapper': validarVigenciaPoliza(
+                      auto.fechaVigenciaHasta
+                    ),
+                    'vencida-wrapper': !validarVigenciaPoliza(
+                      auto.fechaVigenciaHasta
+                    )
+                  }"
+                >
+                  <div class="vigente">
+                    {{
+                      validarVigenciaPoliza(auto.fechaVigenciaHasta)
+                        ? "Vigente"
+                        : "Vencida"
+                    }}
+                  </div>
+                </div>
+              </div>
+              <div
+                class="cp-btn-contorno-variaciones"
+                id="cPBtnContornoVariacionesContainer"
+              >
+                <button
+                  class="cp-boton-principal-variaciones-histo"
+                  (click)="verHistorico(auto)"
+                >
+                  <div class="div">Historial póliza</div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="delete-wrapper"
+          id="frameContainer2"
+          (click)="openDialogDeleteCar(auto.placa)"
+        >
+          <img class="delete-icon" alt="" src="assets/images/delete.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="component-alert1-estticasweb"></div>
+  <ng-template let-data #callDialogAddCar>
+    <div class="modalplaca">
+      <div class="header2">
+        <div class="content">
+          <div class="title">Agrega tu vehículo</div>
+          <div class="supporting-text">
+            Ingresa la placa de tu vehículo para acceder a nuestros servicios.
+          </div>
+        </div>
+      </div>
+      <div class="content-to-swap">
+        <div class="frame-parent14">
+          <div class="label-wrapper">
+            <input
+              class="label"
+              maxlength="6"
+              oninput="this.value = this.value.toUpperCase()"
+              placeholder="PLACA"
+              [(ngModel)]="placa"
+              hintLabel="Max 6 caracteres"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="cp-btn-contorno-variaciones3">
+          <button
+            id="cp-btn-contorno-variaciones3"
+            class="cp-boton-principal-variaciones4"
+            (click)="closeDialog2()"
+          >
+            <div class="continuar5">Cancelar</div>
+          </button>
+        </div>
+
+        <button
+          class="cp-boton-principal-variaciones5"
+          [ngClass]="{
+            'cp-boton-principal-variaciones': placa!.length === 6,
+            'cp-boton-principal-variaciones5': placa!.length <= 6
+          }"
+          (click)="registrarPlaca()"
+        >
+          <div class="continuar6">Agregar</div>
+        </button>
+      </div>
+      <div class="circle-button" (click)="closeDialog2()">
+        <img class="icn-close-icon" alt="" src="assets/images/icn-Close.png" />
+      </div>
+    </div>
+  </ng-template>
+  <ng-template let-data #callDialogDeleteCar>
+    <div class="popup-error-confirm_delete">
+      <img
+        class="popup-error-confirm-child_delete"
+        alt=""
+        src="assets/images/Group 24007.svg"
+      />
+      <div class="frame-parent_delete">
+        <div class="titulo-wrapper_delete">
+          <div class="titulo_delete">Eliminar vehículo</div>
+        </div>
+        <div class="recuerda-una-vez-container_delete">
+          <p class="el-vehculo-se_delete">
+            El vehículo se eliminará de tu lista.
+          </p>
+          <p class="el-vehculo-se_delete">¿Deseas eliminarlo?</p>
+        </div>
+      </div>
+      <div class="cp-btn-contorno-variaciones-parent_delete">
+        <div class="cp-btn-contorno-variaciones_delete">
+          <div
+            class="cp-boton-principal-variaciones_delete"
+            (click)="closeDialog2()"
+          >
+            <div class="continuar_delete">Cancelar</div>
+          </div>
+        </div>
+        <div
+          class="cp-boton-principal-variaciones1_delete"
+          (click)="eliminarVehiculo()"
+        >
+          <div class="continuar1_delete">Aceptar</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template let-data #callDialogHistoricos>
+    <div class="modalregistro11">
+      <div class="frame-parent11">
+        <div class="frame-parent12">
+          <div class="header-container">
+            <div class="header1">Histórico de la póliza</div>
+          </div>
+          <div class="supporting-text1">
+            <span>
+              <span class="vehculo1">Vehículo</span>
+              <span class="span1"> </span>
+            </span>
+            <span class="slf3371"> {{ historicoPlaca }}</span>
+          </div>
+        </div>
+        <img
+          class="path-19705-icon1"
+          alt=""
+          src="assets/images/Path 19705.svg"
+          (click)="closeDialog2()"
+        />
+      </div>
+
+      <div class="frame-parent13">
+        <div class="container">
+          @for (poliza of polizasAuto; track poliza.polizaID; ){
+          <div class="row container">
+            <div class="col-3">
+              <div>
+                <div
+                  class="frame-child3"
+                  [ngClass]="{
+                    'frame-child3':
+                      validarVigenciaPoliza(poliza.fechaVigenciaHasta) &&
+                      $index === 0,
+                    'frame-child1':
+                      !validarVigenciaPoliza(poliza.fechaVigenciaHasta) &&
+                      $index === 0,
+                    'frame-child4': $index > 0
+                  }"
+                ></div>
+                @if ($index < polizasAuto.length - 1) {
+                <svg
+                  width="2"
+                  height="25"
+                  viewBox="0 0 2 28"
+                  fill="#592272"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style="left: 23.5px; top: 12px; position: relative"
+                >
+                  <path
+                    id="Vector 142"
+                    d="M1 1V33"
+                    stroke="#592272"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-dasharray="4 4"
+                  />
+                </svg>
+                }
+              </div>
+            </div>
+            <div class="col-9">
+              <div
+                class="ene-2024-24-ene-2025-wrapper"
+                [ngClass]="{
+                  'ene-2024-24-ene-2025-wrapper':
+                    validarVigenciaPoliza(poliza.fechaVigenciaHasta) &&
+                    $index === 0,
+                  'ene-2023-27-ene-2024-wrapper':
+                    !validarVigenciaPoliza(poliza.fechaVigenciaHasta) &&
+                    $index === 0,
+                  'ene-2022-24-ene-2023-wrapper': $index > 0
+                }"
+              >
+                <div>
+                  {{ poliza.fechaVigenciaDesde | date : "dd MMM yyyy" }} -
+                  {{ poliza.fechaVigenciaHasta | date : "dd MMM yyyy" }}
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+<app-footer></app-footer>

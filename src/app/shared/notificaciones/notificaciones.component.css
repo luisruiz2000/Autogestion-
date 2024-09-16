@@ -1,0 +1,232 @@
+.container-notificaciones{
+  width: 32em;
+  height: 42em;
+  position: absolute;
+  right: 18em;
+  z-index: 1000;
+  padding: 0;
+  overflow: auto;
+}
+.container-notificaciones .row-notificaciones{
+  width: 100%;
+}
+.container-notificaciones .modal-notificaciones{
+  margin-top: 1em;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  border: solid 1px #efefef;
+  background-color: #ffffff;
+  border-radius: 5px;
+
+}
+.container-notificaciones .modal-notificaciones::before{
+  content: "\00a0";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  margin: -10px 0 0 28.5em;
+  transform: rotate(45deg);
+  background-color: #ffffff;
+  box-shadow: -1px -1px 0px 1px rgba( 0, 0, 0, 0.05);
+}
+.notificacion {
+  border-bottom: solid 1px #efefef;
+  /*border-top: solid 1px #efefef;*/
+  font-size: 15px;
+  margin-right: 0!important;
+  margin-left: 0!important;
+  min-height: 74px;
+}
+.notificacion:first-child .notificacion-img{
+  border-radius: 5px 0 0 0;
+}
+.notificacion:last-child .notificacion-img{
+  border-radius: 0 0 0 5px;
+}
+.notificacion:nth-child(n+2){
+  margin-top: 1px;
+}
+.notificacion-img{
+  float: left;
+  max-width: 70px;
+  font-size: 12px;
+  color: #ffffff;
+  font-family: "Futura Std Medium", Trebuchet MS, Arial, sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.titulo-imagen{
+  margin: 0.5em auto 0 auto;
+  text-align: center;
+}
+.not-asistencia{
+  background-color: #1f4c38;
+}
+.not-siniestro{
+  background-color: #f89a3b;
+}
+.not-cuenta{
+  background-color: #bdd63f;
+}
+.not-pqrs{
+  background-color: #67bc47;
+}
+.not-vehiculos{
+  background-color: #099fda;
+}
+.not-hogar{
+  background-color: #754496;
+}
+img{
+  margin-right: auto;
+  margin-left: auto;
+}
+.not-asistencia img{
+  margin-top: 1em;
+  width: 26px;
+  height: 31px;
+}
+.not-siniestro img{
+  margin-top: 1em;
+  width: 39px;
+  height: 30px;
+}
+.not-cuenta img{
+  margin-top: 1em;
+  width: 27px;
+  height: 27px;
+}
+.not-pqrs img{
+  margin-top: 1em;
+  width: 27px;
+  height: 27px;
+}
+.not-vehiculos img{
+  margin-top: 1em;
+  width: 38px;
+  height: 19px;
+}
+.not-hogar img{
+  margin-top: 1em;
+  width: 39px;
+  height: 30px;
+}
+
+.notificacion-body{
+  padding: 0.3em;
+  margin-left: 0.8em;
+}
+.notificacion-body .titulo{
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  color: #1f4c38;
+  font-family: "Futura Std Medium", sans-serif;
+}
+.notificacion-body .descripcion{
+  color:#626366;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 300;
+  text-align: left;
+  font-family: "Neris Light", Arial, Helvetica, sans-serif;
+}
+.notificacion-body .fecha{
+  color:#c3c4c3;
+  font-size: 10px;
+  font-weight: 300;
+  text-align: left;
+  font-family: "Neris Light", Arial, Helvetica, sans-serif;
+}
+.others{
+  height: 3em;
+  color: #67bc47;
+  font-size: 15px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  border-radius: 0 0 5px 5px;
+}
+.others a{
+  float: right;
+  text-align: left;
+  text-decoration: underline #67bc47;
+  margin: 0.5em 1em;
+  cursor: pointer;
+}
+
+span.sinleer{
+  content: "\00a0";
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #67bc47;
+  color: #67bc47;
+  font-size: 8px;
+  padding: 0 4px 0 4px;
+  margin-left: 1em;
+}
+.sinNotificaciones{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: 800;
+  text-align: center;
+  font-family: "Neris Light", Arial, Helvetica, sans-serif;
+}
+
+.eliminarNotificacion{
+  position: absolute;
+  right: 1em;
+  top: 1.5em;
+  z-index: 100;
+}
+
+.eliminarNotificacion img{
+  width: 16px;
+  height: 20px;
+  position: relative;
+  top: -0.1em;
+  left: 0.05em;
+}
+.ver-notificaciones {
+  width: 124px;
+  height: 21px;
+  font-family: 'Segoe UI Regular', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  text-align: right;
+  margin: 7.5px 0 10px 25px;
+  text-decoration: underline #67bc47;
+  color: #67bc47;
+  cursor: default;
+}
+@media(max-width: 768px) {
+  .container-notificaciones{
+    max-width: 32em;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 0;
+  }
+
+  .container-notificaciones .modal-notificaciones::before{
+    display: none;
+  }
+  .eliminarNotificacion{
+    right: 0.5em;
+  }
+  .btn-close-modal{
+    width: 32px;
+    height: 32px;
+    border-radius: 0%;
+    border: transparent 0% #67bc47;
+    background-color: transparent;
+    color: #1f4c38;
+    border-width: 0px;
+    font-size: 18px;
+  }
+}

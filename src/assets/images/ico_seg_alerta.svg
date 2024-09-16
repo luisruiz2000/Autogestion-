@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.062" height="20.064" viewBox="0 0 20.062 20.064">
+    <defs>
+        <style>
+            .cls-3{fill:#f89a3b}
+        </style>
+    </defs>
+    <g id="ico_alerta" transform="translate(-130.653 -176.414)">
+        <g id="Elipse_81" fill="#fff" stroke="#fff" data-name="Elipse 81" transform="translate(131.653 177.414)">
+            <circle cx="9" cy="9" r="9" stroke="none"/>
+            <circle cx="9" cy="9" r="8.5" fill="none"/>
+        </g>
+        <path id="Trazado_2053" fill="#fff" d="M140.652 196.478a10.032 10.032 0 1 1 10.063-9.986 10.027 10.027 0 0 1-10.063 9.986zm8.507-9.988a8.471 8.471 0 1 0-8.523 8.421 8.459 8.459 0 0 0 8.523-8.42z" data-name="Trazado 2053"/>
+        <path id="Trazado_2054" d="M246.319 234.382c-.053-.988-.109-1.977-.161-2.965a1.337 1.337 0 0 1 1.286-1.426 1.305 1.305 0 0 1 1.378 1.327c-.025 1.139-.1 2.278-.163 3.416-.043.838-.078 1.677-.143 2.514a2.137 2.137 0 0 1-.205.823.937.937 0 0 1-1.069.435 1 1 0 0 1-.746-1.01c-.061-1.037-.118-2.076-.177-3.114z" class="cls-3" data-name="Trazado 2054" transform="translate(-106.809 -49.543)"/>
+        <path id="Trazado_2055" d="M251 360.443a1.148 1.148 0 0 1-1.1 1.144 1.178 1.178 0 0 1-1.161-1.139 1.141 1.141 0 0 1 1.155-1.127 1.111 1.111 0 0 1 1.106 1.122z" class="cls-3" data-name="Trazado 2055" transform="translate(-109.188 -169.138)"/>
+    </g>
+</svg>

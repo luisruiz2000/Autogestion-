@@ -1,0 +1,2317 @@
+<app-plantilla-general></app-plantilla-general>
+
+<div class="contenedor">
+  <div class="container">
+    <!--<div class="row pt-2 pb-2" >
+                <div class="col">-->
+    <div class="contenedor-inner">
+      <div class="miga-de-pan-wrapper">
+        <div class="miga-de-pan">
+          <div class="paleta-de-color" (click)="redireccionar('/home/false')">
+            Home
+          </div>
+          <img
+            class="angle-right-icon"
+            alt=""
+            src="assets/images/angle-right.svg"
+          />
+
+          <div class="paleta-de-color1" (click)="redireccionar('/servicios')">
+            Servicios
+          </div>
+          <img
+            class="angle-right-icon"
+            alt=""
+            src="assets/images/angle-right.svg"
+          />
+
+          <div class="paleta-de-color2">Radicar siniestro</div>
+        </div>
+      </div>
+    </div>
+    <div class="frame-parent">
+      <div class="radicacin-de-siniestros-parent">
+        <div class="radicacin-de-siniestros">Radicación de siniestros</div>
+        <div class="completa-los-siguientes">Completa los siguientes pasos</div>
+      </div>
+      <div class="cp-stepperradicarweb">
+        <div class="cp-stepperradicar">
+          <div class="wizard-default">
+            <div class="estadoswizard">
+              <div class="ellipse-parent">
+                <div class="frame-child" [ngClass]="classDatos"></div>
+                <img class="component-3-icon" alt="" [src]="imgCurrentDatos" />
+
+                <img
+                  class="sebastiangroup-42-icon"
+                  alt=""
+                  src="assets/images/radicacion/Group 42.svg"
+                />
+              </div>
+              <div class="datos">Datos</div>
+            </div>
+            <img
+              class="wizard-default-child"
+              alt=""
+              src="assets/images/radicacion/Line 29.svg"
+            />
+
+            <div class="estadoswizard">
+              <div class="ellipse-parent">
+                <div [ngClass]="classDocumentos"></div>
+                <img
+                  class="component-3-icon"
+                  alt=""
+                  [src]="imgCurrentDocumentos"
+                />
+                <img
+                  class="sebastiangroup-42-icon"
+                  alt=""
+                  src="assets/images/radicacion/Group 42.svg"
+                />
+              </div>
+              <div class="documentos">Documentos</div>
+            </div>
+            <img
+              class="wizard-default-child"
+              alt=""
+              src="assets/images/radicacion/Line 30.svg"
+            />
+
+            <div class="estadoswizard">
+              <div class="ellipse-parent">
+                <div [ngClass]="classTaller"></div>
+                <img class="component-3-icon" alt="" [src]="imgCurrentTaller" />
+                <img
+                  class="sebastiangroup-42-icon"
+                  alt=""
+                  src="assets/images/radicacion/Group 42.svg"
+                />
+              </div>
+              <div class="taller">Taller</div>
+            </div>
+            <img
+              class="wizard-default-child"
+              alt=""
+              src="assets/images/radicacion/Line 31.svg"
+            />
+
+            <div class="estadoswizard">
+              <div class="ellipse-parent">
+                <div [ngClass]="classResumen"></div>
+                <img
+                  class="component-3-icon"
+                  alt=""
+                  [src]="imgCurrentResumen"
+                />
+                <img
+                  class="sebastiangroup-42-icon"
+                  alt=""
+                  src="assets/images/radicacion/Group 42.svg"
+                />
+              </div>
+              <div class="resumen">Resumen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-group">
+        <div class="component-43-parent">
+          <img
+            class="component-43-icon"
+            alt=""
+            src="assets/images/radicacion/Component 43.svg"
+          />
+
+          <div class="para-solicitar-tu">
+            Para solicitar tu cita de video peritación asistida comunícate al:
+          </div>
+        </div>
+        <div class="group-parent">
+          <img
+            class="group-icon"
+            alt=""
+            src="assets/images/radicacion/Group 24160.svg"
+          />
+
+          <div class="div">#345</div>
+        </div>
+      </div>
+      <!--  </div>
+                </div>-->
+    </div>
+    <!--Opcion Datos-->
+    @if(numStepRadicar === 1){
+    <div class="flex-column-register">
+      <div class="flex-row">
+        <div class="datos-del-siniestro">Datos del siniestro.</div>
+        <div class="component-alert1-estticasweb">
+          <div class="container-icon">
+            <img
+              class="alerta-icon"
+              alt=""
+              src="assets/images/radicacion/alerta.svg"
+            />
+          </div>
+          <div class="label-alert">
+            Los campos marcados con (*) son obligatorios.
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="flex-item5">
+          <div
+            ngbAccordion
+            #accordion="ngbAccordion"
+            style="position: relative; width: 100%"
+          >
+            <div ngbAccordionItem="first" class="cp-acordeon">
+              <div class="documentacin-parent">
+                <div class="documentacin">{{ labelAutoSeleccionado }}</div>
+                <button
+                  ngbAccordionToggle
+                  class="buttonAcordeon"
+                  (click)="switchImgAngleAcordeon()"
+                >
+                  <img
+                    class="alerta-icon"
+                    alt=""
+                    [src]="imgAngleAcordeonCurrent"
+                  />
+                </button>
+              </div>
+              <div ngbAccordionCollapse>
+                <div class="contenedorAcordeon">
+                  <div class="listado-de-vehculos">Listado de Vehículos</div>
+                  @for (vehiculo of vehiculo; track vehiculo.polizaID; ){
+                  <div class="cp-radio-estados-parent">
+                    <input
+                      type="radio"
+                      id="html"
+                      name="fav_language"
+                      [value]="vehiculo"
+                      (click)="
+                        obtenerDatosVehiculo(vehiculo); accordion.collapseAll()
+                      "
+                      [ngModel]="autoSeleccionado"
+                    />
+                    <div class="internacional-slf337-wrapper">
+                      <div class="internacional-slf337">
+                        <span class="internacional">
+                          <span>{{ vehiculo.marca }}</span>
+                          <span class="span"> </span>
+                        </span>
+                        <span class="slf337"> {{ vehiculo.placa }}</span>
+                        <span class="span1"> </span>
+                      </div>
+                    </div>
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="definir-fecha">Fecha del siniestro*</div>
+            </div>
+            <div class="mask-input">
+              <input
+                #dateSiniestro
+                id="dateSiniestro"
+                class="definir-fecha"
+                placeholder="Definir fecha"
+                name="dp"
+                ngbDatepicker
+                #d="ngbDatepicker"
+                ngDefaultControl
+                [positionTarget]="buttonCalendar"
+                [placement]="positionCalendar"
+                [minDate]="fechaMinimaCalendar"
+                [maxDate]="fechaMaximaCalendar"
+                [formControl]="fCfecha"
+                [ngClass]="
+                  {
+                    inputFieldInvalid:
+                      (fCfecha!.invalid && formEnviado) ||
+                      (fCfecha!.invalid && fCfecha!.dirty) ||
+                      (fCfecha!.invalid && fCfecha!.touched)
+                  } || fCfecha!.errors!['required']
+                "
+                (ngModelChange)="validarFechaSiniestro($event)"
+              />
+              <div class="input-group-append">
+                <button
+                  #buttonCalendar
+                  class="btn btn-outline-secondary calendarSiniestro"
+                  (click)="d.toggle()"
+                  type="button"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column">
+          <div class="etiqueta">
+            <div class="divhora">Hora del siniestro*</div>
+          </div>
+          <ngb-timepicker
+            size="medium"
+            class="inputhora"
+            [formControl]="fCTime"
+            [ngClass]="{
+              horaFieldInvalid:
+                (fCTime!.invalid && formEnviado) ||
+                (fCTime!.invalid && fCTime!.dirty) ||
+                (fCTime!.invalid && fCTime!.touched)
+            }"
+            id="horaSiniestro"
+            [meridian]="meridian"
+            [spinners]="spinners"
+            (click)="testtime($event)"
+          ></ngb-timepicker>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-item2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="definir-fecha">Departamento*</div>
+            </div>
+            <div
+              ngbAccordion
+              #accordionDpto="ngbAccordion"
+              style="position: relative; width: 100%"
+            >
+              <div ngbAccordionItem="first" class="cp-acordeonSelect">
+                <div class="documentacin-parent-select">
+                  <div
+                    class="label-helpSelect"
+                    [ngClass]="{
+                      'label-helpSelect-placeholder':
+                        labelDptoSeleccionado === 'Seleccionar departamento',
+                      'label-helpSelect':
+                        labelDptoSeleccionado !== 'Seleccionar departamento'
+                    }"
+                  >
+                    {{ labelDptoSeleccionado }}
+                  </div>
+                  <button
+                    ngbAccordionToggle
+                    class="buttonAcordeonSelect"
+                    (click)="switchImgAngleSelectAcordeon()"
+                  >
+                    <img
+                      class="alerta-icon"
+                      alt=""
+                      [src]="imgAngleAcordeonSelectCurrent"
+                    />
+                  </button>
+                </div>
+                <div ngbAccordionCollapse>
+                  <div class="contenedorAcordeonSelect">
+                    <div class="buscador-sencillo">
+                      <input
+                        type="text"
+                        class="buscar"
+                        placeholder="Buscar"
+                        (keyup)="onKeyUp(1, $event)"
+                      />
+                      <!--<img class="search-icon" alt="" src="assets/images/radicacion/search.svg">-->
+                    </div>
+                    <div class="container" style="overflow-y: auto">
+                      @for (departamento of departamentos; track
+                      departamento.codigo; ){
+                      <div>
+                        <button
+                          class="maestro-config-reglas"
+                          (click)="
+                            obtenerMunicipios(departamento);
+                            accordionDpto.collapseAll()
+                          "
+                        >
+                          {{ departamento.nombre }}
+                        </button>
+                      </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="definir-fecha">Ciudad / Municipio*</div>
+            </div>
+            <div
+              ngbAccordion
+              #accordionCiudad="ngbAccordion"
+              style="position: relative; width: 100%"
+            >
+              <div ngbAccordionItem="first" class="cp-acordeonSelect">
+                <div class="documentacin-parent-select">
+                  <div
+                    class="label-helpSelect-placeholder"
+                    [ngClass]="{
+                      'label-helpSelect-placeholder':
+                        labelCiudadSeleccionado === 'Seleccionar ciudad',
+                      'label-helpSelect':
+                        labelCiudadSeleccionado !== 'Seleccionar ciudad'
+                    }"
+                  >
+                    {{ labelCiudadSeleccionado }}
+                  </div>
+                  <button
+                    ngbAccordionToggle
+                    class="buttonAcordeonSelect"
+                    (click)="switchImgAngleSelectCiudadAcordeon()"
+                  >
+                    <img
+                      class="alerta-icon"
+                      alt=""
+                      [src]="imgAngleAcordeonSelectCiudadCurrent"
+                    />
+                  </button>
+                </div>
+                <div ngbAccordionCollapse>
+                  <div class="contenedorAcordeonSelect">
+                    <div class="buscador-sencillo">
+                      <input
+                        type="text"
+                        class="buscar"
+                        placeholder="Buscar"
+                        (keyup)="onKeyUp(2, $event)"
+                      />
+                      <!--<img class="search-icon" alt="" src="assets/images/radicacion/search.svg">-->
+                    </div>
+                    <div class="container" style="overflow-y: auto">
+                      @for (municipio of municipios; track municipio.codigo; ){
+                      <div>
+                        <button
+                          class="maestro-config-reglas"
+                          (click)="
+                            obtenerCodigoMunicipio(municipio);
+                            accordionCiudad.collapseAll()
+                          "
+                        >
+                          {{ municipio.nombre }}
+                        </button>
+                      </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item3">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Dirección del siniestro*</div>
+            </div>
+            <div class="mask-input">
+              <input
+                class="inputDir"
+                type="text"
+                size="20"
+                placeholder="Dirección"
+                [formControl]="fCdireccion"
+                [ngClass]="{
+                  inputFieldInvalid:
+                    (fCdireccion!.invalid && formEnviado) ||
+                    (fCdireccion!.invalid && fCdireccion!.dirty) ||
+                    (fCdireccion!.invalid && fCdireccion!.touched)
+                }"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="flex-item4">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">¿Qué ocurrió? Cuéntanos tu versión*</div>
+            </div>
+            <div class="mask-area">
+              <textarea
+                placeholder="Ingresa aquí el detalle"
+                class="textareaformat"
+                maxlength="4000"
+                [formControl]="fCdesEvento"
+                [ngClass]="{
+                  inputFieldInvalid:
+                    (fCdesEvento!.invalid && formEnviado) ||
+                    (fCdesEvento!.invalid && fCdesEvento!.dirty) ||
+                    (fCdesEvento!.invalid && fCdesEvento!.touched)
+                }"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item4">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">¿Qué le pasó a tu vehículo?*</div>
+            </div>
+            <div class="mask-area">
+              <textarea
+                placeholder="Ingresa aquí el detalle"
+                class="textareaformat"
+                maxlength="4000"
+                [formControl]="fCdesAveria"
+                [ngClass]="{
+                  inputFieldInvalid:
+                    (fCdesAveria!.invalid && formEnviado) ||
+                    (fCdesAveria!.invalid && fCdesAveria!.dirty) ||
+                    (fCdesAveria!.invalid && fCdesAveria!.touched)
+                }"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-column">
+          <div class="etiqueta">
+            <div class="etiqueta1">
+              ¿Manejaba alguien diferente al asegurado?
+            </div>
+            <div style="padding-left: 50px; padding-right: 10px">No</div>
+            <div>
+              <label class="switch">
+                <input type="checkbox" (click)="conductorDiferente($event)" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div style="padding-left: 10px">Si</div>
+          </div>
+        </div>
+      </div>
+      @if(esConductorDiferente){
+      <div class="flex-row">
+        <div class="flex-item3">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Nombres*</div>
+            </div>
+            <div class="mask-input">
+              <input
+                type="text"
+                placeholder="Nombres"
+                class="inputDir"
+                [formControl]="fCconductorNombre"
+                [ngClass]="{
+                  inputFieldInvalid:
+                    (fCconductorNombre!.invalid && formEnviado) ||
+                    (fCconductorNombre!.invalid && fCconductorNombre!.dirty) ||
+                    (fCconductorNombre!.invalid && fCconductorNombre!.touched)
+                }"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-item2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Tipo de documento</div>
+            </div>
+            <div
+              ngbAccordion
+              #accordionTipoDoc="ngbAccordion"
+              style="position: relative; width: 100%"
+            >
+              <div ngbAccordionItem="first" class="cp-acordeonSelect">
+                <div class="documentacin-parent-select">
+                  <div
+                    class="label-helpSelect-placeholder"
+                    [ngClass]="{
+                      'label-helpSelect-placeholder':
+                        labelTipoDocConductorSeleccionado ===
+                        'Seleccione tipo de documento',
+                      'label-helpSelect':
+                        labelTipoDocConductorSeleccionado !==
+                        'Seleccione tipo de documento'
+                    }"
+                  >
+                    {{ labelTipoDocConductorSeleccionado }}
+                  </div>
+                  <button
+                    ngbAccordionToggle
+                    class="buttonAcordeonSelect"
+                    (click)="switchImgAngleSelectTipoDocAcordeon()"
+                  >
+                    <img
+                      class="alerta-icon"
+                      alt=""
+                      [src]="imgAngleAcordeonSelectTipoDocCurrent"
+                    />
+                  </button>
+                </div>
+                <div ngbAccordionCollapse>
+                  <div class="contenedorAcordeonSelect">
+                    <div class="container" style="overflow-y: auto">
+                      @for (documento of tipoDocumento; track documento.codigo;
+                      ){
+                      <div>
+                        <button
+                          class="maestro-config-reglas"
+                          (click)="
+                            cambiarDocumentoOtroCunductor(documento);
+                            accordionTipoDoc.collapseAll()
+                          "
+                        >
+                          {{ documento.nombre }}
+                        </button>
+                      </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Número de documento*</div>
+            </div>
+            <div class="mask-input">
+              <input
+                type="text"
+                placeholder="Documento"
+                class="inputDir"
+                size="13"
+                [formControl]="fCconductorDocumento"
+                (keypress)="validarFormatoDocumento($event)"
+                maxlength="12"
+                minlength="4"
+                [ngClass]="{
+                  inputFieldInvalid:
+                    (fCconductorDocumento!.invalid && formEnviado) ||
+                    (fCconductorDocumento!.invalid &&
+                      fCconductorDocumento!.dirty) ||
+                    (fCconductorDocumento!.invalid &&
+                      fCconductorDocumento!.touched)
+                }"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-item6">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Edad*</div>
+            </div>
+            <div class="mask-input">
+              <input
+                type="text"
+                placeholder="Edad del conductor"
+                class="inputDir"
+                [formControl]="fCconductorEdad"
+                (keypress)="soloNumeros($event)"
+                maxlength="3"
+                minlength="1"
+                [ngClass]="{
+                  inputFieldInvalid:
+                    (fCconductorEdad!.invalid && formEnviado) ||
+                    (fCconductorEdad!.invalid && fCconductorEdad!.dirty) ||
+                    (fCconductorEdad!.invalid && fCconductorEdad!.touched)
+                }"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-item3">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Género*</div>
+            </div>
+            <div
+              ngbAccordion
+              #accordionGenero="ngbAccordion"
+              style="position: relative; width: 100%"
+            >
+              <div ngbAccordionItem="first" class="cp-acordeonSelect">
+                <div class="documentacin-parent-select">
+                  <div
+                    class="label-helpSelect-placeholder"
+                    [ngClass]="{
+                      'label-helpSelect-placeholder':
+                        labelGeneroSeleccionado === 'Seleccionar',
+                      'label-helpSelect':
+                        labelGeneroSeleccionado !== 'Seleccionar'
+                    }"
+                  >
+                    {{ labelGeneroSeleccionado }}
+                  </div>
+                  <button
+                    ngbAccordionToggle
+                    class="buttonAcordeonSelect"
+                    (click)="switchImgAngleSelectGeneroAcordeon()"
+                  >
+                    <img
+                      class="alerta-icon"
+                      alt=""
+                      [src]="imgAngleAcordeonSelectTipoDocCurrent"
+                    />
+                  </button>
+                </div>
+                <div ngbAccordionCollapse>
+                  <div class="contenedorAcordeonSelect">
+                    <div class="container" style="overflow-y: auto">
+                      <div>
+                        <button
+                          class="maestro-config-reglas"
+                          (click)="
+                            escogerGenero('M'); accordionGenero.collapseAll()
+                          "
+                        >
+                          Masculino
+                        </button>
+                      </div>
+                      <div>
+                        <button
+                          class="maestro-config-reglas"
+                          (click)="
+                            escogerGenero('F'); accordionGenero.collapseAll()
+                          "
+                        >
+                          Fenenino
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      <div class="flex-row">
+        <div class="flex-column">
+          <div class="etiqueta">
+            <div class="etiqueta1">
+              Información del solicitante de la radicación:
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-item3">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Nombres*</div>
+            </div>
+            <div class="mask-input-disabled">
+              <input
+                type="text"
+                readonly
+                placeholder="Nombres"
+                class="inputDir"
+                [formControl]="fCnombreContacto"
+                [ngClass]="{
+                  inputFieldInvalid:
+                    (fCnombreContacto!.invalid && formEnviado) ||
+                    (fCnombreContacto!.invalid && fCnombreContacto!.dirty) ||
+                    (fCconductorNombre!.invalid && fCconductorNombre!.touched)
+                }"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-item2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Tipo de documento</div>
+            </div>
+            <div
+              ngbAccordion
+              #accordionTipoDoc="ngbAccordion"
+              style="position: relative; width: 100%"
+            >
+              <div ngbAccordionItem="first" class="cp-acordeonSelect">
+                <div class="documentacin-parent-select-disabled">
+                  <div
+                    class="label-helpSelect-placeholder"
+                    [ngClass]="{
+                      'label-helpSelect-placeholder':
+                        labelTipoDocSeleccionado ===
+                        'Seleccione tipo de documento',
+                      'label-helpSelect':
+                        labelTipoDocSeleccionado !==
+                        'Seleccione tipo de documento'
+                    }"
+                  >
+                    {{ labelTipoDocSeleccionado }}
+                  </div>
+                  <button
+                    ngbAccordionToggle
+                    disabled
+                    class="buttonAcordeonSelect"
+                    (click)="switchImgAngleSelectTipoDocAcordeon()"
+                  >
+                    <img
+                      class="alerta-icon"
+                      alt=""
+                      [src]="imgAngleAcordeonSelectTipoDocCurrent"
+                    />
+                  </button>
+                </div>
+                <div ngbAccordionCollapse>
+                  <div class="contenedorAcordeonSelect">
+                    <div class="container" style="overflow-y: auto">
+                      @for (documento of tipoDocumento; track documento.codigo;
+                      ){
+                      <div>
+                        <button
+                          class="maestro-config-reglas"
+                          (click)="
+                            cambiarDocumentoOtroCunductor(documento);
+                            accordionTipoDoc.collapseAll()
+                          "
+                        >
+                          {{ documento.nombre }}
+                        </button>
+                      </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Número de documento*</div>
+            </div>
+            <div class="mask-input-disabled">
+              <input
+                type="text"
+                readonly
+                placeholder="Documento"
+                class="inputDir"
+                size="13"
+                [formControl]="fCdocContacto"
+                (keypress)="validarFormatoDocumento($event)"
+                maxlength="12"
+                minlength="4"
+                [ngClass]="{
+                  inputFieldInvalid:
+                    (fCconductorDocumento!.invalid && formEnviado) ||
+                    (fCconductorDocumento!.invalid &&
+                      fCconductorDocumento!.dirty) ||
+                    (fCconductorDocumento!.invalid &&
+                      fCconductorDocumento!.touched)
+                }"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-item6">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Celular</div>
+            </div>
+            <div class="mask-input">
+              <input
+                type="text"
+                placeholder="Celular"
+                class="inputDir"
+                size="25"
+                [formControl]="fCnumCelular"
+                maxlength="10"
+                minlength="0"
+                (keypress)="soloNumeros($event)"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-item7">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Dirección*</div>
+            </div>
+            <div class="mask-input-disabled">
+              <input
+                type="text"
+                readonly
+                placeholder="Dirección"
+                class="inputDir"
+                size="23"
+                [formControl]="fCdirContacto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+    <!--Opcion documentos-->
+    @if(numStepRadicar === 2){
+    <div class="flex-column-register">
+      <div class="flex-row">
+        <div class="documentos-del-siniestro">Documentos del siniestro.</div>
+      </div>
+      <div class="flex-row">
+        <div class="group-adjuntar-parent">
+          <img
+            class="instance-child"
+            alt=""
+            src="assets/images/radicacion/id_card.svg"
+          />
+          <div class="puedes-adjuntar-los">
+            Puedes adjuntar los documentos solicitados tomando una foto de cada
+            uno por el frente y respaldo del mismo.
+          </div>
+        </div>
+        <div class="component-alert1-estticasweb-docs">
+          <div class="container-icon">
+            <img
+              class="alerta-icon"
+              alt=""
+              src="assets/images/radicacion/alerta.svg"
+            />
+          </div>
+          <div class="label-alert">
+            Puedes cargar archivos en formatos PDF, JPG, JPGE, PNG y de hasta
+            5MB.
+          </div>
+        </div>
+      </div>
+      <div class="flex-row-docs">
+        <div class="flex-item">
+          <div class="containerAdjuntos">
+            <div class="circleDoc">
+              <div class="circleText">1</div>
+            </div>
+            <div class="textDocumentos">Tarjeta de propiedad del vehículo</div>
+          </div>
+        </div>
+
+        <div class="flex-item-docs">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Frente</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                width: 95%;
+              "
+            >
+              <div class="mask-input">
+                <input
+                  type="text"
+                  placeholder="Adjuntar archivo"
+                  class="inputDir"
+                  [formControl]="fCtargeta"
+                />
+              </div>
+              @if(fCfileTargeta.value){
+              <div
+                style="cursor: pointer; padding-left: 8px"
+                (click)="openDialogDeleteFile(1)"
+              >
+                <svg
+                  class="icono-eliminar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="currentColor"
+                >
+                  <g id="delete">
+                    <path
+                      id="delete_2"
+                      d="M3.41761 20C2.93207 20 2.51524 19.8181 2.16714 19.4542C1.81903 19.0904 1.64498 18.6548 1.64498 18.1473V2.39177H0.5V0.903578H5.43143V0H12.5686V0.903578H17.5V2.39177H16.355V18.1473C16.355 18.6564 16.1814 19.0925 15.834 19.4555C15.4867 19.8185 15.0695 20 14.5824 20H3.41761ZM14.9311 2.39177H3.06888V18.1473C3.06888 18.2536 3.10278 18.3409 3.17059 18.4093C3.23841 18.4776 3.32074 18.5118 3.41761 18.5118H14.5824C14.6696 18.5118 14.7495 18.4738 14.8221 18.3979C14.8948 18.322 14.9311 18.2384 14.9311 18.1473V2.39177ZM6.15362 16.0547H7.57752V4.82912H6.15362V16.0547ZM10.4225 16.0547H11.8464V4.82912H10.4225V16.0547Z"
+                      fill="#592272"
+                    />
+                  </g>
+                </svg>
+              </div>
+              }
+              <div style="padding-left: 10px">
+                <button
+                  for="uploadFile"
+                  class="col buttonUpload"
+                  (click)="selectFileUpload(1)"
+                >
+                  Adjuntar
+                </button>
+                <input
+                  #uploadFileTargeta
+                  multiple="false"
+                  type="file"
+                  id="uploadFileTargeta"
+                  style="display: none"
+                  (change)="selectFile($event, 1)"
+                  [formControl]="fCfileTargeta"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item-docs2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Respaldo</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+              "
+              [ngStyle]="
+                fCfileTargetaRespaldo.value
+                  ? { width: 'auto' }
+                  : { width: '95%' }
+              "
+            >
+              <div class="col-md-auto mask-input">
+                <input
+                  type="text"
+                  placeholder="Adjuntar archivo"
+                  class="inputDir"
+                  [formControl]="fCtargetaRespaldo"
+                />
+              </div>
+              @if(fCfileTargetaRespaldo.value){
+              <div
+                style="cursor: pointer; padding-left: 8px"
+                (click)="openDialogDeleteFile(2)"
+              >
+                <svg
+                  class="icono-eliminar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="currentColor"
+                >
+                  <g id="delete">
+                    <path
+                      id="delete_2"
+                      d="M3.41761 20C2.93207 20 2.51524 19.8181 2.16714 19.4542C1.81903 19.0904 1.64498 18.6548 1.64498 18.1473V2.39177H0.5V0.903578H5.43143V0H12.5686V0.903578H17.5V2.39177H16.355V18.1473C16.355 18.6564 16.1814 19.0925 15.834 19.4555C15.4867 19.8185 15.0695 20 14.5824 20H3.41761ZM14.9311 2.39177H3.06888V18.1473C3.06888 18.2536 3.10278 18.3409 3.17059 18.4093C3.23841 18.4776 3.32074 18.5118 3.41761 18.5118H14.5824C14.6696 18.5118 14.7495 18.4738 14.8221 18.3979C14.8948 18.322 14.9311 18.2384 14.9311 18.1473V2.39177ZM6.15362 16.0547H7.57752V4.82912H6.15362V16.0547ZM10.4225 16.0547H11.8464V4.82912H10.4225V16.0547Z"
+                      fill="#592272"
+                    />
+                  </g>
+                </svg>
+              </div>
+              }
+              <div style="padding-left: 10px">
+                <button
+                  for="uploadFile"
+                  class="col buttonUpload"
+                  (click)="selectFileUpload(2)"
+                >
+                  Adjuntar
+                </button>
+                <input
+                  #uploadFileTargetaRespaldo
+                  multiple="false"
+                  type="file"
+                  id="uploadFileTargetaRespaldo"
+                  style="display: none"
+                  (change)="selectFile($event, 2)"
+                  [formControl]="fCfileTargetaRespaldo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row-docs">
+        <div class="flex-item">
+          <div class="containerAdjuntos">
+            <div class="circleDoc">
+              <div class="circleText">2</div>
+            </div>
+            <div class="textDocumentos">Cédula del asegurado</div>
+          </div>
+        </div>
+        <div class="flex-item-docs">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Frente</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                width: 95%;
+              "
+            >
+              <div class="mask-input">
+                <input
+                  type="text"
+                  placeholder="Adjuntar archivo"
+                  class="inputDir"
+                  [formControl]="fCcedula"
+                />
+              </div>
+              @if(fCfileCedula.value){
+              <div
+                style="cursor: pointer; padding-left: 8px"
+                (click)="openDialogDeleteFile(3)"
+              >
+                <svg
+                  class="icono-eliminar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="currentColor"
+                >
+                  <g id="delete">
+                    <path
+                      id="delete_2"
+                      d="M3.41761 20C2.93207 20 2.51524 19.8181 2.16714 19.4542C1.81903 19.0904 1.64498 18.6548 1.64498 18.1473V2.39177H0.5V0.903578H5.43143V0H12.5686V0.903578H17.5V2.39177H16.355V18.1473C16.355 18.6564 16.1814 19.0925 15.834 19.4555C15.4867 19.8185 15.0695 20 14.5824 20H3.41761ZM14.9311 2.39177H3.06888V18.1473C3.06888 18.2536 3.10278 18.3409 3.17059 18.4093C3.23841 18.4776 3.32074 18.5118 3.41761 18.5118H14.5824C14.6696 18.5118 14.7495 18.4738 14.8221 18.3979C14.8948 18.322 14.9311 18.2384 14.9311 18.1473V2.39177ZM6.15362 16.0547H7.57752V4.82912H6.15362V16.0547ZM10.4225 16.0547H11.8464V4.82912H10.4225V16.0547Z"
+                      fill="#592272"
+                    />
+                  </g>
+                </svg>
+              </div>
+              }
+              <div style="padding-left: 10px">
+                <button
+                  for="uploadFile"
+                  class="col buttonUpload"
+                  (click)="selectFileUpload(3)"
+                >
+                  Adjuntar
+                </button>
+                <input
+                  #uploadFileCedula
+                  multiple="false"
+                  type="file"
+                  id="uploadFileCedula"
+                  style="display: none"
+                  (change)="selectFile($event, 3)"
+                  [formControl]="fCfileCedula"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item-docs2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Respaldo</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+              "
+              [ngStyle]="
+                fCfileCedulaRespaldo.value
+                  ? { width: 'auto' }
+                  : { width: '95%' }
+              "
+            >
+              <div class="col-md-auto mask-input">
+                <input
+                  type="text"
+                  placeholder="Adjuntar archivo"
+                  class="inputDir"
+                  [formControl]="fCcedulaRespaldo"
+                />
+              </div>
+              @if(fCfileCedulaRespaldo.value){
+              <div
+                style="cursor: pointer; padding-left: 8px"
+                (click)="openDialogDeleteFile(4)"
+              >
+                <svg
+                  class="icono-eliminar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="currentColor"
+                >
+                  <g id="delete">
+                    <path
+                      id="delete_2"
+                      d="M3.41761 20C2.93207 20 2.51524 19.8181 2.16714 19.4542C1.81903 19.0904 1.64498 18.6548 1.64498 18.1473V2.39177H0.5V0.903578H5.43143V0H12.5686V0.903578H17.5V2.39177H16.355V18.1473C16.355 18.6564 16.1814 19.0925 15.834 19.4555C15.4867 19.8185 15.0695 20 14.5824 20H3.41761ZM14.9311 2.39177H3.06888V18.1473C3.06888 18.2536 3.10278 18.3409 3.17059 18.4093C3.23841 18.4776 3.32074 18.5118 3.41761 18.5118H14.5824C14.6696 18.5118 14.7495 18.4738 14.8221 18.3979C14.8948 18.322 14.9311 18.2384 14.9311 18.1473V2.39177ZM6.15362 16.0547H7.57752V4.82912H6.15362V16.0547ZM10.4225 16.0547H11.8464V4.82912H10.4225V16.0547Z"
+                      fill="#592272"
+                    />
+                  </g>
+                </svg>
+              </div>
+              }
+              <div style="padding-left: 10px">
+                <button
+                  for="uploadFile"
+                  class="col buttonUpload"
+                  (click)="selectFileUpload(4)"
+                >
+                  Adjuntar
+                </button>
+                <input
+                  #uploadFileCedulaRespaldo
+                  multiple="false"
+                  type="file"
+                  id="uploadFileCedulaRespaldo"
+                  style="display: none"
+                  (change)="selectFile($event, 4)"
+                  [formControl]="fCfileCedulaRespaldo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row-docs">
+        <div class="flex-item">
+          <div class="containerAdjuntos">
+            <div class="circleDoc">
+              <div class="circleText">3</div>
+            </div>
+            <div class="textDocumentos">
+              Licencia del conductor quien manejaba
+            </div>
+          </div>
+        </div>
+        <div class="flex-item-docs">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Frente</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 95%;
+              "
+            >
+              <div class="mask-input">
+                <input
+                  type="text"
+                  placeholder="Adjuntar archivo"
+                  class="inputDir"
+                  [formControl]="fClicencia"
+                />
+              </div>
+              @if(fCfileLicencia.value){
+              <div
+                style="cursor: pointer; padding-left: 8px"
+                (click)="openDialogDeleteFile(5)"
+              >
+                <svg
+                  class="icono-eliminar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="currentColor"
+                >
+                  <g id="delete">
+                    <path
+                      id="delete_2"
+                      d="M3.41761 20C2.93207 20 2.51524 19.8181 2.16714 19.4542C1.81903 19.0904 1.64498 18.6548 1.64498 18.1473V2.39177H0.5V0.903578H5.43143V0H12.5686V0.903578H17.5V2.39177H16.355V18.1473C16.355 18.6564 16.1814 19.0925 15.834 19.4555C15.4867 19.8185 15.0695 20 14.5824 20H3.41761ZM14.9311 2.39177H3.06888V18.1473C3.06888 18.2536 3.10278 18.3409 3.17059 18.4093C3.23841 18.4776 3.32074 18.5118 3.41761 18.5118H14.5824C14.6696 18.5118 14.7495 18.4738 14.8221 18.3979C14.8948 18.322 14.9311 18.2384 14.9311 18.1473V2.39177ZM6.15362 16.0547H7.57752V4.82912H6.15362V16.0547ZM10.4225 16.0547H11.8464V4.82912H10.4225V16.0547Z"
+                      fill="#592272"
+                    />
+                  </g>
+                </svg>
+              </div>
+              }
+              <div style="padding-left: 10px">
+                <button
+                  for="uploadFile"
+                  class="col buttonUpload"
+                  (click)="selectFileUpload(5)"
+                >
+                  Adjuntar
+                </button>
+                <input
+                  #uploadFileLicencia
+                  multiple="false"
+                  type="file"
+                  id="uploadFileLicencia"
+                  style="display: none"
+                  (change)="selectFile($event, 5)"
+                  [formControl]="fCfileLicencia"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item-docs2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Respaldo</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+              "
+              [ngStyle]="
+                fCfileLicenciaRespaldo.value
+                  ? { width: 'auto' }
+                  : { width: '95%' }
+              "
+            >
+              <div class="col-md-auto mask-input">
+                <input
+                  type="text"
+                  placeholder="Adjuntar archivo"
+                  class="inputDir"
+                  [formControl]="fClicenciaRespaldo"
+                />
+              </div>
+              @if(fCfileLicenciaRespaldo.value){
+              <div
+                style="cursor: pointer; padding-left: 8px"
+                (click)="openDialogDeleteFile(6)"
+              >
+                <svg
+                  class="icono-eliminar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="currentColor"
+                >
+                  <g id="delete">
+                    <path
+                      id="delete_2"
+                      d="M3.41761 20C2.93207 20 2.51524 19.8181 2.16714 19.4542C1.81903 19.0904 1.64498 18.6548 1.64498 18.1473V2.39177H0.5V0.903578H5.43143V0H12.5686V0.903578H17.5V2.39177H16.355V18.1473C16.355 18.6564 16.1814 19.0925 15.834 19.4555C15.4867 19.8185 15.0695 20 14.5824 20H3.41761ZM14.9311 2.39177H3.06888V18.1473C3.06888 18.2536 3.10278 18.3409 3.17059 18.4093C3.23841 18.4776 3.32074 18.5118 3.41761 18.5118H14.5824C14.6696 18.5118 14.7495 18.4738 14.8221 18.3979C14.8948 18.322 14.9311 18.2384 14.9311 18.1473V2.39177ZM6.15362 16.0547H7.57752V4.82912H6.15362V16.0547ZM10.4225 16.0547H11.8464V4.82912H10.4225V16.0547Z"
+                      fill="#592272"
+                    />
+                  </g>
+                </svg>
+              </div>
+              }
+              <div style="padding-left: 10px">
+                <button
+                  for="uploadFile"
+                  class="col buttonUpload"
+                  (click)="selectFileUpload(6)"
+                >
+                  Adjuntar
+                </button>
+                <input
+                  #uploadFileLicenciaRespaldo
+                  multiple="false"
+                  type="file"
+                  id="uploadFileLicenciaRespaldo"
+                  style="display: none"
+                  (change)="selectFile($event, 6)"
+                  [formControl]="fCfileLicenciaRespaldo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="lineSeparadorDocs"></div>
+      </div>
+      <div class="flex-row">
+        <div class="documentos-del-siniestro">Evidencias</div>
+      </div>
+      <div class="flex-row">
+        <div class="containerEvidencias">
+          <img
+            class="boxFoto"
+            alt=""
+            src="assets/images/radicacion/add_a_photo.svg"
+          />
+          <div class="textFotos">
+            Anexa las fotografías del vehículo desde las siguientes
+            perspectivas:
+          </div>
+        </div>
+      </div>
+      <div class="flex-row-evidencias">
+        <div class="flex-column">
+          <div class="frameEvidencias">
+            <div class="carro">
+              <img
+                alt=""
+                id="imgFotoLateralDerecho"
+                src="assets/images/radicacion/lateral_derecho.svg"
+              />
+            </div>
+            <div
+              class="frameFoto"
+              (click)="
+                fCfileLateralDerecho.value !== null
+                  ? openDialogDeleteFile(7)
+                  : selectFileUpload(7)
+              "
+            >
+              <img
+                alt=""
+                id="imgFrameFotoLateralDerecho"
+                [src]="imgFotoCurrent"
+              />
+              <input
+                #uploadFotoLateralDerecho
+                multiple="false"
+                type="file"
+                id="uploadFotoLateralDerecho"
+                style="display: none"
+                (change)="selectFile($event, 7)"
+                [formControl]="fCfileLateralDerecho"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-column">
+          <div class="frameEvidencias">
+            <div class="carro">
+              <img
+                alt=""
+                id="imgFotoFrontal"
+                src="assets/images/radicacion/carro_frente.svg"
+              />
+            </div>
+
+            <div
+              class="frameFoto"
+              (click)="
+                fCfileFrontal.value !== null
+                  ? openDialogDeleteFile(8)
+                  : selectFileUpload(8)
+              "
+            >
+              <img alt="" id="imgFrameFotoFrontal" [src]="imgFotoCurrent" />
+              <input
+                #uploadFotoFrontal
+                multiple="false"
+                type="file"
+                id="uploadFotoFrontal"
+                style="display: none"
+                (change)="selectFile($event, 8)"
+                [formControl]="fCfileFrontal"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-column">
+          <div class="frameEvidencias">
+            <div class="carro">
+              <img
+                alt=""
+                id="imgFotoLateralIzquierdo"
+                src="assets/images/radicacion/lateral_izquierdo.svg"
+              />
+            </div>
+            <div
+              class="frameFoto"
+              (click)="
+                fCfileLateralIzquierdo.value !== null
+                  ? openDialogDeleteFile(9)
+                  : selectFileUpload(9)
+              "
+            >
+              <img
+                alt=""
+                id="imgFrameFotoLateralIzquierdo"
+                [src]="imgFotoCurrent"
+              />
+              <input
+                #uploadFotoLateralIzquierdo
+                multiple="false"
+                type="file"
+                id="uploadFotoLateralIzquierdo"
+                style="display: none"
+                (change)="selectFile($event, 9)"
+                [formControl]="fCfileLateralIzquierdo"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-column">
+          <div class="frameEvidencias">
+            <div class="carro">
+              <img
+                alt=""
+                id="imgFotoTrasero"
+                src="assets/images/radicacion/carro_trasero.svg"
+              />
+            </div>
+
+            <div
+              class="frameFoto"
+              (click)="
+                fCfileTrasero.value !== null
+                  ? openDialogDeleteFile(10)
+                  : selectFileUpload(10)
+              "
+            >
+              <img alt="" id="imgFrameFotoTrasero" [src]="imgFotoCurrent" />
+              <input
+                #uploadFotoTrasero
+                multiple="false"
+                type="file"
+                id="uploadFotoTrasero"
+                style="display: none"
+                (change)="selectFile($event, 10)"
+                [formControl]="fCfileTrasero"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row-evidencias">
+        <div class="documentos-del-siniestro">
+          Si tienes el documento del croquis por favor anéxalo
+        </div>
+      </div>
+      <div class="flex-row-evidencias">
+        <div class="frameEvidenciasCroquis">
+          <div class="carro">
+            <img
+              alt=""
+              id="imgFotoCroquis"
+              src="assets/images/radicacion/croquis.svg"
+            />
+          </div>
+
+          <div
+            class="frameFotoCenter"
+            (click)="
+              fCfileCroquis.value !== null
+                ? openDialogDeleteFile(11)
+                : selectFileUpload(11)
+            "
+          >
+            <img alt="" id="imgFrameFotoCroquis" [src]="imgFotoCurrent" />
+            <input
+              #uploadFotoCroquis
+              multiple="false"
+              type="file"
+              id="uploadFotoCroquis"
+              style="display: none"
+              (change)="selectFile($event, 11)"
+              [formControl]="fCfileCroquis"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+    <!--Opcion talleres-->
+    @if(numStepRadicar === 3){
+    <div class="flex-column-taller">
+      <div class="flex-row">
+        <div class="flex-column">
+          <div class="documentos-del-siniestro">Selección de taller</div>
+          <div class="subtituloTaller">
+            Información del vehículo siniestrado:
+          </div>
+        </div>
+        <div class="component-alert1-estticasweb-taller">
+          <div class="container-icon">
+            <img
+              class="alerta-icon"
+              alt=""
+              src="assets/images/radicacion/alerta.svg"
+            />
+          </div>
+          <div class="label-alert">
+            Si la ciudad es diferente a la de ocurrencia del siniestro, el
+            traslado del vehículo no es asumido por La Previsora
+          </div>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-item5">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Placa del vehículo</div>
+            </div>
+            <div class="mask-input-disabled">
+              <input
+                type="text"
+                readonly
+                placeholder="Nombres"
+                class="inputDir"
+                [formControl]="fCplaca"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-item5">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Marca del vehículo</div>
+            </div>
+            <div class="mask-input-disabled">
+              <input
+                type="text"
+                readonly
+                placeholder="Nombres"
+                class="inputDir"
+                [formControl]="fCmarca"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-item5">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Modelo del vehículo</div>
+            </div>
+            <div class="mask-input-disabled">
+              <input
+                type="text"
+                readonly
+                placeholder="Modelo"
+                class="inputDir"
+                [formControl]="fCmodelo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row-evidencias">
+        <div class="frame-parent-taller">
+          <div class="cp-radio-estados-web-parent">
+            <div class="cp-radio-estados-web-icon">
+              <input
+                (click)="habilitarBusquedaTalleres(fCseEncuentraTaller!.value)"
+                type="radio"
+                name="fav_language"
+              />
+            </div>
+
+            <div class="requerimos-ms-documentacin-p-wrapper">
+              <div class="requerimos-ms-documentacin">
+                Mi vehículo ya se encuentra en un taller de La Previsora.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-parent-taller">
+          <div class="cp-radio-estados-web-parent">
+            <div class="cp-radio-estados-web-icon">
+              <input
+                (click)="habilitarBusquedaTalleres(fCseleccionarTaller!.value)"
+                type="radio"
+                name="fav_language"
+              />
+            </div>
+            <div class="requerimos-ms-documentacin-p-wrapper">
+              <div class="requerimos-ms-documentacin">
+                Quiero seleccionar uno de los talleres de La Previsora.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          [ngClass]="{
+            'cp-boton-principal-activo': habilitarContinuarTaller,
+            'cp-boton-principal-inactivo': !habilitarContinuarTaller
+          }"
+          id="cPBotonPrincipalVariacionesContainer"
+        >
+          <button
+            class="continuar"
+            [disabled]="!habilitarContinuarTaller"
+            (click)="pathToTalleresoResumen()"
+          >
+            Continuar
+          </button>
+        </div>
+      </div>
+      @if(visibleButtonContinuar){
+      <div class="flex-row">
+        <div class="line-div"></div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-row-taller-ciudad">
+          <div class="etiqueta-taller">
+            <div class="etiqueta1">Ciudad*</div>
+          </div>
+          <div class="flex-item2">
+            <div ngbAccordion #accordionCiudadTaller="ngbAccordion">
+              <div ngbAccordionItem="first" class="cp-acordeonSelect">
+                <div class="documentacin-parent-select">
+                  <div
+                    class="label-helpSelect-placeholder"
+                    [ngClass]="{
+                      'label-helpSelect-placeholder':
+                        labelCiudadTallerSeleccionado === 'Seleccionar ciudad',
+                      'label-helpSelect':
+                        labelCiudadTallerSeleccionado !== 'Seleccionar ciudad'
+                    }"
+                  >
+                    {{ labelCiudadTallerSeleccionado }}
+                  </div>
+                  <button
+                    ngbAccordionToggle
+                    class="buttonAcordeonSelect"
+                    (click)="switchImgAngleSelectCiudadTallerAcordeon()"
+                  >
+                    <img
+                      class="alerta-icon"
+                      alt=""
+                      [src]="imgAngleAcordeonSelectCiudadCurrent"
+                    />
+                  </button>
+                </div>
+                <div ngbAccordionCollapse>
+                  <div class="contenedorAcordeonSelect">
+                    <div class="buscador-sencillo">
+                      <input
+                        type="text"
+                        class="buscar"
+                        placeholder="Buscar"
+                        (keyup)="onKeyUp(2, $event)"
+                      />
+                    </div>
+                    <div class="container" style="overflow-y: auto">
+                      @for (ciudad of ciudades; track ciudad.ciudadID; ){
+                      <div>
+                        <button
+                          class="maestro-config-reglas"
+                          (click)="
+                            selectCiudad(ciudad);
+                            accordionCiudadTaller.collapseAll()
+                          "
+                        >
+                          {{ ciudad.nombre }}
+                        </button>
+                      </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cp-boton-principal-activo-taller">
+            <button class="continuar" (click)="buscarTalleres()">Buscar</button>
+          </div>
+        </div>
+
+        @if(existeTaller){
+        <!--<div class="flex-column-right">
+                    <div class="flex-item2">-->
+        <div class="buscador-sencillo">
+          <input
+            type="text"
+            class="buscar"
+            placeholder="Buscar"
+            (keyup)="buscarTallerList(1, $event)"
+          />
+        </div>
+        <!--</div>
+                </div>-->
+        }
+      </div>
+      @if(existeTaller){
+      <div class="box-taller">
+        @for (taller of talleres; track taller.id; ){
+        <div class="cp-infotaller">
+          <div class="cp-radio-estados-parent-infotaller">
+            <div class="cp-radio-estados-web-icon">
+              <input
+                (click)="selectTaller(taller)"
+                type="radio"
+                name="fav_language"
+              />
+            </div>
+            <div class="requerimos-ms-documentacin-p-parent">
+              <div class="requerimos-ms-documentacin-infotaller">
+                {{ taller.nombre }}
+              </div>
+              <div class="requerimos-ms-documentacin1-infotaller">
+                {{ taller.direccion }}
+              </div>
+              <div class="requerimos-ms-documentacin2-infotaller">
+                {{ taller.telefono }}
+              </div>
+              <div class="requerimos-ms-documentacin3-infotaller">
+                {{ taller.horariosAtencion }}
+              </div>
+            </div>
+          </div>
+          <div class="gps-autogestion-1-parent">
+            <a class="cmo-llegar" [href]="ubicarTaller(taller)" target="_blank">
+              <img
+                class="gps-autogestion-1"
+                alt=""
+                src="assets/images/radicacion/Gps autogestion 1.svg"
+              />
+              <div class="titulo-gps">
+                <p class="cmo">Cómo</p>
+                <p class="cmo">llegar</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        }
+      </div>
+      } }
+    </div>
+    }
+
+    <!--Opcion resumen-->
+    @if(numStepRadicar === 4){
+    <div class="flex-column-register">
+      <div class="flex-column">
+        <div class="resumen-de-la">Resumen de la radicación</div>
+        <div class="informacin-del-vehculo-resumen">
+          Información del vehículo siniestrado:
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="flex-item2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Placa del vehículo</div>
+            </div>
+            <div class="mask-input-disabled">
+              <input
+                type="text"
+                readonly
+                placeholder="Nombres"
+                class="inputDir"
+                [formControl]="fCplaca"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-item2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Marca del vehículo</div>
+            </div>
+            <div class="mask-input-disabled">
+              <input
+                type="text"
+                readonly
+                placeholder="Nombres"
+                class="inputDir"
+                [formControl]="fCmarca"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-item2">
+          <div class="flex-column">
+            <div class="etiqueta">
+              <div class="etiqueta1">Modelo del vehículo</div>
+            </div>
+            <div class="mask-input-disabled">
+              <input
+                type="text"
+                readonly
+                placeholder="Modelo"
+                class="inputDir"
+                [formControl]="fCmodelo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-column-register">
+      <div class="scroll-resumen">
+        <div class="datos-del-siniestro-resumen">Datos del siniestro</div>
+        <div class="en-qu-fecha">
+          ¿En qué fecha y hora ocurrió el siniestro?
+        </div>
+        <div class="frame-parent-resumen2">
+          <div class="calendar-parent-resumen">
+            <img
+              class="calendar-ico-resumen"
+              alt=""
+              src="assets/images/radicacion/calendar_resumen.svg"
+            />
+            <div class="div-resumen">{{ fCfecha.value }}</div>
+          </div>
+          <div class="calendar-parent-resumen">
+            <img
+              class="more-time-icon-resumen"
+              alt=""
+              src="assets/images/radicacion/more_time_resumen.svg"
+            />
+            <div class="div-resumen">
+              {{
+                ((fCTime.value?.hour?.toString)!.length > 1
+                  ? fCTime.value?.hour
+                  : "0" + fCTime.value?.hour) +
+                  ":" +
+                  ((fCTime.value?.minute?.toString)!.length > 1
+                    ? fCTime.value?.minute
+                    : "0" + fCTime.value?.minute)
+              }}
+            </div>
+          </div>
+        </div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">¿En qué lugar sucedió el siniestro?</div>
+
+        <div class="frame-parent-resumen">
+          <div class="departamento-wrapper">
+            <div class="departamento-resumen">Departamento:</div>
+            <div class="ciudad-resumen">{{ fCDpto.value!.nombre }}</div>
+          </div>
+
+          <div class="departamento-wrapper">
+            <div class="departamento-resumen">Municipio:</div>
+            <div class="ciudad-resumen">{{ fcCiudad.value!.nombre }}</div>
+          </div>
+
+          <div class="departamento-wrapper">
+            <div class="departamento-resumen">Dirección:</div>
+            <div class="ciudad-resumen">{{ fCdireccion.value }}</div>
+          </div>
+        </div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">¿Qué ocurrió? Cuéntanos tu versión</div>
+
+        <div class="ciudad-resumen">{{ fCdesEvento.value }}</div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">¿Qué le pasó a tu vehículo?</div>
+
+        <div class="ciudad-resumen">{{ fCdesAveria.value }}</div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">¿Manejaba alguien diferente al asegurado?</div>
+
+        <div class="ciudad-resumen">
+          {{ esConductorDiferente ? "SI" : "NO" }}
+        </div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">Nombre de quien manejaba:</div>
+
+        <div class="ciudad-resumen">
+          {{
+            esConductorDiferente
+              ? fCconductorNombre.value
+              : fCnombreContacto.value
+          }}
+        </div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">Tipo Documento:</div>
+
+        <div class="ciudad-resumen">
+          {{
+            esConductorDiferente
+              ? fCconductorTipoDocumento.value
+              : fCtipoDocContacto.value
+          }}
+        </div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">Número de identificación:</div>
+
+        <div class="ciudad-resumen">
+          {{
+            esConductorDiferente
+              ? fCconductorDocumento.value
+              : fCdocContacto.value
+          }}
+        </div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">Teléfono de quien radica:</div>
+
+        <div class="ciudad-resumen">{{ fCnumCelular.value }}</div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">
+          Tu vehículo se puede movilizar por sus propios medios?
+        </div>
+
+        <div class="ciudad-resumen">No aplica</div>
+
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+
+        <div class="en-qu-fecha">Cuál es la gravedad del golpe o daño?</div>
+
+        <div class="ciudad-resumen">No aplica</div>
+
+        <div class="documentos-y-evidencias">Documentos y evidencias</div>
+
+        <div class="tarjeta-de-propiedad">
+          Tarjeta de propiedad del vehículo
+        </div>
+
+        <div class="frame-parent-resumen">
+          <div class="departamento-wrapper">
+            <div class="parte-frontal">Parte frontal:</div>
+            @if(fCtargeta.value){<img
+              class="check-icon"
+              alt=""
+              src="assets/images/radicacion/check_resumen.svg"
+            />
+            <div class="cargado">Cargado</div>
+            }@else{
+            <div class="no-cargado">No cargado</div>
+            }
+          </div>
+
+          <div class="departamento-wrapper">
+            <div class="parte-frontal">Parte trasera:</div>
+            @if(fCtargetaRespaldo.value){<img
+              class="check-icon"
+              alt=""
+              src="assets/images/radicacion/Check.png"
+            />
+            <div class="cargado">Cargado</div>
+            }@else{
+            <div class="no-cargado">No cargado</div>
+            }
+          </div>
+        </div>
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+        <div class="tarjeta-de-propiedad">Documento del asegurado</div>
+        <div class="frame-parent-resumen">
+          <div class="departamento-wrapper">
+            <div class="parte-frontal">Parte frontal:</div>
+            @if(fCcedula.value){<img
+              class="check-icon"
+              alt=""
+              src="assets/images/radicacion/check_resumen.svg"
+            />
+            <div class="cargado">Cargado</div>
+            }@else{
+            <div class="no-cargado">No cargado</div>
+            }
+          </div>
+
+          <div class="departamento-wrapper">
+            <div class="parte-frontal">Parte trasera:</div>
+            @if(fCcedulaRespaldo.value){<img
+              class="check-icon"
+              alt=""
+              src="assets/images/radicacion/Check.png"
+            />
+            <div class="cargado">Cargado</div>
+            }@else{
+            <div class="no-cargado">No cargado</div>
+            }
+          </div>
+        </div>
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+        <div class="tarjeta-de-propiedad">
+          Licencia del conductor quien manejaba
+        </div>
+        <div class="frame-parent-resumen">
+          <div class="departamento-wrapper">
+            <div class="parte-frontal">Parte frontal:</div>
+            @if(fClicencia.value){<img
+              class="check-icon"
+              alt=""
+              src="assets/images/radicacion/check_resumen.svg"
+            />
+            <div class="cargado">Cargado</div>
+            }@else{
+            <div class="no-cargado">No cargado</div>
+            }
+          </div>
+
+          <div class="departamento-wrapper">
+            <div class="parte-frontal">Parte trasera:</div>
+            @if(fClicenciaRespaldo.value){<img
+              class="check-icon"
+              alt=""
+              src="assets/images/radicacion/Check.png"
+            />
+            <div class="cargado">Cargado</div>
+            }@else{
+            <div class="no-cargado">No cargado</div>
+            }
+          </div>
+        </div>
+        <img
+          class="line-icon"
+          alt=""
+          src="assets/images/radicacion/Line 36.svg"
+        />
+        <div class="tarjeta-de-propiedad">Fotos adicionales del vehículo</div>
+        <div class="flex-column">
+          <div class="frame-parent-resumen">
+            <div class="departamento-wrapper">
+              <div class="parte-frontal">Lateral derecha:</div>
+              @if(fCfileLateralDerecho.value){<img
+                class="check-icon"
+                alt=""
+                src="assets/images/radicacion/check_resumen.svg"
+              />
+              <div class="cargado">Cargado</div>
+              }@else{
+              <div class="no-cargado">No cargado</div>
+              }
+            </div>
+
+            <div class="departamento-wrapper">
+              <div class="parte-frontal">Lateral izquierda:</div>
+              @if(fCfileLateralIzquierdo.value){<img
+                class="check-icon"
+                alt=""
+                src="assets/images/radicacion/Check.png"
+              />
+              <div class="cargado">Cargado</div>
+              }@else{
+              <div class="no-cargado">No cargado</div>
+              }
+            </div>
+            <div class="departamento-wrapper">
+              <div class="parte-frontal">Frontal:</div>
+              @if(fCfileFrontal.value){<img
+                class="check-icon"
+                alt=""
+                src="assets/images/radicacion/Check.png"
+              />
+              <div class="cargado">Cargado</div>
+              }@else{
+              <div class="no-cargado">No cargado</div>
+              }
+            </div>
+          </div>
+          <div class="frame-parent-resumen">
+            <div class="departamento-wrapper">
+              <div class="parte-frontal">Posterior:</div>
+              @if(fCfileTrasero.value){<img
+                class="check-icon"
+                alt=""
+                src="assets/images/radicacion/check_resumen.svg"
+              />
+              <div class="cargado">Cargado</div>
+              }@else{
+              <div class="no-cargado">No cargado</div>
+              }
+            </div>
+
+            <div class="departamento-wrapper">
+              <div class="parte-frontal">Croquis:</div>
+              @if(fCfileCroquis.value){<img
+                class="check-icon"
+                alt=""
+                src="assets/images/radicacion/Check.png"
+              />
+              <div class="cargado">Cargado</div>
+              }@else{
+              <div class="no-cargado">No cargado</div>
+              }
+            </div>
+          </div>
+        </div>
+        <div class="tarjeta-de-propiedad">Selección de taller</div>
+        <div class="flex-item2">
+          <div class="cont">
+            <div class="tallerseleccionado">
+              <div class="requerimos-ms-documentacin-p-parent">
+                @if(fCtaller.value?.id){
+                <div class="requerimos-ms-documentacin-infotaller">
+                  {{ fCtaller.value?.nombre }}
+                </div>
+                <div class="requerimos-ms-documentacin1-infotaller">
+                  {{ fCtaller.value?.direccion }}
+                </div>
+                <div class="requerimos-ms-documentacin2-infotaller">
+                  {{ fCtaller.value?.telefono }}
+                </div>
+                <div class="requerimos-ms-documentacin3-infotaller">
+                  {{ fCtaller.value?.horariosAtencion }}
+                </div>
+                }@else {
+                <div class="requerimos-ms-documentacin3-infotaller">
+                  No seleccionado
+                </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    } @if((numStepRadicar === 3 && visibleButtonContinuar) || (numStepRadicar
+    !== 3)){
+    <div class="row p-5">
+      <div class="col" align="center">
+        <div
+          [ngClass]="{
+            'cp-boton-principal-activo': validarCampos(),
+            'cp-boton-principal-inactivo': !validarCampos()
+          }"
+          id="cPBotonPrincipalVariacionesContainer"
+        >
+          <button
+            class="continuar"
+            [disabled]="!validarCampos()"
+            (click)="numStepRadicar === 4 ? radicarSiniestro() : stepsRadicar()"
+          >
+            {{ labelButtonContinue }}
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+<ng-template let-data #callDialogDeleteFile>
+  <div class="popup-error-confirm_delete">
+    <img
+      class="popup-error-confirm-child_delete"
+      alt=""
+      src="assets/images/Group 24007.svg"
+    />
+    <div class="frame-parent_delete">
+      <div class="titulo-wrapper_delete">
+        <div class="titulo_delete">¿Eliminar archivo?</div>
+      </div>
+      <div class="recuerda-una-vez-container_delete">
+        <p class="el-vehculo-se_delete">
+          La foto se eliminará de las evidencias.
+        </p>
+        <p class="el-vehculo-se_delete">¿Deseas eliminarla?</p>
+      </div>
+    </div>
+    <div class="cp-btn-contorno-variaciones-parent_delete">
+      <div class="cp-btn-contorno-variaciones_delete">
+        <div
+          class="cp-boton-principal-variaciones_delete"
+          (click)="closeDialog()"
+        >
+          <div class="continuar_delete">Cancelar</div>
+        </div>
+      </div>
+      <div
+        class="cp-boton-principal-variaciones1_delete"
+        (click)="deleteFile(opc)"
+      >
+        <div class="continuar1_delete">Aceptar</div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template let-data #callDialogSendRadicar>
+  <div class="popup-error-confirm_delete">
+    <img
+      class="popup-error-confirm-child_delete"
+      alt=""
+      src="assets/images/radicacion/icon_success.svg"
+    />
+    <div class="frame-parent_delete">
+      <div class="titulo-wrapper_delete">
+        <div class="detalle-del-siniestro">Detalle del siniestro</div>
+      </div>
+      <div class="recuerda-una-vez-container_delete">
+        <p class="el-vehculo-se_delete">La información se ha recibido</p>
+        <p class="el-vehculo-se_delete">Vehiculo: {{ fCplaca.value }}</p>
+      </div>
+      <div class="recuerda-una-vez-container_delete">
+        <p class="el-vehculo-se_delete">
+          Tu solicitud está en trámite, espera nuestra llamada para
+        </p>
+        <p class="el-vehculo-se_delete">
+          finalizar el proceso y recibir tu número de radicado.
+        </p>
+      </div>
+    </div>
+    <div class="cp-btn-contorno-variaciones-parent_delete">
+      <div
+        class="cp-boton-principal-variaciones-radicar"
+        (click)="closeDialog(); redireccionar('/servicios')"
+      >
+        <div class="continuar-radicar">Regresar a servicios</div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<app-footer></app-footer>

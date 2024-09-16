@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.862" height="16.807" viewBox="0 0 16.862 16.807">
+  <g id="ico-cerrar-sesion" transform="translate(0.1 -0.751)">
+    <path id="Trazado_2006" data-name="Trazado 2006" d="M8.3,16.074H2.076a.692.692,0,0,1-.692-.692V2.927a.692.692,0,0,1,.692-.692H8.3A.692.692,0,1,0,8.3.851H2.076A2.078,2.078,0,0,0,0,2.927V15.382a2.078,2.078,0,0,0,2.076,2.076H8.3a.692.692,0,0,0,0-1.384Z" transform="translate(0 0)" fill="#67bc47" stroke="#fff" stroke-width="0.2"/>
+    <path id="Trazado_2007" data-name="Trazado 2007" d="M181.02,111.516l-4.207-4.152a.692.692,0,0,0-.971.985l3.007,2.967h-8.056a.692.692,0,0,0,0,1.384h8.056l-3.007,2.967a.692.692,0,1,0,.971.985l4.207-4.152a.692.692,0,0,0,0-.985Z" transform="translate(-164.564 -102.854)" fill="#67bc47" stroke="#fff" stroke-width="0.2"/>
+  </g>
+</svg>

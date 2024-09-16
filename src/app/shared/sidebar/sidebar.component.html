@@ -1,0 +1,35 @@
+@if(currentSizeScreen !== 'Large'){
+  <div class="view-menu" (click)="onViewMenu()">
+    <img src="assets/images/MainMenu.svg">
+  </div>
+}
+@if((currentSizeScreen === 'Large' && !viewMenu) || viewMenu){
+<div [ngClass]="{'mainmenu': currentSizeScreen === 'Large' && !viewMenu, 'mainmenu-smart': viewMenu }">
+  <div class="base">
+  </div>
+  <div [ngClass]="{'op1': currentSizeScreen === 'Large' && !viewMenu, 'op1-smart': viewMenu }">
+    <div [ngClass]="{'base':opc !== 1, 'op1-child': opc === 1, 'op1-child7': estOver1 && opc !== 1, 'base7': !estOver1 && opc !== 1}" (mouseover)="overOpc(1)" (mouseout)="outOpc(1)" (click)="clickOpc(1)" [routerLink]="['/home/false']">
+      <div class="inicio-wrapper">
+        <div [ngClass]="{'noselected':opc !== 1, 'selected': opc === 1, 'selected2': estOver1 && opc !== 1, 'noselected2': !estOver1 && opc !== 1}">Inicio</div>
+      </div>
+    </div>
+
+  </div>
+  <div [ngClass]="{'op11': currentSizeScreen === 'Large' && !viewMenu, 'op11-smart': viewMenu }">
+    <div [ngClass]="{'base':opc !== 2, 'op1-child': opc === 2, 'op1-child7': estOver2 && opc !== 2, 'base7': !estOver2 && opc !== 2}" (mouseover)="overOpc(2)" (mouseout)="outOpc(2)" (click)="clickOpc(2)" [routerLink]="['/video-peritacion']">
+      <div class="inicio-wrapper">
+        <div [ngClass]="{'noselected':opc !== 3, 'selected': opc === 2, 'selected2': estOver2 && opc !== 2, 'noselected2': !estOver2 && opc !== 2}">Video peritación</div>
+      </div>
+    </div>
+
+  </div>
+  <div [ngClass]="{'op12': currentSizeScreen === 'Large' && !viewMenu, 'op12-smart': viewMenu }">
+    <div [ngClass]="{'base':opc !== 3, 'op1-child': opc === 3, 'op1-child7': estOver3  && opc !== 3, 'base7': !estOver3 && opc !== 3}" (mouseover)="overOpc(3)" (mouseout)="outOpc(3)" (click)="clickOpc(3)" [routerLink]="['/preguntas-frecuentes']" >
+      <div class="inicio-wrapper">
+        <div [ngClass]="{'noselected':opc !== 3, 'selected': opc === 3, 'selected2': estOver3 && opc !== 3, 'noselected2': !estOver3 && opc !== 3}">Preguntas frecuentes</div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+}

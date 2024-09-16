@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="./loginlookfeel.component.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@500;600&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400&display=swap" />
+  	
+  	
+  	
+</head>
+<body>
+  	
+  	<div class="login1">
+    		<div class="frame-parent">
+      			<div class="frame-imagen-wrapper">
+        				<div class="frame-imagen">
+                            <img [src]="backgroundImage"  class="img-fluid" alt="Responsive image" >
+          					
+        				</div>
+      			</div>
+      			<div class="frame-group">
+        				<div class="contenedor-blanco-wrapper">
+          					<div class="contenedor-blanco">
+          					</div>
+        				</div>
+        				<div class="informacin">
+          					<div class="bienvenido-a-autogestin-parent">
+            						<div class="bienvenido-a-autogestin-container">
+              							<p class="bienvenido-a">¡Bienvenido a </p>
+              							<p class="bienvenido-a">Autogestión! </p>
+            						</div>
+            						<div class="ingrese-su-correo">Ingrese su correo electrónico y contraseña para continuar.</div>
+          					</div>
+                              <form [formGroup]="formularioLogin"  (submit)="ingresar()" id="login-form">
+                                <div class="form-group">
+                                    <div class="correo1-parent">
+                                            <div class="correo1">
+                                                <div class="etiqueta">
+                                                   
+                                                        <img   class="component-4-icon" alt="" [src]="mail">
+                                                   
+                                                   
+                                                        <div class="select_wrapper">
+                                                            <label for="email" class="correo-electrnico" [ngClass]="{ 'ng-invalid': email!.invalid && (email!.dirty || email!.touched) }">
+                                                                Correo electrónico
+                                                            </label>
+                                                        </div>
+                                                </div>
+                                              
+                                                        
+                                                        <div style="width: 100%;">
+                                                            
+                                                                  <input id="email" type="email"  required class="form-control input" id="email"  name="email"
+                                                                    formControlName="email"
+                                                                    (keyup.enter)="ingresar()"  
+                                                                    [(ngModel)]="autenticacion.username" />
+                                                                    <span
+                                                                    *ngIf="(email?.invalid && email?.dirty) || (email?.invalid && email?.touched) || (email?.invalid && submit)"
+                                                                    class="error-icon-hover-area"
+                                                                    data-toggle="tooltip"
+                                                                    data-placement="right"
+                                                                    title="Ingrese un correo electrónico válido."
+                                                                  
+                                                                ></span>
+                                                            
+                                                          </div> 
+                                                          <!-- Validaciones campo correo electrónico -->
+                                                          <div class="container-error-message text-danger text-center"
+                                                              *ngIf="(email?.invalid && email?.dirty) || (email?.invalid && email?.touched) || (email?.invalid && submit)">
+                                                              <label class="label-error content-login font-weight-bold">
+                                                                Ingrese un correo electrónico válido.
+                                                              </label>
+                                                        </div>  
+                                                        
+                                                <!--</div>-->
+                                            </div>
+                                            <div class="contrasea1" id="contrasea1Container">
+                                                <div class="etiqueta">
+                                                        <img class="component-4-icon" alt="" [src]="key">
+                                                        
+                                                        <div class="select_wrapper">
+                                                            <label for="contrasena" class="labelRegistro" [ngClass]="{ 'ng-invalid': contrasena!.invalid && (contrasena!.dirty || contrasena!.touched) }">
+                                                              Contraseña
+                                                            </label>
+                                                        </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input id="confContrasena" type="{{ocultarMostrarPassword}}"    [type]="hide ? 'password' : 'text'"  class="form-control-input input" formControlName="contrasena" required
+                                                    [ngClass]="{ 'inputFieldInvalid': contrasena!.invalid && (contrasena!.dirty || contrasena!.touched) }"
+                                                    >
+                                                    <div class="input-group-append">
+                                                      <button type="button" class="btn btn-show-pwd-disabled input-group-text"
+                                                        [ngClass]="{'btn-show-pwd-enable': showEnableBtnPwd, 'ng-user-invalid': contrasena!.invalid && (contrasena!.touched || contrasena!.dirty || submit)}" (click)="cambiarTipo('contrasena')">
+                                                      </button>
+                                                    </div>
+                                                    <!--<div class="tooltip-test">
+                                                      &nbsp;<img [src]="iconoPregunta" alt="iconoAyuda">
+                                                      <span class="tooltip-text">{{tooltipContrasena}}</span>
+                                                    </div>-->
+                                                  </div>
+                                            </div>
+                                    </div>
+                                      
+          					<div class="btn-enlace-parent">
+            						<div class="btn-enlace">
+              							<div class="label-btn">Olvidé mi contraseña</div>
+            						</div>
+            						<div class="cp-boton-principal-variaciones-parent">
+              							
+                                            <button type="submit" [disabled]="!formularioLogin.valid"  [class]="formularioLogin.valid ? 'cp-boton-principal-variaciones2':'cp-boton-principal-variaciones' ">Ingresar</button>
+              							
+              							<div class="cp-btn-contorno-variaciones" id="cPBtnContornoVariacionesContainer">
+                								<div class="cp-boton-principal-variaciones1">
+                  									<div class="correo-electrnico">Registrarse</div>
+                								</div>
+              							</div>
+            						</div>
+            						<div class="versin-1311">Versión 1.31.1</div>
+          					</div>
+                        </div>
+                    </form> 
+        				</div>
+                        
+      			</div>
+    		</div>
+    		<div class="footer">
+                <app-footer></app-footer>
+    		</div>
+  	</div>
+  	
+  	<div id="modalRegistro1Container" class="popup-overlay" style="display:none">
+    		
+    		<div class="modalregistro1">
+      			<div class="frame-container">
+        				<div class="header-wrapper">
+          					<div class="header">Registro</div>
+        				</div>
+        				<img class="path-19705-icon" alt="" src="Path 19705.svg">
+        				
+      			</div>
+      			<div class="frame-div">
+        				<div class="wizard-default-parent">
+          					<div class="wizard-default">
+            						<div class="estadoswizard">
+              							<div class="ellipse-parent">
+                								<div class="frame-child">
+                								</div>
+                								<img class="component-3-icon" alt="" src="Component 3.svg">
+                								
+                								<img class="sebastiangroup-42-icon" alt="" src="sebastian/Group 42.svg">
+                								
+              							</div>
+            						</div>
+            						<img class="wizard-default-child" alt="" src="Line 29.svg">
+            						
+            						<div class="estadoswizard">
+              							<div class="ellipse-parent">
+                								<div class="frame-item">
+                								</div>
+                								<img class="component-3-icon" alt="" src="key.svg">
+                								
+              							</div>
+            						</div>
+          					</div>
+          					<div class="informacin-personal-parent">
+            						<div class="informacin-personal">
+              							<ol class="informacin-personal1">
+                								<li>Información personal</li>
+              							</ol>
+            						</div>
+            						<div class="supporting-text">Queremos conocerte, por favor ingresa todos tus datos.</div>
+          					</div>
+        				</div>
+        				<div class="num-identificacin-parent">
+          					<div class="num-identificacin">
+            						<div class="correo">
+              							<div class="label">
+                								<div class="etiqueta5">Número de identificación*</div>
+              							</div>
+              							<div class="correo-electrnico-container">
+                								<div class="etiqueta5">Número de identificación</div>
+              							</div>
+            						</div>
+          					</div>
+          					<div class="celular">
+            						<div class="correo">
+              							<div class="label">
+                								<div class="etiqueta5">Celular* </div>
+              							</div>
+              							<div class="correo-electrnico-container">
+                								<div class="etiqueta5">Número de celular</div>
+              							</div>
+            						</div>
+          					</div>
+          					<div class="correo-variaciones">
+            						<div class="correo">
+              							<div class="label">
+                								<div class="etiqueta5">Correo electrónico*</div>
+              							</div>
+              							<div class="correo-electrnico-container">
+                								<div class="etiqueta5">Correo electrónico</div>
+              							</div>
+            						</div>
+          					</div>
+          					<div class="cp-btn-contorno-variaciones-parent">
+            						<div class="cp-btn-contorno-variaciones1">
+              							<div class="cp-boton-principal-variaciones2">
+                								<div class="etiqueta5">Cancelar</div>
+              							</div>
+            						</div>
+            						<div class="cp-boton-principal-variaciones3">
+              							<div class="seleccione-tipo-de">Continuar</div>
+            						</div>
+          					</div>
+          					<div class="tipo-documento">
+            						<div class="tipo-documento-child">
+            						</div>
+            						<div class="seleccione-tipo-de-documento-parent">
+              							<div class="seleccione-tipo-de">Seleccione tipo de documento</div>
+              							<img class="path-19705-icon" alt="" src="angle-down.svg">
+              							
+            						</div>
+            						<div class="tipo-de-documento">Tipo de documento</div>
+          					</div>
+          					<div class="cp-apellidos">
+            						<div class="label">
+              							<div class="etiqueta5">Apellidos*</div>
+            						</div>
+            						<div class="correo-electrnico-container">
+              							<div class="etiqueta5">Apellidos</div>
+            						</div>
+          					</div>
+          					<div class="nombres">
+            						<div class="correo">
+              							<div class="label">
+                								<div class="etiqueta5">Nombres*</div>
+              							</div>
+              							<div class="correo-electrnico-container">
+                								<div class="etiqueta5">Nombres</div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		
+    		
+  	</div>
+  	
+  	
+  	
+  	<script>
+    		var contrasea1Container = document.getElementById("contrasea1Container");
+    		if(contrasea1Container) {
+      			contrasea1Container.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var cPBtnContornoVariacionesContainer = document.getElementById("cPBtnContornoVariacionesContainer");
+    		if(cPBtnContornoVariacionesContainer) {
+      			cPBtnContornoVariacionesContainer.addEventListener("click", function () {
+        				var popup = document.getElementById("modalRegistro1Container");
+        				if(!popup) return;
+        				var popupStyle = popup.style;
+        				if(popupStyle) {
+          					popupStyle.display = "flex";
+          					popupStyle.zIndex = 100;
+          					popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+          					popupStyle.alignItems = "center";
+          					popupStyle.justifyContent = "center";
+        				}
+        				popup.setAttribute("closable", "");
+        				
+        				var onClick = popup.onClick || function(e) {
+          					if(e.target === popup && popup.hasAttribute("closable")) {
+            						popupStyle.display = "none";
+          					}
+        				};
+        				popup.addEventListener("click", onClick);
+      			});
+    		}
+    		
+    		var vectorIcon = document.getElementById("vectorIcon");
+    		if(vectorIcon) {
+      			vectorIcon.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}
+    		
+    		var path19702Icon = document.getElementById("path19702Icon");
+    		if(path19702Icon) {
+      			path19702Icon.addEventListener("click", function (e) {
+        				// Add your code here
+      			});
+    		}</script></body>
+</html>

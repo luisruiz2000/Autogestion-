@@ -1,0 +1,6 @@
+.container-fluid {
+    background-image: url(/assets/images/fondo.png);
+    background-attachment: fixed;
+    height: 700px;
+  }
+  

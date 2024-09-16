@@ -1,0 +1,34 @@
+<div class="container container-notificaciones" [hidden]="!mostrar" #containerNotificaciones *ngIf="mostrar" id="containerNotificaciones">
+  <div class="row-notificaciones">
+    <div class="modal-notificaciones" id="modalNotificaciones">
+      
+        
+     
+      <div *ngFor="let notificacion of notificationsList | slice:0:10;" class="notificacion row" (mouseenter)="activarEliminar(notificacion)" (mouseleave)="mostrarBotonBasura= false">
+        <div class="col-2 col-md-2 notificacion-img" [ngClass]="validarClase(notificacion)" >
+              <div class="row">
+                <img [src]="imgNotificacion" alt="imagen notificacion" class="img-not"/>
+              </div>
+              <p class="titulo-imagen">{{tituloTipo}}</p>
+        </div>
+        <div class="col-8 col-md-8 notificacion-body" >
+          <div class="titulo">{{notificacion.tituloNotificacion}} <span class="sinleer" [hidden]="notificacion.estadoNotificacion != 1">.</span></div>
+          <div class="descripcion" [innerHTML]="notificacion.descripcion"></div>
+          <div class="fecha">{{notificacion.fechaNotificacion}}</div>
+        </div>
+        <div class="col-1 col-md-2">
+          <a *ngIf="mostrarBotonBasura  && notificacion.notificacionID == notificacionSeleccionada" (click)="eliminarNotificacion(notificacion)" alt="imagenParteIzquierda" class="cursor eliminarNotificacion"><img alt="iconoTrash" [src]="icoTrash"/></a>
+        </div>
+      </div>
+      <div class="letraTituloVerde sinNotificaciones" *ngIf="sinNotificaciones">
+        No tienes Notificaciones
+      </div>
+      <div *ngIf="mostrarLink" class="others">
+        <a (click)="goToNotificaciones()">Ver notificaciones</a>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+

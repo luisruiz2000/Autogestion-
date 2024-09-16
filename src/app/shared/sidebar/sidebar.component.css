@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.base {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	background-color: #592272;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	cursor:pointer;
+	justify-content: center;
+	text-align: center;
+	
+}
+.base7 {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	right: 0%;
+	bottom: 0%;
+	left: 0%;
+	background-color: #592272;
+	cursor:pointer;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.op1-child {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	right: 0%;
+	bottom: 0%;
+	left: 0%;
+	background-color: #eaece9;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	justify-content: center;
+	text-align: center;
+}
+.op1-child7 {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	right: 0%;
+	bottom: 0%;
+	left: 0%;
+	background-color: #eaece9;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.inicio {
+  	width: 109px;
+  	position: relative;
+  	letter-spacing: 0.5px;
+  	line-height: 22px;
+  	display: inline-block;
+  	flex-shrink: 0;
+}
+.inicio-wrapper {
+  	position: relative;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: center;
+	border: none;
+	background-color: transparent;
+	outline: none;
+}
+
+
+.op1 {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	width: 13.96%;
+	top: 0%;
+	right: 81.48%;
+	bottom: 0%;
+	left: 5.47%;
+	color: #2c421f;
+	z-index: 700;
+}
+.op11 {
+  position: absolute;
+  height: 100%;
+  width: 13.96%;
+  top: 0%;
+  right: 68.44%;
+  bottom: 0%;
+  left: 18.52%;
+  z-index: 800;
+}
+.op12 {
+  position: absolute;
+  height: 100%;
+  width: 13.96%;
+  top: 0%;
+  right: 54.44%;
+  bottom: 0%;
+  left: 31.6%;
+  z-index: 900;
+}
+.op1-smart {
+	position: relative;
+	height: 70px;
+	width: 100%;
+	border-bottom: 0.10px solid #eaece9 /*#9b4cba*/;
+}
+.op11-smart {
+  position: relative;
+  height: 70px;
+  width: 100%;
+  border-bottom: 0.10px solid #eaece9;
+}
+.op12-smart {
+  position: relative;
+  height: 70px;
+  width: 100%;
+  
+}
+.noselected {
+  	flex: 1;
+  	position: relative;
+  	letter-spacing: 0.5px;
+  	line-height: 22px;
+	text-align: center;
+  	font-size: 16px;
+  	color: #fff;
+  	font-family: Arimo;
+}
+.selected {
+	flex: 1;
+	position: relative;
+	letter-spacing: 0.5px;
+	line-height: 22px;
+    text-align: center;
+	font-size: 16px;
+	color: #2c421f;
+	font-family: Arimo;
+	font-weight: bold;
+
+}
+.noselected2 {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-family: Arimo;
+}
+.selected2 {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  text-align: center;
+  font-size: 16px;
+  color: #2c421f;
+  font-family: Arimo;
+
+}
+
+.inicio-frame {
+  	position: absolute;
+  	height: 31.43%;
+  	width: 90.85%;
+  	top: 22.86%;
+  	right: 9.57%;
+  	bottom: 45.71%;
+  	left: 9.58%;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: center;
+}
+
+.mainmenu {
+  	width: 100%;
+  	position: relative;
+	display: flex;
+	flex-direction: row;
+  	height: 70px;
+	z-index: 900;
+}
+.mainmenu-smart {
+	position: absolute;
+	
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	top: 71px;
+	left: 0px;
+	z-index: 1000;
+	justify-content: center;
+	align-self: stretch;
+	height: auto;
+	
+
+}
+.button:hover {
+
+	background-color: #eaece9;
+	width: 100%;
+	position: absolute;
+  	height: 100%;
+  	width: 13.05%;
+  	top: 0%;
+  	right: 68.44%;
+  	bottom: 0%;
+  	left: 18.52%;
+	height: 70px;
+}
+.op1-focus:focus {
+	width: 100%;
+	position: relative;
+	height: 70px;
+	text-align: center;
+	font-size: 16px;
+	color: #2c421f;
+	font-family: Arimo;
+	position: absolute;
+	height: 31.43%;
+	width: 80.85%;
+	top: 22.86%;
+	right: 9.57%;
+	bottom: 45.71%;
+	left: 9.58%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+}
+.view-menu{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	cursor: pointer;
+}
+

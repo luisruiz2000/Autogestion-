@@ -1,0 +1,124 @@
+.header {
+  display: flex;
+  padding: .5rem 0;
+  height: 76px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  background-color: #fff !important;
+  z-index: 2;
+}
+
+.container_campana {
+  position: relative;
+  cursor: pointer;
+}
+
+.logo_campana {
+  width: 66%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.7rem 0 6rem;
+  border-right: solid 1px #fb028d;
+}
+
+.logo {
+  width: 239px;
+  cursor: pointer;
+}
+
+
+.N_notificaciones {
+  position: absolute;
+  font-weight: 900;
+  color: white;
+  font-size: 12px;
+  margin: 0;
+  top: -5px;
+  right: -9px;
+  background: #d90b0b;
+  width: 19px;
+  height: 19px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.container_usuario {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 24%;
+  border-right: solid 1px #fb028d;
+  padding: 0 1rem;
+}
+
+
+.container_nombre_usuario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.down,
+.user-circle-icon {
+  cursor: pointer;
+}
+
+.nombre_usuario {
+  font-size: 20px;
+  letter-spacing: 0.15px;
+  line-height: 30px;
+  font-weight: 500;
+  font-family: "Noto Sans";
+  margin: 0;
+}
+
+
+.cerrar_sesion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.5rem;
+  cursor: pointer;
+}
+
+@media(max-width:884px) {
+
+  .logo_campana {
+    width: 72%;
+  }
+
+  .logo {
+    width: 124px;
+    margin: 0 .5rem 0 0;
+  }
+
+  .container_usuario {
+    justify-content: center;
+    padding: 0 !important;
+    width: 14%;
+  }
+
+
+  .user-circle-icon {
+    margin: 0 !important;
+    width: 24px !important;
+  }
+
+  .nombre_usuario {
+    display: none;
+  }
+
+  .icono_campana {
+    width: 18px;
+  }
+
+  .down {
+    display: none;
+  }
+
+  .cerrar_sesion {
+    padding-left: 1rem !important;
+    width: 24px;
+  }
+}

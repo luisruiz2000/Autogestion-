@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Futura Std Heavy";
+    src: url('Futura-Std-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Futura Std Light Oblique";
+    src: url('Futura-Std-Light-Oblique.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Futura Std Medium";
+    src: url('Futura-Std-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Futura Std Light";
+    src: url('Futura-Std-Light.ttf') format('truetype');
+}

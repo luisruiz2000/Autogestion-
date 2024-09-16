@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="imagen">
+    <div class="contenedor-imagen">
+      <img class="d-block imagen-iphone" [src]=icoIphone alt="Iphone">
+    </div>
+  </div>
+  <div class="detalle">
+    <div class="cerrar-modal">
+      <button type="button" class="close mr-1" (click)="cerrar()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="titulo-redireccion">
+
+      <p class="titulo-redirec">¡PREVISORA TE INVITA A CONOCER <span class="text-previsora">NUESTRA APP!</span></p>
+
+    </div>
+    <div class="resumen">
+      <p class="texto-resumen">
+        Con nuestra App tienes un canal más cerca de ti,
+        en el que podrás realizar todas tus solicitudes
+        relacionadas con la asistencia a tu vehículo y
+        radicar tus siniestros de forma segura y rápida.
+      </p>
+
+    </div>
+    <div class="botones-redireccion">
+      <span class="text-descarga">Encuentra nuestra app móvil en:</span>
+      <div class="col-12">
+        <div class="row">
+            <div class="text-left botonApp">
+                <a href="{{googlePlay}}" target="_blank" rel="noopener noreferrer"><img
+                        class="logoApp cursor" [src]="icoGooglePlay" alt="icono-google-play"></a>
+            </div>
+            <div class="text-left botonApp">
+                <a href="{{appStore}}" target="_blank" rel="noopener noreferrer"><img
+                        class="logoApp cursor" [src]="icoAppStore" alt="icono-app-store"></a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

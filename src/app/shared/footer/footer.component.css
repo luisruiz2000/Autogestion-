@@ -1,0 +1,90 @@
+footer {
+  background-color: #20232a;
+}
+
+.section-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 1rem;
+}
+
+.content-img-footer {
+  width: 42%;
+}
+
+
+.contenedorEnlaces {
+  width: 30% !important;
+  background-image: url('../../../assets/images/Line 113.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: white;
+  text-align: center;
+}
+
+.contenedorEnlaces p {
+  margin-bottom: .5rem;
+}
+
+.content-info {
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  color: white;
+}
+
+.iconsLinks {
+  align-self: flex-end;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconLink {
+  width: 20px !important;
+}
+
+.section-footer-movil {
+  display: none;
+}
+
+/* Responsi */
+
+@media (max-width: 800px) {
+  .section-footer {
+    display: none !important;
+  }
+
+  .section-footer-movil {
+    display: flex;
+    color: white;
+    text-align: center;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1.5rem 0;
+  }
+
+  .contenedorEnlaces-movil {
+    padding: 1rem 0 0 0 !important;
+  }
+
+  .contenedorEnlaces-movil p {
+    margin-bottom: .5rem !important;
+  }
+
+  .content-info-movil p {
+    margin-bottom: .5rem;
+  }
+
+  .iconsLinks-movil {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+  }
+
+}

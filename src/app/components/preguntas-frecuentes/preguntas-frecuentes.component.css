@@ -1,0 +1,482 @@
+.color-active {
+  color: #9B4CBA;
+}
+
+.color-inactive {
+  color: black;
+}
+
+.regresar {
+  margin: 1.5rem 0 1rem 0;
+  font-size: 12px;
+
+}
+
+
+.estilosSpinner {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(74, 74, 74, 0.8);
+  z-index: 99999;
+}
+
+.cargaSpinner {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.spinner {
+  background-image: url(/assets/images/logo2.gif);
+  background-position: center;
+  margin: auto;
+  background-size: 121px;
+  background-repeat: no-repeat;
+  width: 100% !important;
+  height: 100% !important;
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+
+.bi-chevron-right {
+  color: #9B4CBA;
+  margin: 0 .5rem;
+}
+
+.home {
+  color: #9B4CBA;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.flex-container {
+  margin: 0 5.5rem;
+}
+
+.searchbar-text {
+  height: 49px;
+  font-family: "Neris Black", Trebuchet MS, Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  text-align: center;
+  color: white;
+  margin: 10px auto 10px auto;
+}
+
+.searchbar {
+  width: 569px;
+  height: 50px;
+  margin: auto;
+  border-radius: 30px;
+  border: none;
+  outline-width: 0;
+  text-indent: 20px;
+  background-color: white;
+}
+
+.container-card {
+  padding: 22px 20px;
+  margin-bottom: 35px;
+}
+
+.imagen {
+  width: auto;
+  height: auto;
+  margin: 0px 0px 10px 26px;
+}
+
+.title-text {
+  font-family: "Futura Std Heavy", Trebuchet MS, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  margin: 0px 0px 0px 20px;
+}
+
+.mat-expansion-panel-header-description {
+  flex-grow: 0;
+}
+
+.body-text {
+  font-family: "Neris Light", Trebuchet MS, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: left;
+  color: #707070;
+}
+
+.annotation-text {
+  font-family: "Neris Light", Trebuchet MS, Arial, sans-serif;
+  color: #626366;
+  font-size: 15px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.smiley {
+  width: 24.2px;
+  height: 24.2px;
+  color: #c3c4c3;
+}
+
+.hr-title {
+  border-top: 1px solid #1f4c38;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.head-bar {
+  background-color: #67bc47;
+  background-image: url(/assets/images/header_faq.svg);
+}
+
+.header-panel {
+  height: 55px;
+  width: 100%;
+  border-radius: 6px;
+  border: solid 1px #3d761b;
+  padding: 24px 18px !important;
+  background-color: #F4EDF7;
+}
+
+.header-panel.mat-expanded {
+  height: 55px;
+  width: 100%;
+  border-radius: 4.5px 4.5px 0px 0px !important;
+  border: solid 1px #c3c4c3 !important;
+}
+
+.mat-expansion-panel-header:hover {
+  height: 55px;
+  width: 100%;
+  border-radius: 6px 6px 6px 6px;
+  border: solid 1px #c3c4c3 !important;
+  background-color: #e3dce6 !important;
+}
+
+::ng-deep .ng-trigger-bodyExpansion {
+  background-color: white;
+}
+
+.titulo-pregunta {
+  font-family: "Neris Light", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2C421F;
+}
+
+.descripcion-pregunta {
+  font-family: "Neris Light", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: left;
+  color: #707070;
+}
+
+.icono {
+  margin: -9px 0px 0px auto !important;
+  overflow: visible !important;
+}
+
+.linea {
+  overflow: auto;
+  border-style: solid;
+  border-width: 1px;
+  color: #1f4c38;
+}
+
+.no-faq {
+  height: 98px;
+  font-family: "Futura Std Medium", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1f4c38;
+}
+
+.ico-no-faq {
+  width: 163.3px;
+  height: 163.3px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel-pregunta {
+  margin: auto auto 10px auto !important;
+  border-radius: 6px !important;
+  background: #F4EDF7 !important;
+}
+
+.mat-expansion-panel.mat-expanded {
+  border-radius: 6px !important;
+  border: solid 1px #c3c4c3 !important;
+}
+
+/* Responsive */
+
+@media(max-width: 980px) {
+
+  .tittle-pregunta {
+    text-align: center;
+  }
+
+  .container-tab-search {
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+
+  .container-search {
+    margin: 1.5rem 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .flex-container {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+  .searchbar {
+    width: 70%;
+    height: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .searchbar-text {
+    height: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-top: 2.125em;
+  }
+
+  .container-card {
+    padding: 0rem 1rem;
+    box-shadow: none;
+  }
+
+  .title-text {
+    padding-left: 0.9375rem;
+    margin: 0rem;
+  }
+
+  .imagen {
+    margin: 0px 0px 0.625rem 1rem;
+    width: auto;
+    height: auto;
+  }
+
+  .mat-expansion-panel-header {
+    padding: 0rem 0.625rem;
+  }
+
+  .head-bar>br {
+    display: none;
+  }
+
+  .titulo-pregunta {
+    line-height: 1.2;
+    text-align: justify;
+    margin-right: 1px;
+  }
+
+  .mat-expansion-panel-header-description,
+  .mat-expansion-panel-header-title {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 3px;
+  }
+
+}
+
+@media(max-width: 510px) {
+  .flex-container {
+    margin: 0 1rem !important;
+  }
+
+  .searchbar-text {
+    font-size: 1rem;
+  }
+
+  .searchbar {
+    width: 80%;
+  }
+
+  .tittle-pregunta {
+    text-align: start;
+    font-size: 22px;
+  }
+
+  .container-card {
+    padding: 0;
+  }
+
+  .header-panel {
+    height: 64px;
+    padding: 34px 18px !important;
+  }
+
+}
+
+.tittle-pregunta {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #2C421F;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+
+.nav-tabs {
+  display: flex;
+  justify-content: start;
+  white-space: nowrap;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom: 3px solid #9B4CBA;
+  color: #9B4CBA;
+  background-color: #ffffff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  flex: 1;
+  text-align: center;
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid #9B4CBA;
+  border-radius: 0;
+  border-bottom: none;
+  margin-bottom: -1px;
+  color: #000000;
+  flex: 1;
+  text-align: center;
+}
+
+.nav-tabs .nav-link:not(.active) {
+  border: 1px solid #9B4CBA;
+}
+
+.nav-tabs .nav-link .tab-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+::ng-deep .mat-icon {
+  width: none !important;
+}
+
+.nav-tabs .nav-link.active .tab-icon {
+  fill: red;
+}
+
+.container-tab-search {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-search {
+  width: 408px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  height: 40px !important;
+  border: solid 1px #636466;
+  padding: 0 1rem !important;
+  font-size: 1rem !important;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-input:focus,
+.search-input:focus-visible {
+  border: 1px solid #9B4CBA;
+  outline: none;
+}
+
+.fas .fa-search {
+  color: #9B4CBA !important;
+}
+
+
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+}
+
+.search-icon i {
+  font-size: 20px;
+  color: #aaa;
+}
+
+.search-input:focus-visible + .search-icon i {
+  color: #9B4CBA;
+}
+
+
+
+.home {
+  color: #9B4CBA;
+  text-decoration: underline;
+  cursor: pointer;
+}

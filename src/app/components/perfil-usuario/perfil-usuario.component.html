@@ -1,0 +1,334 @@
+<app-plantilla-general></app-plantilla-general>
+<p class="regresar">
+  <span class="home">Home</span>
+  <i class="bi bi-chevron-right"></i>
+  <span>Perfil</span>
+</p>
+<div class="">
+  <div class="containerr">
+    <div class="">
+      <div class="d-flex align-items-center imgName">
+        <img [src]="iconoPerfil" alt="Icono perfil" class="iconoPerfil" />
+        <div>
+          <h4 class="name">{{ usuario.nombres | titlecase }}</h4>
+          <h4 class="lastname">{{ usuario.apellidos | titlecase }}</h4>
+        </div>
+      </div>
+
+      <div class="separador">
+        <label class="me-3 misDatos"> Mis Datos </label>
+        <div class="linea-separador"></div>
+      </div>
+      <form [formGroup]="formulario" (ngSubmit)="guardar()">
+        <div class="form-group">
+          <form
+            class="container-fluid text-start"
+            [formGroup]="formulario"
+            (ngSubmit)="guardar()"
+          >
+            <!-- PRIMERA FILA DEL FORMULARIO -->
+            <div class="row mb-4 oneRow">
+              <div class="col-12 col-md-4">
+                <div class="select_wrapper mb-2">
+                  <label for="nombre" class="labelRegistro">
+                    Tipo de documento
+                  </label>
+                </div>
+                <div class="form-control-wrapper">
+                  <div>
+                    <input
+                      type="text"
+                      required
+                      class="form-control input"
+                      id="tipoDocumento"
+                      name="tipoDocumento"
+                      formControlName="tipoDocumento"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="select_wrapper mb-2">
+                  <label for="numeroCedula" class="labelRegistro">
+                    Número de documento
+                  </label>
+                </div>
+                <div class="form-control-wrapper">
+                  <div>
+                    <input
+                      type="text"
+                      required
+                      class="form-control input"
+                      id="numeroCedula"
+                      name="numeroCedula"
+                      formControlName="numeroDocumento"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="select_wrapper mb-2">
+                  <label for="nombre" class="labelRegistro"> Correo </label>
+                </div>
+                <div class="form-control-wrapper">
+                  <div>
+                    <input
+                      type="email"
+                      formControlName="correo"
+                      autocomplete="username"
+                      id="email"
+                      name="email"
+                      required
+                      class="form-control input"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SEGUNDA FILA DEL FORMULARIO -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 text-start">
+              <div class="col">
+                <div class="select_wrapper mb-2">
+                  <label for="numeroId" class="labelRegistro"> Celular </label>
+                </div>
+                <div class="form-control-wrapper">
+                  <div>
+                    <input
+                      [class.in-invalid]="validarCelular"
+                      formControlName="celular"
+                      required
+                      class="form-control input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col dpto">
+                <div class="select_wrapper mb-2">
+                  <label
+                    for="departamento"
+                    class="labelRegistro"
+                    [ngClass]="{
+                      'ng-invalid':
+                        departamento!.invalid &&
+                        (departamento!.dirty || departamento!.touched)
+                    }"
+                  >
+                    Departamento
+                  </label>
+                </div>
+                <div class="form-control-wrapper">
+                  <div>
+                    <mat-select
+                      class="custom-mat-select"
+                      id="departamento"
+                      name="departamento"
+                      placeholder="Seleccionar departamento"
+                      formControlName="departamento"
+                      (selectionChange)="obtenerMunicipios($event.value)"
+                    >
+                      <div class="container-input-dpto">
+                        <input
+                          type="text"
+                          class="form-control input-dpto"
+                          placeholder="Buscar..."
+                          aria-label="Search"
+                          aria-describedby="basic-addon1"
+                          (keyup)="buscarDpto($event)"
+                        />
+
+                        <i class="bi bi-search icon-input-dpto"></i>
+                      </div>
+                      <mat-option
+                        *ngFor="
+                          let dpto of nameDpto ? nameDpto : nameDepartamento
+                        "
+                        [value]="dpto"
+                      >
+                        {{ dpto }}
+                      </mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+              </div>
+              <div class="col municipio">
+                <div class="select_wrapper mb-2">
+                  <label for="ciudadMunicipio" class="labelRegistro">
+                    Ciudad / Municipio
+                  </label>
+                </div>
+                <div class="form-control-wrapper">
+                  <mat-select
+                    class="custom-mat-select"
+                    formControlName="ciudadMunicipio"
+                    placeholder="Seleccionar Ciudad"
+                  >
+                    <mat-option
+                      class="label-form"
+                      value="{{ municipio.codigo }}"
+                      *ngFor="let municipio of municipios"
+                    >
+                      {{ municipio.nombre }}
+                    </mat-option>
+                  </mat-select>
+                </div>
+              </div>
+
+              <div class="col colAdress">
+                <div class="select_wrapper mt-3 mb-2">
+                  <label for="direccion" class="labelRegistro">
+                    Dirección
+                  </label>
+                </div>
+                <div class="form-control-wrapper">
+                  <div>
+                    <input
+                      type="text"
+                      id="direccion"
+                      class="form-control input"
+                      formControlName="direccion"
+                      placeholder="Contraseña"
+                      (click)="metodoQuitarReadOnly()"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separador">
+              <div class="linea-separador w-100"></div>
+            </div>
+
+            <!-- TERCERA FILA CONTRASEÑA -->
+            <div class="row text-start">
+              <div class="col-12 col-md-4">
+                <div class="select_wrapper mb-2">
+                  <i class="bi bi-key me-2"></i>
+                  <label class="labelRegistro" for="oldContrasena"
+                    >Contraseña actual*</label
+                  >
+                </div>
+                <div class="form-control-wrapper">
+                  <div class="input-group">
+                    <input
+                      type="{{ ocultarMostrarOldPassword }}"
+                      placeholder="Contraseña"
+                      id="oldContrasena"
+                      class="input"
+                      formControlName="oldContrasena"
+                      [ngClass]="{
+                        invalidPwd: !currentPasswordInvalida
+                      }"
+                      (click)="metodoQuitarReadOnly()"
+                      readonly
+                    />
+                    <div class="input-group-append">
+                      <i
+                        [ngClass]="
+                          ocultarMostrarOldPassword === 'password'
+                            ? 'bi bi-eye-slash'
+                            : 'bi bi-eye'
+                        "
+                        class="bi bi-eye-slash"
+                        (click)="showPassword('oldContrasena')"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="select_wrapper mb-2">
+                  <i class="bi bi-key me-2"></i>
+                  <label class="labelRegistro" for="newContrasena"
+                    >Nueva contraseña*</label
+                  >
+                </div>
+                <div class="form-control-wrapper">
+                  <div class="input-group">
+                    <input
+                      type="{{ ocultarMostrarNewPassword }}"
+                      id="newContrasena"
+                      placeholder="Contraseña"
+                      class="input"
+                      formControlName="newContrasena"
+                      [ngClass]="{
+                        invalidPwd: !newPasswordInvalida
+                      }"
+                      (keydown)="nuevaPassword($event)"
+                      (click)="metodoQuitarReadOnly()"
+                      readonly
+                    />
+                    <div class="input-group-append">
+                      <i
+                        [ngClass]="
+                          ocultarMostrarNewPassword === 'password'
+                            ? 'bi bi-eye-slash'
+                            : 'bi bi-eye'
+                        "
+                        class="bi bi-eye-slash"
+                        (click)="showPassword('newContrasena')"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="select_wrapper mb-2">
+                  <i class="bi bi-key me-2"></i>
+                  <label class="labelRegistro" for="confNewContrasena"
+                    >Confirmar Contraseña*</label
+                  >
+                </div>
+                <div class="form-control-wrapper">
+                  <div class="input-group">
+                    <input
+                      placeholder="Confirmar Contraseña"
+                      id="confiPassword"
+                      type="{{ ocultarMostrarNewPassword }}"
+                      formControlName="confNewContrasena"
+                      [ngClass]="{
+                        invalidPwd: !confPasswordInvalida
+                      }"
+                      class="input"
+                      (keydown)="confiPassword($event)"
+                      (click)="metodoQuitarReadOnly()"
+                      readonly
+                    />
+                    <div class="input-group-append">
+                      <i
+                        [ngClass]="
+                          ocultarMostrarNewPassword === 'password'
+                            ? 'bi bi-eye-slash'
+                            : 'bi bi-eye'
+                        "
+                        class="bi bi-eye-slash"
+                        (click)="showPassword('newContrasena')"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center my-2">
+                <li class="text-password fw-bold">
+                  Su contraseña debe incluir al menos 8 caracteres entre
+                  mayusculas, <br />
+                  minuscular y numero
+                </li>
+              </div>
+              <div class="divBotonRegistro mb-4">
+                <button
+                  type="submit"
+                  class="btn botonRegistro"
+                  [disabled]="!confPasswordInvalida"
+                >
+                  Guardar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

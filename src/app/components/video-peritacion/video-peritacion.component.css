@@ -1,0 +1,898 @@
+.containerr {
+  margin: 0 5.5rem;
+}
+
+.regresar {
+  margin: 1.5rem 0 1rem 0;
+  font-size: 12px;
+}
+
+.bi-chevron-right {
+  color: #9B4CBA;
+  margin: 0 1rem;
+}
+
+.home {
+  color: #9B4CBA;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.seccionEncabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fafafa;
+  padding: 16px 0 10px 10px;
+}
+
+.imgLlamar {
+  width: 60px;
+  height: 60px;
+  margin: 12px 11px 11px -20px;
+}
+
+
+.selectVehiculoPeritaje {
+  width: 44% !important;
+  height: 37px;
+  font-style: normal !important;
+}
+
+.selectInmovil {
+  width: 20% !important;
+  height: 37px;
+  font-style: normal !important;
+}
+
+
+
+.boton {
+  border-radius: 25px;
+  padding: 10px 2rem !important;
+}
+
+.btn-habilitado {
+  background-color: #2C421F;
+  color: white;
+}
+
+.btn-habilitado:hover {
+  background-color: #2C421F;
+  color: white;
+}
+
+.btn-deshabilitado {
+  border: none !important;
+  background-color: #999999 !important;
+  color: white !important;
+}
+
+.space-footer {
+  height: 40vh;
+}
+
+/*Pasos video peritacion*/
+
+.content-fases {
+  border-radius: 6px;
+  padding: 29px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.border-left-icon {
+  width: 46%;
+  position: relative;
+  border-left: solid 10px #FB028D;
+  padding: 1rem 3rem;
+}
+
+.left-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #FB028D;
+  padding: 7px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute !important;
+  top: 0 !important;
+  left: -28px !important;
+}
+
+.last-child-icon {
+  background-color: #FB028D !important;
+  color: white !important;
+  top: 11px !important;
+}
+
+.last-child-icon i {
+
+  font-size: 24px;
+}
+
+
+.icons {
+  color: #FB028D;
+}
+
+.border-left-icon p {
+  color: #636466;
+}
+
+.label-fase {
+  width: 210px;
+  min-height: 48px;
+  height: auto;
+  margin-left: auto;
+  margin-right: 5px;
+  text-align: center;
+  border-radius: 24px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #67bc47;
+  padding: 10px;
+}
+
+.label-fase-inicio {
+  margin-top: 25px;
+}
+
+.info-fase {
+  font-family: "Futura Std Heavy", Trebuchet MS, Arial, sans-serif;
+  font-weight: 500;
+  color: #2C421F;
+  font-size: 20px;
+}
+
+.nombres-fases {
+  padding: 0px;
+  height: auto;
+  margin-top: 23px;
+}
+
+.label-fase-repuestos {
+  padding-top: 10px;
+}
+
+.label-fase-innactivo {
+  background-color: #cbcbcb !important;
+}
+
+.content-info {
+  max-width: 583px;
+  height: 110px;
+}
+
+.detalle-fase-reparacion {
+  padding: 0px;
+  /* height: 122px; */
+  border-radius: 6px;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+  border: solid 1px #cbcbcb;
+  background-color: #ffffff;
+  margin-left: -19px;
+  margin-right: 0px;
+  padding-left: 50px;
+  padding-right: 11px;
+  /* margin-top: 13px; */
+  height: 100%;
+  /* height: auto; */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.detalle-fase-entregado {
+  padding: 0px;
+  height: 111px;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  border: solid 1px #cbcbcb;
+  background-color: #ffffff;
+  margin-left: -26px;
+  margin-right: 0px;
+  padding-left: 68px;
+}
+
+.url-video-peritacion {
+  color: #67bc47;
+  font-weight: 900;
+}
+
+.contenerdor-mensaje-llamar {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 43px;
+    border-bottom-left-radius: 43px;
+    text-align: end;
+    padding: 0 1.5rem 0 0;
+    text-align: end;
+    background: #FBE7F3;
+    width: 368px;
+}
+
+.modal-body-agregar {
+  margin-top: -1.5em;
+  padding-bottom: 0px !important;
+}
+
+.input-modal::placeholder {
+  color: #c3c4c3 !important;
+  font-weight: 300 !important;
+}
+
+.btn-cancel-modal {
+  width: 84px;
+  height: 38px;
+  border-radius: 4px;
+  border: solid 1px #67bc47;
+  color: #1f4c38;
+}
+
+.btn-add-modal {
+  width: 96px;
+  height: 38px;
+  border-radius: 4px;
+  background-color: #67bc47;
+  color: white !important;
+  text-align: center;
+}
+
+.contBotonVehiculo {
+  width: 50%;
+}
+
+.modal-agregar {
+  height: 85% !important;
+  overflow-y: hidden;
+}
+
+.title-head {
+  font-family: "Futura Std Heavy", Trebuchet MS, Arial, sans-serif;
+  color: #1f4c38;
+  text-align: center !important;
+  font-size: 22px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  white-space: nowrap;
+}
+
+.modal-footer-add {
+  margin-bottom: 1em !important;
+}
+
+hr {
+  margin-top: 1%;
+  width: 7rem;
+  background-color: #c3c4c3;
+}
+
+.mensaje-peritacion-movil {
+  display: none;
+}
+
+.mensaje-peritacion-escritorio {
+  display: block;
+}
+
+.container-title-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-info {
+  width: 60%;
+}
+
+.title-video {
+  color: var(--principales-2-c-421-f, #2C421F);
+  font-feature-settings: 'liga'off, 'clig'off;
+  font-family: "Noto Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  margin: 19px;
+}
+
+.text-label {
+  color: var(--escala-de-grises-636466, #636466);
+  font-family: Arimo;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.4px;
+  text-align: left;
+  padding: 10px 14px 9px 18px;
+}
+
+.text-title {
+  color: var(--principales-000000, #000);
+  font-feature-settings: 'liga'off, 'clig'off;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  margin: 23px 16px;
+}
+
+.container-form {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 3rem;
+}
+
+.content-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-form-select {
+  width: 26%;
+  padding: 0px 10px 10px 5px;
+}
+
+.form-select .placeholder {
+  color: red !important;
+  /* Color del texto */
+}
+
+.form-select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+  appearance: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.form-select::after {
+  content: '\25BC';
+  /* Símbolo de flecha hacia abajo */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* El icono no interfiere con los eventos del mouse */
+  color: #aaa;
+  /* Color de la flecha */
+}
+
+/* inputttt */
+
+.cp-acordeonSelect {
+  position: relative;
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: #fff;
+  border: none;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+  margin: 0%;
+  position: relative;
+}
+
+.documentacin-parent-select {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  border-radius: 5px;
+  border: 0.25px solid #636466;
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: .5rem;
+  background-color: transparent;
+}
+
+.documentacin-parent-select:focus-within {
+  border: 1px solid #64b834;
+}
+
+.documentacin-parent-select-disabled {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  /*box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);*/
+  border-radius: 5px;
+  border: 0.25px solid #636466;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #c8c8c8;
+}
+
+.label-helpSelect-placeholder {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  padding-left: 5px;
+  color: #c8c8c8;
+  font-size: 16px;
+  background: transparent;
+  font-family: Arimo;
+}
+
+.label-helpSelect {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  padding-left: 5px;
+
+  font-size: 16px;
+  color: #000;
+  font-family: Arimo;
+}
+
+.alerta-icon {
+  margin-right: .5rem !important;
+}
+
+
+.cp-acordeonSelect {
+  position: relative;
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: #fff;
+  border: none;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+  margin: 0%;
+  position: relative;
+}
+
+.documentacin-parent-select:focus-within {
+  border: 1px solid #64b834;
+}
+
+.documentacin-parent-select-disabled {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  /*box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);*/
+  border-radius: 5px;
+  border: 0.25px solid #636466;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #c8c8c8;
+}
+
+
+.label-helpSelect-placeholder {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  padding-left: 5px;
+  color: #c8c8c8;
+  font-size: 16px;
+  background: transparent;
+  font-family: Arimo;
+}
+
+.buttonAcordeonSelect {
+  border-width: 0px;
+  background-color: transparent;
+
+}
+.contenedorAcordeonSelect {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 10px;
+  text-align: left;
+  font-size: 18px;
+  color: #000;
+  font-family: 'Noto Sans';
+  padding: 7px;
+  justify-content: flex-start;
+  border-width: 0px;
+  margin: 0px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.53);
+  height: 200px;
+  left: 0px;
+  top: 40px;
+  z-index: 7778;
+  background-color: #fff;
+  outline: none;
+}
+
+.maestro-config-reglas {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 40px;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  font-family: Arimo;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  left: -13px;
+  border-width: 0px;
+  outline: none;
+}
+
+.maestro-config-reglas:hover {
+  background-color: #b6a5bd;
+}
+/*  */
+
+
+
+.mensaje-form {
+  border: solid 1px #FFAB00;
+  padding: 8px 10px 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-radius: 10px;
+  margin-left: 16px;
+}
+
+.text-warning {
+  margin-right: 1rem !important;
+}
+
+.mat-mdc-select {
+  opacity: 100;
+  font-style: normal !important;
+  font-family: "Neris Light", Arial, Helvetica, sans-serif !important;
+  width: 50% !important;
+  height: 35px;
+  margin-left: 0px !important;
+  font-size: 15px;
+  font-weight: 600;
+  font-stretch: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: left;
+  color: #626366;
+  background-color: white;
+
+}
+
+.mat-mdc-select-arrow-wrapper {
+  background-image: url("/assets/images/flecha.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.mat-mdc-select-arrow {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-radius: 4px;
+  margin: 0 7px;
+
+}
+
+
+/*Responsive*/
+@media (max-width:1080px) and (min-width:768px) {
+  .textoInformacion {
+    font-size: 12px;
+  }
+}
+
+@media (max-width:768px) {
+  .card-body {
+    padding: 0rem;
+  }
+
+  .letraSubtitulo {
+    font-family: "Futura Std Medium", Trebuchet MS, Arial, sans-serif;
+    text-align: left !important;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.29;
+  }
+
+  .labelVehiculoSiniestrado {
+    margin-bottom: 0rem !important;
+  }
+
+  .letraFormularios {
+    font-family: "Neris Light", Arial, Helvetica, sans-serif !important;
+    font-size: 13px;
+    line-height: 1.31;
+    font-weight: 300;
+    color: #626366;
+  }
+
+  .labelCamposObligatorios {
+    height: 13px;
+    font-family: "Neris Light", Arial, Helvetica, sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: left;
+    color: #626366;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem !important;
+  }
+
+  .selectVehiculoPeritaje,
+  .selectInmovil {
+    width: 100% !important;
+    margin-left: 0px !important;
+  }
+
+  .info-fase {
+    font-family: "Futura Std Medium", Trebuchet MS, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    text-align: left;
+    color: #67bc47;
+  }
+
+  div.icono-fase>img {
+    width: 57px;
+    height: 57px;
+    z-index: 2;
+    margin: 0 auto;
+  }
+
+  .barra-avance-fase-activa {
+    width: 23px;
+    position: absolute;
+    right: auto;
+    left: auto;
+    z-index: 1;
+    margin: -1em 0 0 0;
+  }
+
+  .detalle-fase-inicio {
+    padding: 0;
+    min-height: initial;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    margin: 0px;
+  }
+
+  .mensaje-fase {
+    top: 0;
+    font-size: 14px;
+  }
+
+  .detalle-fase-reparacion {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: initial;
+    border: none;
+    box-shadow: none;
+  }
+
+  .detalle-fase-entregado {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    height: auto;
+  }
+
+  .textoInformacion-movil {
+    font-family: "Neris Semibold", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    font-stretch: normal;
+    font-style: normal;
+    padding-right: 10px;
+    text-align: right;
+  }
+
+  .textoInformacion-movil span {
+    font-family: "Neris Black", sans-serif;
+    font-weight: 900;
+
+  }
+
+  .imgLlamar {
+    width: 60px;
+  }
+
+  .fase {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .content-info {
+    height: auto !important;
+  }
+
+  .detalle-fase-inicio-no-taller {
+    height: auto;
+  }
+
+  .notificacion-mensaje {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .mensaje-alerta {
+    margin-left: 0px;
+  }
+
+  div.contBotonVehiculo {
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  .sinVehiculo,
+  .contBotonVehiculo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mensaje-peritacion-movil {
+    display: block;
+  }
+
+  .mensaje-peritacion-escritorio {
+    display: none;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .seccionEncabezado {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .container-form {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .contenerdor-mensaje-llamar {
+    width: 50%;
+    align-self: flex-end;
+  }
+
+
+  .container-form-select {
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+
+}
+
+@media (max-width: 814px) {
+
+  .containerr {
+    margin: 0 1rem;
+  }
+
+  .title-video {
+    font-size: 20px;
+  }
+
+  .text-title {
+    margin: 23px 0;
+  }
+
+  .contenerdor-mensaje-llamar {
+    width: 100%;
+  }
+
+  .text-warning {
+    margin-right: .5rem;
+  }
+
+  .text-mensaje-warning {
+    font-size: 14px;
+  }
+
+  .content-fases {
+    padding: 29px 0 0 2rem;
+  }
+
+  .border-left-icon {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-form {
+    align-items: start !important;
+    margin: 2rem 0rem;
+  }
+
+  .container-form-select {
+    width: 100%;
+    padding: 0px 10px 10px 0;
+  }
+
+  .content-btn {
+    width: 100%;
+  }
+
+  .title-video {
+    font-size: 18px;
+    margin: 16px 0 16px 0;
+  }
+
+  .form-label {
+    font-size: 14px;
+  }
+
+  .mensaje-form {
+    text-align: center;
+  }
+
+  .bi-exclamation-circle-fill {
+    margin-right: .5rem !important;
+  }
+}
+
+@media (max-width: 514px) {
+
+  .content-fases {
+    width: 100%;
+
+  }
+  .content-text-fases {
+    font-size: 14px;
+  }
+
+  .border-left-icon {
+    padding: 0 0 0 3rem;
+  }
+
+  .left-icon {
+    height: 68px;
+    width: 68px;
+    left: -38px !important;
+  }
+
+  .space-footer {
+    height: 5vh;
+  }
+}

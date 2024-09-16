@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Neris Light";
+    src: url('Neris-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "Neris Light Italic";
+    src: url('Neris-LightItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "Neris Semibold";
+    src: url('Neris-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Neris Black";
+  src: url('Neris-Black.otf') format('opentype');
+}

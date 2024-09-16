@@ -1,0 +1,246 @@
+
+<app-plantilla-general></app-plantilla-general>
+ 	<div class="contenedor">
+    		<div class="miga-de-pan-wrapper">
+      			<div class="miga-de-pan">
+        				<div class="paleta-de-color" id="paletaDeColor"><a style="color: #9b4cba;" [routerLink]="['/home/false']">Home</a></div>
+        				<img class="angle-right-icon" alt="" src="assets/images/angle-right.svg">
+        				
+        				<div class="paleta-de-color1">Detalle hogares</div>
+      			</div>
+    		</div>
+    		<div class="frame-parent">
+      			<div class="frame-group">
+        				<div class="autos-parent">
+          					<div class="autos">HOGARES</div>
+          					<div class="wrapper">
+            						<div class="div">{{hogares!.length}}</div>
+          					</div>
+        				</div>
+        			          <button  id="cPBotonPrincipalIconoIzquiContainer"  class="cp-boton-principal-icono-izqui"  (click)="openDialogAddHogar()">
+                       <img class="component-37-icon"  src="assets/images/Component 37.svg" alt="añadir">
+                       <div class="div">Agregar propiedad</div>
+                    </button>
+        		
+      			</div>
+      			<div class="mis-vehculos-parent">
+        				<div class="mis-vehculos">Mis Propiedades</div>
+        				<img class="frame-child" alt="" src="assets/images/Line 38.svg">
+        				
+      			</div>
+    		</div>
+    		<div class="caja">
+          <div *ngFor="let hogar of hogares; let i = index">
+      			<div class="contarjeta">
+        				<div class="group-parent">
+          					<img class="frame-item" alt="" src="assets/images/admin_hogar.svg">
+          					
+          					<div class="vehculo-1-parent">
+            						<div class="mis-vehculos">Propiedad {{i + 1}}.</div>
+            						<div class="direccin-kr3-d10-container">
+                          <span class="direccin">Dirección: </span>
+                          <span class="kr3-d10-5">{{hogar.direccion}}</span>
+                          </div>
+          					</div>
+          					
+        				</div>
+        				<div class="frame-div">
+          					<div class="frame-parent1">
+            						<div class="desde-parent">
+              							<div class="desde">Desde</div>
+              							<div class="apr-2024">{{hogar.fechaVigenciaDesde | date: "dd/MMM/yyyy"}}</div>
+            						</div>
+            						<div class="frame-wrapper">
+              							<div class="ellipse-wrapper" [ngClass]="{'ellipse-container' : hogar.porcentajePoliza >= 100, 'ellipse-wrapper' : hogar.porcentajePoliza < 100  }" [style.width.px]="(hogar.porcentajePoliza * 232)/100">
+                								<div class="frame-inner">
+                								</div>
+              							</div>
+            						</div>
+            						<div class="desde-parent">
+              							<div class="desde">Hasta</div>
+              							<div class="apr-2024">{{hogar.fechaVigenciaHasta | date: "dd/MMM/yyyy"}}</div>
+            						</div>
+          					</div>
+          					<div class="frame-wrapper1">
+            						<div class="frame-parent2">
+              							<div class="autos-parent">
+                								<div class="estado-de-la">Estado de la  Póliza:</div>
+                								<div class="vigente-wrapper" [ngClass]="{'vigente-wrapper' : validarVigenciaPoliza(hogar.fechaVigenciaHasta), 'vencida-wrapper' : !validarVigenciaPoliza(hogar.fechaVigenciaHasta)  }">
+                  									<div class="vigente">{{validarVigenciaPoliza(hogar.fechaVigenciaHasta) ? 'Vigente' : 'Vencida' }}</div>
+                								</div>
+              							</div>
+              							<div class="cp-btn-contorno-variaciones" id="cPBtnContornoVariacionesContainer">
+                								<button class="cp-boton-principal-variaciones-histo" (click)="verHistorico(hogar)">
+                  									<div class="div">Historial póliza</div>
+                                </button>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+        				<div class="delete-wrapper" id="frameContainer2" (click)="openDialogDeleteHogar(hogar)">
+          					<img class="delete-icon" alt="" src="assets/images/delete.svg">
+          					
+        				</div>
+      			</div>
+         </div>
+      			
+    		</div>
+    	
+        <ng-template let-data #callDialogAddHogar>
+    		
+          <div class="modalplaca">
+              <div class="header2">
+                  <div class="content">
+                      <div class="title">Agrega tu propiedad</div>
+                      <div class="supporting-text">Ingresa tu número de documento para acceder a nuestros servicios.</div>
+                  </div>
+              </div>
+                <div class="container">
+                  <div class="row pb-5">
+                    <div class="col justify-content-center"> 
+                      <div class="etiqueta">
+                        <div [ngClass]="{'etiqueta1':estadoValidTipoDoc, 'etiqueta1-invalid': !estadoValidTipoDoc}">Tipo de documento*</div>
+                      </div>
+                      <div ngbAccordion #accordionTipoDoc="ngbAccordion" >
+                        <div ngbAccordionItem="first"  class="cp-acordeonSelect" >
+                          <div [ngClass]="{'documentacin-parent-select':estadoValidTipoDoc, 'documentacin-parent-select-invalid': !estadoValidTipoDoc}">
+                              <div  [ngClass]="{'label-helpSelect-placeholder': labelTipoDocSeleccionado ==='Seleccione tipo de documento', 'label-helpSelect': labelTipoDocSeleccionado!=='Seleccione tipo de documento'}">{{labelTipoDocSeleccionado}}</div>
+                              <button ngbAccordionToggle class="buttonAcordeonSelect" (click)="switchImgAngleSelectTipoDocAcordeon()" (blur)="validar(1)">
+                                  <img class="alerta-icon" alt="" [src]="imgAngleAcordeonSelectTipoDocCurrent">
+                              </button>
+                          </div>
+                          <div ngbAccordionCollapse>
+                            <div class="contenedorAcordeonSelect" >
+                              <div class="container" style="overflow-y: auto;">
+                                      @for (documento of tipoDocumento; track  documento.codigo; ){
+                                        <div>
+                                          <button class="maestro-config-reglas" (click)="cambiarTipoDocumento(documento);accordionTipoDoc.collapseAll()">{{documento.nombre}}</button>
+                                        </div>
+                                      }   
+                              </div>      
+                            </div>  
+                          </div>
+                        </div>
+                        <div class="etiqueta">
+                          <div [ngClass]="{'etiqueta1':estadoValidDoc, 'etiqueta1-invalid': !estadoValidDoc}">Número de documento*</div>
+                        </div>
+                        <div [ngClass]="{'mask-input': estadoValidDoc, 'mask-input-invalid': !estadoValidDoc}">
+                          <input type="text" placeholder="Documento" class="inputDir" size="13" [formControl]="fCdocumento"  (keypress)="validarFormatoDocumento($event)" (blur)="validar(2)"
+                            maxlength="12" minlength="4"
+                            />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="buttons">
+                  <div class="cp-btn-contorno-variaciones3">
+                    <button  id="cp-btn-contorno-variaciones3"  class="cp-boton-principal-variaciones4"  (click)="closeDialog2()">
+                   
+                      <div class="continuar5">Cancelar</div>
+                   </button>
+                  </div>
+                 
+                  
+                  <button     [ngClass]="{'cp-boton-principal-variaciones5' : !fCdocumento.valid || !fCtipoDocumento.valid, 'cp-boton-principal-variaciones': fCtipoDocumento.valid && fCdocumento.valid}"  (click)="vincularHogar()">
+                    <div class="continuar6">Agregar</div>
+                 </button>
+              </div>
+              <div class="circle-button" (click)="closeDialog2()">
+                  <img class="icn-close-icon" alt="" src="assets/images/icn-Close.png">
+                  
+              </div>
+          </div>
+          
+          
+      </ng-template>
+      <ng-template let-data #callDialogDeleteHogar>
+  
+        <div class="popup-error-confirm_delete">
+          <img class="popup-error-confirm-child_delete" alt="" src="assets/images/Group 24007.svg">
+          <div class="frame-parent_delete">
+          <div class="titulo-wrapper_delete">
+          <div class="titulo_delete">Eliminar propiedad</div>
+          </div>
+          <div class="recuerda-una-vez-container_delete">
+            <p class="el-vehculo-se_delete">La propiedad se eliminará de tu lista.</p>
+            <p class="el-vehculo-se_delete">¿Deseas eliminarlo?</p>
+            </div>
+            </div>
+            <div class="cp-btn-contorno-variaciones-parent_delete">
+              <div class="cp-btn-contorno-variaciones_delete">
+                <div class="cp-boton-principal-variaciones_delete" (click)="closeDialog2()">
+                  <div class="continuar_delete">Cancelar</div>
+                </div>
+              </div>
+              <div class="cp-boton-principal-variaciones1_delete" (click)="eliminarHogar()">
+                <div class="continuar1_delete">Aceptar</div>
+              </div>
+            </div>
+        </div>
+          
+      </ng-template>
+      <ng-template let-data #callDialogHistoricos>
+        <div class="modalregistro11">
+          <div class="frame-parent11">
+              <div class="frame-parent12">
+                  <div class="header-container">
+                      <div class="header1">Histórico de la póliza</div>
+                  </div>
+                  <div class="supporting-text1">
+                      <span>
+                          <span class="vehculo1">Hogar:</span>
+                          <span class="span1"> </span>
+                      </span>
+                      <span class="slf3371"> {{historicoHogar.direccion}}</span>
+                  </div>
+              </div>
+              <img class="path-19705-icon1" alt="" src="assets/images/Group 24007.svg" (click)="closeDialog2()">
+              
+          </div>
+        
+              
+                      <div class="frame-parent13">
+                        <div class="container">
+                      
+                          <div class="row container">
+                            <div class="col-3">
+                              <div>
+                                <div  [ngClass]="{'frame-child3' : validarVigenciaPoliza(historicoHogar.fechaVigenciaHasta),'frame-child1' : !validarVigenciaPoliza(historicoHogar.fechaVigenciaHasta)}"></div>
+                               
+                                
+                               
+                              </div>
+                            </div>  
+                            <div class="col-9 ">
+                              <div class="ene-2024-24-ene-2025-wrapper" [ngClass]="{'ene-2024-24-ene-2025-wrapper' : (validarVigenciaPoliza(historicoHogar.fechaVigenciaHasta)),'ene-2023-27-ene-2024-wrapper' : (!validarVigenciaPoliza(historicoHogar.fechaVigenciaHasta))}">
+                                  <div>  {{historicoHogar.fechaVigenciaDesde | date: "dd MMM yyyy"}} - {{historicoHogar.fechaVigenciaHasta | date: "dd MMM yyyy"}}</div>
+                              </div>
+                            </div>  
+                          </div>
+                     
+                        </div>
+          </div>
+      </div>
+      
+      </ng-template>
+      
+      <ng-template let-data #callDialogRespuesta>
+        <div class="popup-error-sencilla-popup">
+          <div class="popup-error-sencilla1-popup">
+            <img class="popup-error-sencilla-child-popup" alt="" [src]="isSuccess ? imageResponseSucess : imageResponseError">
+            <div class="frame-parent-popup">
+              <div class="titulo-wrapper-popup">
+                <div [ngClass]="{'titulo-error': !isSuccess, 'titulo-success': isSuccess}">{{isSuccess ? tituloSuccess : tituloError}}</div>
+              </div>
+              <div class="recuerda-una-vez">{{ isSuccess ? mensajeSuccess : mensajeError}}</div>
+            </div>
+            <div class="cp-boton-principal-variaciones-popup" (click)="closeDialog2()">
+              <div class="continuar">Aceptar</div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      
+  	</div>
+    <app-footer></app-footer>

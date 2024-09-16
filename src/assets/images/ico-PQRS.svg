@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__Ico_PQRS" transform="translate(.101)">
+        <path id="prefix__Rectángulo_1824" d="M0 0H23V21H0z" data-name="Rectángulo 1824" transform="translate(-.101)" style="fill:none"/>
+        <g id="prefix__Grupo_1239" data-name="Grupo 1239" transform="translate(4.574 3.006)">
+            <path id="prefix__Trazado_1835" d="M510.829 380.75h-6.807a.272.272 0 000 .545h6.807a.272.272 0 100-.545zm0 0" class="prefix__cls-2" data-name="Trazado 1835" transform="translate(-500.21 -373.943)"/>
+            <path id="prefix__Trazado_1836" d="M504.022 375.295h2.723a.272.272 0 100-.545h-2.723a.272.272 0 000 .545zm0 0" class="prefix__cls-2" data-name="Trazado 1836" transform="translate(-500.21 -370.121)"/>
+            <path id="prefix__Trazado_1837" d="M510.829 386.75h-6.807a.272.272 0 000 .544h6.807a.272.272 0 100-.544zm0 0" class="prefix__cls-2" data-name="Trazado 1837" transform="translate(-500.21 -377.765)"/>
+            <path id="prefix__Trazado_1838" d="M510.829 392.75h-6.807a.272.272 0 100 .544h6.807a.272.272 0 100-.544zm0 0" class="prefix__cls-2" data-name="Trazado 1838" transform="translate(-500.21 -381.587)"/>
+            <path id="prefix__Trazado_1839" d="M510.829 398.75h-6.807a.272.272 0 000 .545h6.807a.272.272 0 100-.545zm0 0" class="prefix__cls-2" data-name="Trazado 1839" transform="translate(-500.21 -385.408)"/>
+            <path id="prefix__Trazado_1840" d="M505.708 365.972V362H494v14.975h1.361v1.361h11.708v-11zm-2.451-1.682l2.883 2.883h-2.883zm-8.713 12.14v-13.886h10.619v2.883l-2.066-2.066h-7.736v13.069zm1.361 1.361v-13.885h6.807v3.812h3.812v10.074zm0 0" class="prefix__cls-2" data-name="Trazado 1840" transform="translate(-494 -362)"/>
+        </g>
+    </g>
+</svg>

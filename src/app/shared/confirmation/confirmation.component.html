@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="screenSmall; else btn_volver_screen_normal" class="col pl-0">
+      <button class="btn-volver pl-0 mt-3" (click)="regresar()">
+        <img [src]="iconoFlechaRetorno" alt="volver" />
+      </button>
+    </div>
+    <ng-template #btn_volver_screen_normal>
+      <button class="btn-volver pl-0 mt-3 mb-2" (click)="regresar()"><img [src]="icoVolver" alt="volver">Volver</button>
+    </ng-template>
+  </div>
+
+  <div class="rectnguloGrande">
+    <div class="row" *ngIf="mostrarCardInfo">
+      <div>
+        <div class="card camposInfoContacto" *ngIf="!screenSmall">
+          <div class="row pt-2 pb-2 pl-2">
+            <div class="col-1 mt-3"><img alt="alerta" src="assets/images/ico-alerta-verde.svg"></div>
+            <div class="col-9 pr-0 pl-2 mt-2 letraTituloVerde textoInformacion">
+              <label>Recuerda que en cualquier momento puedes<br/> comunicarte con nuestra línea de atención al cliente</label>
+            </div>
+            <div class="col-1 pl-0"><img alt="alerta" class="imgLlamar" [src]="iconoLlamar345"></div>
+          </div>
+        </div>
+        <div class="card camposInfoContacto" *ngIf="screenSmall">
+          <img alt="alerta" class="imgLlamar" [src]="iconoLlamar345">
+        </div>
+      </div>
+    </div>
+    <h3 class="letraTitulo">{{titulo}}</h3>
+    <div class="row ico_aprobado justify-content-center">
+      <img [src]="icoMostrar" alt="icoAprobar">
+    </div>
+    <div class="row justify-content-center">
+      <label *ngIf="solicitudSeguimiento; else mostrarSubtituloEnvioRadicacion" class="subTitulo"
+             [ngClass]="validarClase()">{{subtitulo}}</label>
+      <ng-template #mostrarSubtituloEnvioRadicacion>
+        <label class="subTitulo">{{subtitulo}}</label>
+      </ng-template>
+    </div>
+    <div class="contenido">
+      <label class="mt-2" [innerHTML]="infoInicial"></label>
+      <br>
+      <br>
+      <label [innerHTML]="mainMsj" class="text-center"></label>
+    </div>
+    <div class="row contenido mt-4 mb-4" *ngIf="documentosFaltantes && documentosFaltantes.length >0">
+      <div class="col-12" *ngFor="let documento of documentosFaltantes">
+        <div class="row justify-content-center list-documentos">
+          <div class="col-1 col-md-1">
+            <div class="puntoNaranja"></div>
+          </div>
+          <div class="col-10 col-md-5 pl-0 pr-0 text-left texto-documento">{{pasearDocumento(documento)}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center contenido mt-3">
+      <label>{{infoAdicional}}</label>
+    </div>
+    <div class="rectnguloPequeño row justify-content-center" *ngIf="!solicitudSeguimiento">
+      <div class="text-style">
+        <label class="text-estado">Estado: </label>
+       
+        <label class="text-recibido">Recibido</label>
+      </div>
+    </div>
+    <hr class="lineaSeparador">
+    <h3 class="text text-center" [innerHTML]="footer"></h3>
+  </div>
+</div>

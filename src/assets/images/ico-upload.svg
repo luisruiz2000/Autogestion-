@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <filter id="Elipse_179" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_3118" data-name="Grupo 3118" transform="translate(-296 -1533)">
+    <g transform="matrix(1, 0, 0, 1, 296, 1533)" filter="url(#Elipse_179)">
+      <circle id="Elipse_179-2" data-name="Elipse 179" cx="15" cy="15" r="15" transform="translate(9 6)" fill="#67bc47"/>
+    </g>
+    <path id="Icon_awesome-upload" data-name="Icon awesome-upload" d="M8.093,10.5H5.906a.655.655,0,0,1-.656-.656V5.253h-2.4a.546.546,0,0,1-.386-.932L6.625.159a.53.53,0,0,1,.746,0L11.533,4.32a.546.546,0,0,1-.386.932h-2.4V9.846A.655.655,0,0,1,8.093,10.5ZM14,10.284v3.062a.655.655,0,0,1-.656.656H.656A.655.655,0,0,1,0,13.346V10.284a.655.655,0,0,1,.656-.656H4.375v.219a1.532,1.532,0,0,0,1.531,1.531H8.093A1.532,1.532,0,0,0,9.624,9.846V9.627h3.718A.655.655,0,0,1,14,10.284Zm-3.39,2.406a.547.547,0,1,0-.547.547A.548.548,0,0,0,10.608,12.69Zm1.75,0a.547.547,0,1,0-.547.547A.548.548,0,0,0,12.358,12.69Z" transform="translate(313 1546.994)" fill="#fff"/>
+  </g>
+</svg>

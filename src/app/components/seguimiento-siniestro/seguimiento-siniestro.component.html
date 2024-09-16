@@ -1,0 +1,162 @@
+<app-plantilla-general></app-plantilla-general>
+
+<div class="contenedor">
+  <div class="container" >
+    <div class="row pt-2 pb-2" >
+      <div class="col">
+        <div class="contenedor-inner">
+          <div class="miga-de-pan-wrapper">
+            <div class="miga-de-pan">
+              <div class="paleta-de-color" (click)="redireccionar('/home/false')">Home</div>
+                <img class="angle-right-icon" alt="" src="assets/images/angle-right.svg">
+                  <div class="paleta-de-color1" (click)="redireccionar('/servicios')">Servicios</div>
+                    <img class="angle-right-icon" alt="" src="assets/images/angle-right.svg">
+                    <div class="paleta-de-color2">Seguimiento siniestros</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-parent">
+          <div class="radicacin-de-siniestros-parent">
+            <div class="radicacin-de-siniestros">Seguimiento a siniestro</div>
+            @if(estadoSiniestros.length > 0){<div class="completa-los-siguientes">Listado de solicitudes radicadas.</div>}
+          </div>
+          <div class="frame-group">
+            <div class="component-43-parent">
+                <img class="component-43-icon" alt="" src="assets/images/radicacion/Component 43.svg">
+                
+                <div class="para-solicitar-tu">Para  solicitar tu cita de video peritación asistida comunícate al:</div>
+            </div>
+            <div class="group-parent">
+                <img class="group-icon" alt="" src="assets/images/radicacion/Group 24160.svg">
+                
+                <div class="div">#345</div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    @if(estadoSiniestros.length > 0){
+    @for (estadoSiniestro of estadoSiniestros; track estadoSiniestro.placa ){
+    <div class="row pb-4 pt-4">
+      <div class="col" align="right">
+        <div class="cont-seguimiento-variaciones">
+          <div class="cont-seguimiento">
+            <div [ngClass]="validarClase(estadoSiniestro, 2)">
+              <div class="estado">ESTADO</div>
+              <div class="solicitud-recibida">{{estadoSiniestro.estado}}</div>
+            </div>
+            <div class="vehculo-parent">
+              <div class="estado">Vehículo</div>
+              <div class="am">{{ estadoSiniestro.placa}}</div>
+            </div>
+            <div class="cont-seguimiento-child">
+            </div>
+            <div class="vehculo-parent">
+              <div class="fecha-de-solicitud">Fecha de solicitud</div>
+              <div class="am">{{estadoSiniestro.fecha}}</div>
+            </div>
+            <div class="cp-boton-principal-variaciones">
+              <button class="continuar" (click)="mostrarHistoricoRadicacion(estadoSiniestro)">Ver histórico</button>
+            </div>
+            <img class="angle-right-icon-seguimiento" (click)="verDetalleEstado(estadoSiniestro)" alt="" src="assets/images/seguimiento/angle-right.svg" id="angleRightIcon">
+          </div>
+        </div>
+      </div>
+    </div> 
+  }
+}
+  @else {
+    <div class="row pb-4 pt-4">
+      <div class="col" align="right">
+        <div class="cp-noencontrado-parent">
+          <div class="cp-noencontrado">
+            <img class="component-71-icon" alt="" src="Component 71.svg">
+          </div>
+          <div class="en-este-momento-no-cuentas-con-wrapper">
+            <div class="en-este-momento-container">
+              <p class="en-este-momento">En este momento no cuentas con solicitudes</p>
+              <p class="en-este-momento"> de radicación de siniestros. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  }
+  </div>
+ </div> 
+
+ <ng-template let-data #callDialogDetalle >
+    <div class="cp-modalfixed">
+      <div class="head" (click)="closeDialog()">
+        <img class="times-icon" alt="" src="assets/images/seguimiento/Times.svg">
+      </div>
+      <div class="cuerpo">
+        <div class="check-wrapper" >
+          <img class="check-icon" alt="" src="assets/images/seguimiento/Check.svg">
+        </div>
+        <div class="detalle-del-siniestro">Detalle del siniestro</div>
+        <div class="la-informacin-se">{{messagesEstado}}</div>
+        <div class="vehculo-slf337">Vehículo: {{siniestroCurrent.placa}}</div>
+        <div class="tu-solicitud-est-container">
+          <p class="tu-solicitud-est">Tu solicitud está en trámite, espera nuestra llamada para finalizar el</p>
+          <p class="tu-solicitud-est">proceso y recibir tu número de radicado.</p>
+        </div>
+        <div class="cuerpo-inner">
+          <img class="frame-child-detalle" alt="" src="assets/images/seguimiento/Line 36.svg">
+        </div>
+        <div class="cp-boton-principal-variaciones-detalle" id="cPBotonPrincipalVariacionesContainer"  (click)="closeDialog()">
+        <div class="continuar-detalle">Cerrar</div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template let-data #callDialogHistoric>
+  <div class="modalregistro11">
+    <div class="frame-parent11">
+        <div class="frame-parent12">
+            <div class="header-container">
+                <div class="header1">Histórico del siniestro></div>
+            </div>    
+            <div class="supporting-text1">
+                    <span>
+                        <span class="vehculo1">Vehículo</span>
+                        <span class="span1"> </span>
+                    </span>
+                    <span class="slf3371"> {{historicoPlaca}}</span>
+            </div>
+        </div>  
+        <img class="path-19705-icon1" alt="" src="assets/images/Path 19705.svg" (click)="closeDialog()">
+       
+    </div>  
+          <div class="frame-parent13">
+            <div class="container">
+              @for (estadoSiniestro of historicoSiniestroModal; track  estadoSiniestro.placa; ){
+                <div class="row container">
+                    <div class="col-3">
+                      <div>
+                            <div class="frame-child3" [ngClass]="{'frame-child3' :  $index === 0 , 'frame-child4' : $index > 0}"></div>
+                            @if ($index < historicoSiniestroModal.length - 1) {
+                                <svg width="2" height="27"  [ngClass]="{'line-svg-first': $index === 0, 'line-svg-second': $index > 0}" viewBox="0 0 2 28" fill="#592272" xmlns="http://www.w3.org/2000/svg" >
+                                    <path id="Vector 142" d="M1 1V33" stroke="#592272" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+                                </svg>
+                            }
+                      </div>
+                    </div>  
+                    <div class="col-9 ">
+                        <div  [ngClass]="{'ene-2024-24-ene-2025-wrapper' : ( $index === 0), 'ene-2022-24-ene-2023-wrapper' :  $index > 0 }">
+                          <div [ngClass]="{'label-historico-first' : ($index === 0), 'label-historico-second' : ($index > 0)}">  {{estadoSiniestro.estado}} </div>  
+                          <div [ngClass]="{'label-historico-first-subtitle' : ($index === 0), 'label-historico-second-subtitle' : ($index > 0)}">  {{estadoSiniestro.fecha | date: "dd MMM yyyy"}}</div>
+                            
+                        </div>
+                    </div>  
+                </div>
+              }
+            </div>
+          </div>
+      </div>
+
+</ng-template>
+
+
+<app-footer></app-footer>

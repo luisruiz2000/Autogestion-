@@ -1,0 +1,268 @@
+/* Nuevo Codigo */
+.container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 6px;
+  height: 23rem;
+  width: 25rem;
+}
+
+.bi-x-circle-fill {
+  font-size: 5rem;
+  border-radius: 50%;
+  color: #D90B0B;
+}
+
+.bi-check-circle-fill {
+  font-size: 5rem;
+  border-radius: 50%;
+  color: #3D761B;
+}
+
+.mat-dialog-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  padding: 1rem 0;
+}
+
+
+/* Nuevo Codigo End*/
+.mat-dialog-general .mat-dialog-icon-close {
+  width: 18px;
+  height: 18px;
+  float: right;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 0.6;
+  opacity: 0.8;
+  cursor: pointer;
+  color: #1f4c38;
+  text-shadow: 0 1px 0 #ffffff;
+}
+
+.mat-dialog-title {
+  font-family: "Futura Std Heavy", Trebuchet MS, Arial, sans-serif;
+  font-size: 22px !important;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.76;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1f4c38;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.mat-dialog-title.mat-dialog-title-error {
+  color: #d90b0b !important;
+}
+
+.mat-dialog-title.mat-dialog-title-warning {
+  color: #f89a3b !important;
+}
+
+.modal-tyc {
+  font-family: "Futura Std Heavy", sans-serif;
+  color: #67bc47;
+}
+
+.modal-generico-titulo {
+  margin-top: 0px;
+}
+
+.text-big {
+  font-size: 18px;
+}
+
+.color-turtle-green {
+  color: #67bc47;
+}
+
+.mat-dialog-subtitle {
+  font-family: "Futura Std Heavy", Trebuchet MS, Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1f4c38;
+  margin: 0.75rem;
+  white-space: pre-line;
+}
+
+.mat-dialog-subtitle.mat-dialog-subtitle-error {
+  color: #d90b0b !important;
+}
+
+.mat-dialog-content {
+  text-align: center !important;
+  margin: 0.5rem 0.5rem !important;
+  padding: 0 !important;
+}
+
+.mat-dialog-text {
+  font-family: "Neris Light", Arial, Helvetica, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: center;
+  color: #626366;
+  margin-bottom: 1rem;
+}
+
+.mat-dialog-buttons {
+  justify-content: center !important;
+  padding: 1rem 0;
+}
+
+.btn-cancel-dialog {
+  width: 135px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #2C421F;
+  background-color: #ffffff !important;
+  font-family: "Futura Std Heavy", Trebuchet MS, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000;
+}
+
+.btn-cancel-dialog:hover {
+  background-color: #2C421F !important;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.btn-accept-dialog {
+  width: 135px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #2C421F;
+  background-color: #2C421F;
+  font-family: "Futura Std Heavy", Trebuchet MS, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Estilos scroll */
+
+
+
+/* width */
+
+
+
+::-webkit-scrollbar {
+
+  width: 10px;
+
+  height: 10px;
+
+}
+
+
+
+/* Track */
+
+
+
+::-webkit-scrollbar-track {
+
+  background: #f1f1f1;
+
+}
+
+
+
+/* Handle */
+
+
+
+::-webkit-scrollbar-thumb {
+
+  background: #c8d1db;
+
+  border-radius: 5px;
+
+}
+
+
+
+/* Handle on hover */
+
+
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: #c8d1db;
+
+}
+
+.confirmar-delete {
+  width: auto;
+  font-family: "Futura Std Heavy", Trebuchet MS, Arial, sans-serif;
+  color: #d90b0b;
+  text-align: center !important;
+  font-size: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  white-space: nowrap;
+  margin-top: -0.7em;
+}
+
+.mat-dialog-general .mat-dialog-container {
+  /* overflow-y: hidden !important; */
+}
+
+.cerrar-sesion-botones {
+
+  margin-left: 0%;
+  padding-top: 8px;
+}
+
+.btn-cerrar-sesión-ok {
+
+  color: #1f4c38;
+  font-family: "Neris Light", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+
+}
+
+.btn-cerrar-sesión-cancel {
+  color: #1f4c38;
+  font-family: "Neris Light", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+@media(max-width: 768px) {
+  .cerrar-sesion-botones {
+    margin-left: 0;
+  }
+}

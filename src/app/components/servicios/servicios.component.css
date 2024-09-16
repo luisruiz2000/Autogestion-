@@ -1,0 +1,560 @@
+.paleta-de-color {
+  position: relative;
+  text-decoration: underline;
+  letter-spacing: 0.25px;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.angle-right-icon {
+  width: 8px;
+  position: relative;
+  height: 8px;
+}
+
+.paleta-de-color1 {
+  position: relative;
+  letter-spacing: 0.25px;
+  line-height: 21px;
+  color: #000;
+}
+
+.miga-de-pan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.miga-de-pan-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.contenedor-inner {
+  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 12px;
+  color: #9b4cba;
+}
+
+.simplifica-tus-procesos {
+  width: 575px;
+  position: relative;
+  font-size: 32px;
+  letter-spacing: 0.25px;
+  line-height: 48px;
+  font-weight: 600;
+  font-family: 'Noto Sans';
+  color: #2c421f;
+  display: inline-block;
+}
+
+.supporting-text {
+  width: 735px;
+  position: relative;
+  letter-spacing: 0.25px;
+  line-height: 21px;
+  white-space: pre-wrap;
+  display: inline-block;
+}
+
+.radicar-siniestro {
+  position: relative;
+  letter-spacing: 0.15px;
+  line-height: 30px;
+  font-weight: 500;
+  font-family: 'Noto Sans';
+  text-align: left;
+  z-index: 0;
+}
+
+.enva-tus-solicitudes {
+  width: 282px;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  line-height: 21px;
+  display: inline-block;
+  z-index: 1;
+}
+
+.continuar {
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.cp-boton-principal-variaciones {
+  flex: 1;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid #592272;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  min-width: 124px;
+  cursor: pointer;
+}
+
+
+.cp-targeta99:hover .cp-boton-principal-variaciones {
+  color: #9b4cba;
+}
+
+.cp-btn-contorno-variaciones {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.cp-btn-contorno-variaciones-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 36px;
+  z-index: 2;
+  font-size: 16px;
+  color: #592272;
+}
+
+.contract-edit-icon {
+  width: 40px;
+  position: relative;
+  height: 40px;
+}
+
+.contract-edit-wrapper {
+  width: 282px;
+  margin: 0 !important;
+  position: absolute;
+  top: -11px;
+  left: 16px;
+  border-radius: 10px;
+  background-color: #592272;
+  height: 82px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.cp-targeta99 {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.36);
+  border-radius: 5px;
+  background-color: #fff;
+  border: 0.5px solid #9b4cba;
+  box-sizing: border-box;
+  height: 236px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 22px 16px;
+  position: relative;
+  gap: 8px;
+}
+
+.cp-targeta99:hover .contract-edit-wrapper {
+  background-color: #9b4cba;
+}
+
+.cp-targeta99-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0px 0px;
+  gap: 24px;
+  font-size: 20px;
+}
+
+.component-44-icon {
+  width: 20px;
+  position: relative;
+  height: 20px;
+}
+
+.container-icon {
+  width: 30px;
+  border-radius: 999999px;
+  background-color: #3575d2;
+  height: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.conoce-cmo-puedes {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.25px;
+  line-height: 21px;
+}
+
+.aqu {
+  position: relative;
+  font-size: 18px;
+  text-decoration: underline;
+  letter-spacing: 0.15px;
+  line-height: 27px;
+  font-weight: 500;
+  font-family: 'Noto Sans';
+  color: #3575d2;
+}
+
+.component-alert1-estticasweb {
+  border-radius: 10px;
+  border: 1px solid #3575d2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  gap: 10px;
+  min-width: 150px;
+}
+
+.component-alert1-estticasweb-wrapper {
+  width: 988px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: #636466;
+}
+
+.contenedor {
+  position: relative;
+  width: 100%;
+  height: 602px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px 80px;
+  box-sizing: border-box;
+  gap: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+  font-family: Arimo;
+}
+
+
+.contract-edit-container {
+  width: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  letter-spacing: 0.15px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.header-wrapper {
+  align-self: stretch;
+  position: relative;
+  height: 24px;
+}
+
+.supporting-text1 {
+  align-self: stretch;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: 0.1px;
+  line-height: 27px;
+  font-weight: 500;
+  color: #636466;
+}
+
+.frame-group {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.frame-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.path-19705-icon {
+  width: 16px;
+  position: relative;
+  height: 16px;
+}
+
+.frame-parent {
+  align-self: stretch;
+  border-radius: 8px 8px 0px 0px;
+  background-color: #f4edf7;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 10px;
+}
+
+.header1 {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.15px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.header-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.call-quality-icon {
+  width: 40px;
+  position: relative;
+  height: 40px;
+}
+
+.header2 {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+}
+
+.call-quality-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.vector-icon {
+  width: 25.5px;
+  position: relative;
+  height: 40px;
+}
+
+.vector-wrapper {
+  width: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-parent2 {
+  align-self: stretch;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.desktop-mac-icon {
+  width: 40px;
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.desktop-mac-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-parent1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  font-size: 16px;
+  font-family: Arimo;
+}
+
+.frame-div {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 28px;
+}
+
+.statedotsweb-icon {
+  width: 20px;
+  position: relative;
+  height: 20px;
+}
+
+.cp-dotsweb {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.cp-dotsweb-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.frame-container {
+  align-self: stretch;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 32px 24px 35px;
+  gap: 16px;
+}
+
+.modalpasosradicar {
+  width: 546px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 440px;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: left;
+  font-size: 20px;
+  color: #2c421f;
+  font-family: 'Noto Sans';
+}
+
+
+.prototipo-app-mvil-3 {
+  position: absolute;
+  height: 94.15%;
+  width: 94.12%;
+  top: 0%;
+  right: 5.88%;
+  bottom: 5.85%;
+  left: 0%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.gifs-web {
+  width: 131px;
+  position: relative;
+  height: 106px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+
+.prototipo-app-mvil-31 {
+  position: absolute;
+  height: 94.15%;
+  width: 94.12%;
+  top: 0%;
+  right: 5.88%;
+  bottom: 5.85%;
+  left: 0%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.gifs-web1 {
+  width: 131px;
+  position: relative;
+  height: 106px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+
+.prototipo-app-mvil-32 {
+  position: absolute;
+  height: 94.15%;
+  width: 94.12%;
+  top: 0%;
+  right: 5.88%;
+  bottom: 5.85%;
+  left: 0%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.gifs-web2 {
+  width: 131px;
+  position: relative;
+  height: 106px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}

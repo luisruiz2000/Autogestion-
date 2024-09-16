@@ -1,0 +1,295 @@
+.vehculo {
+    letter-spacing: 0.15px;
+    line-height: 30px;
+    font-weight: 500;
+}
+.slf337 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 600;
+}
+.documentacin {
+    position: relative;
+}
+.angle-down-icon {
+    width: 20px;
+    position: relative;
+    height: 20px;
+}
+.documentacin-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.cp-acordeon {
+    align-self: stretch;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    border: 0.5px solid #636466;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+}
+.cp-acordeon-vehiculo {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.property-1vehiculo1c {
+    position: absolute;
+    top: 513px;
+    left: 49px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.property-1defaultc {
+    position: absolute;
+    top: 97px;
+    left: 49px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.property-1vehiculo2c {
+    position: absolute;
+    top: 890px;
+    left: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.property-1vehiculo3c {
+    position: absolute;
+    top: 1284px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.listado-de-vehculos {
+    position: relative;
+    letter-spacing: 0.15px;
+    line-height: 27px;
+    font-weight: 500;
+}
+.cp-radio-estados-icon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+}
+.span {
+    color: #000;
+}
+.internacional {
+    letter-spacing: 0.4px;
+    line-height: 18px;
+}
+.slf3371 {
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    line-height: 21px;
+    color: #592272;
+}
+.span1 {
+    letter-spacing: 0.4px;
+    line-height: 18px;
+    color: #000;
+}
+.internacional-slf337 {
+    flex: 1;
+    position: relative;
+}
+.internacional-slf337-wrapper {
+    width: 184px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.cp-radio-estados-parent {
+    align-self: stretch;
+    box-shadow: 0px 1px 0px #9b4cba;
+    background-color: #fff;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+.span2 {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    color: #000;
+}
+.scroll {
+    flex: 1;
+    height: 180px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1px;
+}
+.scroll2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 100px;
+    background-color: #2c421f;
+}
+.scroll1 {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    width: 4px;
+    height: 24px;
+}
+.cp-scroll1 {
+    align-self: stretch;
+    width: 8px;
+    position: relative;
+    box-shadow: 1px 0px 0px #e8e8e8 inset, -1px 0px 0px #f0f0f0 inset;
+    background-color: #c8c8c8;
+}
+.scroll-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 10px;
+    gap: 5px;
+    font-size: 12px;
+    color: #636466;
+    font-family: Arimo;
+}
+.contenedor {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #000;
+}
+.property-1vehiculo2d {
+    position: absolute;
+    top: 884px;
+    left: 608px;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    border: 0.5px solid #636466;
+    box-sizing: border-box;
+    width: 396px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    gap: 20px;
+}
+.property-1vehiculo3d {
+    position: absolute;
+    top: 1284px;
+    left: 608px;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    border: 0.5px solid #636466;
+    box-sizing: border-box;
+    width: 396px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    gap: 20px;
+}
+.contenedor2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #000;
+}
+.property-1vehiculo1d {
+    position: absolute;
+    top: 500px;
+    left: 608px;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    border: 0.5px solid #636466;
+    box-sizing: border-box;
+    width: 396px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    gap: 20px;
+}
+.selecciona-el-vehculo {
+    position: relative;
+    letter-spacing: 0.15px;
+    line-height: 30px;
+    font-weight: 500;
+}
+.property-1defaultd {
+    position: absolute;
+    top: 84px;
+    left: 608px;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    border: 0.5px solid #636466;
+    box-sizing: border-box;
+    width: 396px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    gap: 20px;
+}
+.cp-acordeonweb {
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+    border: 1px dashed #9747ff;
+    box-sizing: border-box;
+    height: 1639px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 20px;
+    color: #2c421f;
+    font-family: 'Noto Sans';
+}
+

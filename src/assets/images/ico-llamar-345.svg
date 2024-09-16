@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <g id="prefix__btn_llamar" transform="translate(-279 -87)">
+        <g id="prefix__Grupo_1248" data-name="Grupo 1248" transform="translate(279 87)">
+            <g id="prefix__Elipse_31" data-name="Elipse 31" style="stroke:#fff;fill:#bdd63f">
+                <circle cx="30" cy="30" r="30" style="stroke:none"/>
+                <circle cx="30" cy="30" r="29.5" style="fill:none"/>
+            </g>
+            <g id="prefix__Grupo_1244" data-name="Grupo 1244" transform="translate(18.62 7.273)">
+                <path id="prefix__Trazado_1845" d="M519.788 384.172h-1.229a7.278 7.278 0 0 0-7.268-7.271v-1.225a8.5 8.5 0 0 1 8.5 8.5zm-8.5-6.38v1.229a5.153 5.153 0 0 1 5.147 5.151h1.229a6.382 6.382 0 0 0-6.376-6.376zm-.243-5.792a12.045 12.045 0 0 0 0 24.091.743.743 0 0 0 0-1.486 10.559 10.559 0 1 1 10.559-10.56 6.836 6.836 0 0 1-3.15 5.865 4.521 4.521 0 0 1-2.182.561 3.456 3.456 0 0 0 1.172-1.126 1.491 1.491 0 0 0 .176-.264 11.814 11.814 0 0 0 .411-1.859c.177-.784-3.438-2.317-3.748-1.336a9.3 9.3 0 0 1-.518 1.812c-.2.269-.7.143-1.015-.123-.822-.7-1.743-1.736-2.55-2.55-.02-.024-.042-.046-.066-.07s-.046-.046-.069-.065c-.814-.806-1.848-1.725-2.551-2.551-.265-.315-.391-.814-.123-1.018a9.533 9.533 0 0 1 1.813-.514c.975-.312-.554-3.93-1.34-3.749a12.438 12.438 0 0 0-1.855.407 1.728 1.728 0 0 0-.265.177c-2.062 1.31-2.327 4.486-.315 6.853.768.906 1.567 1.782 2.393 2.638l.069.065c.023.023.046.046.065.07a22.657 22.657 0 0 0 3.518 3.138c3.469 2.317 6.131 1.671 7.7.81a8.31 8.31 0 0 0 3.918-7.167A12.061 12.061 0 0 0 511.045 372zm0 0" data-name="Trazado 1845" transform="translate(-499 -372)" style="fill:#1f4c38"/>
+            </g>
+            <path id="prefix__Rectángulo_1828" d="M0 0H55.455V6.364H0z" data-name="Rectángulo 1828" transform="translate(2.121 29.447)" style="fill:#bdd63f"/>
+            <text id="prefix___345" data-name="#345" transform="translate(28.485 43.948)" style="font-size:17px;font-family:FuturaStd-Heavy,Futura Std;font-weight:800;fill:#1f4c38">
+                <tspan x="-19.652" y="0">#345</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

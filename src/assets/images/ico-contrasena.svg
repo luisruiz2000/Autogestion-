@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.167" height="11" viewBox="0 0 20.167 11">
+    <defs>
+        <clipPath id="prefix__clip-path">
+            <path id="prefix__Rectángulo_2006" d="M0 0H20.167V11H0z" class="prefix__cls-1" data-name="Rectángulo 2006"/>
+        </clipPath>
+        <style>
+            .prefix__cls-1{fill:#c3c4c3}
+        </style>
+    </defs>
+    <g id="prefix__ico_contrasena1" transform="translate(-370 -1115.693)">
+        <g id="prefix__Grupo_1984" data-name="Grupo 1984" transform="translate(370 1115.693)">
+            <g id="prefix__Grupo_1983" data-name="Grupo 1983">
+                <path id="prefix__Trazado_2619" d="M390.015 1121.673c-.18-.2-4.51-4.923-9.933-4.923s-9.753 4.723-9.933 4.923a.591.591 0 000 .788c.18.2 4.51 4.923 9.933 4.923s9.753-4.722 9.933-4.923a.591.591 0 000-.788zm-9.933 4.53a4.136 4.136 0 114.136-4.136 4.141 4.141 0 01-4.136 4.136zm0 0" class="prefix__cls-1" data-name="Trazado 2619" transform="translate(-369.999 -1116.429)"/>
+            </g>
+        </g>
+        <path id="prefix__Trazado_2620" d="M509.617 1163.384a1.571 1.571 0 01.811-1.326 3.657 3.657 0 00-1.456-.307 2.761 2.761 0 100 5.445 3.113 3.113 0 003.168-2.264 1.89 1.89 0 01-2.523-1.548zm0 0" class="prefix__cls-1" data-name="Trazado 2620" transform="translate(-128.886 -43.129)"/>
+    </g>
+</svg>

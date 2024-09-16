@@ -1,0 +1,384 @@
+<app-plantilla-general></app-plantilla-general>
+<div class="containerr main">
+  <p class="regresar">
+    <span (click)="regresar()" class="home">Home</span>
+    <i class="bi bi-chevron-right"></i>
+    <span class="home">servicios</span>
+    <i class="bi bi-chevron-right"></i>
+    <span>Talleres Disponibles</span>
+  </p>
+
+  <div class="seccionEncabezado">
+    <div class="title-video">Talleres Disponibles</div>
+    <div class="contenerdor-mensaje-llamar">
+      <div
+        class="textoInformacion-movil d-flex align-items-center me-2 text-label"
+      >
+        <div class="me-1">
+          <img src="assets/images/icon-infov.svg" alt="alerta" />
+        </div>
+        <label
+          >Para solicitar tu cita de <span>video</span> <br />
+          <span>peritación asistida</span> comunícate al</label
+        >
+      </div>
+      <div class="col-1 pl-0">
+        <img class="imgLlamar" [src]="icoLlamar" alt="alerta" />
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="seccionEncabezado">
+    <div class="title-video">Talleres Disponibles</div>
+    <div class="contenerdor-mensaje-llamar">
+      <div class="textoInformacion-movil d-flex align-items-center me-2 text-label">
+        <img src="assets/images/icon-infov.svg" alt="alerta" />
+      </div>
+      <div class="col-9 mt-2 textoInformacion-movil text-label">
+        <label
+          >Para solicitar tu cita de <span>video</span> <br />
+          <span>peritación asistida</span> comunícate al</label
+        >
+      </div>
+      <div class="col-1 pl-0">
+        <img class="imgLlamar" [src]="icoLlamar" alt="alerta" />
+      </div>
+    </div>
+  </div> -->
+
+  <div class="text-title">
+    <p>
+      La video peritación asistida es un servicio qu ete ofrecemos para evaluar
+      y documentar daños, incidentes o situaciones específicas a través de
+      videos grabados. Esta herramienta permite a los peritos, investigadores o
+      ajustadores de seguros realizar una inspección visual detallada sin
+      necesidad de estar físicamente presentes en el lugar del evento.
+    </p>
+  </div>
+
+  <!-- Vista Antugua -->
+  <div class="container-modelo mt-5">
+    <!-- <h6 class="msjConoce mt-2" *ngIf="screenSmall">
+      Selecciona tu vehículo y ciudad para la cual deseas consultar el listado
+      de talleres:
+    </h6> -->
+    <form #tallerForm="ngForm" class="d-flex justify-content-center">
+      <div class="container-form">
+        <!-- Vehiculo -->
+
+        <div class="content-input">
+          <div class="container-form-label">
+            <label class="">Vehículo</label>
+          </div>
+
+          <div class="container-form-select">
+            <select
+              class="form-select"
+              id="vehiculoList"
+              placeholder="Selecciona"
+              (change)="obtenerCiudades($event)"
+              [(ngModel)]="autoSeleccionado"
+              [ngModelOptions]="{ standalone: true }"
+            >
+              <option *ngFor="let auto of Autos" [ngValue]="auto">
+                {{ auto.marca }} &nbsp;&nbsp; {{ auto.placa }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Modelo -->
+        <div class="modelo">
+          <div class="container-form-label">
+            <label class="">Modelo</label>
+          </div>
+          <div class="model-container">
+            <span *ngIf="autoSeleccionado">{{ autoSeleccionado.modelo }}</span>
+          </div>
+        </div>
+
+        <!-- Ciudad -->
+
+        <div class="content-input">
+          <div class="container-form-label">
+            <label for="cmbCiudad" class="">Ciudad</label>
+          </div>
+
+          <div class="container-form-select">
+            <select
+              class="form-select"
+              id="cmbCiudad"
+              placeholder="Selecciona"
+              name="cmbCiudad"
+              [(ngModel)]="ciudad"
+              (change)="validarFormulario()"
+              [disabled]="!ciudades"
+              required
+            >
+              <option
+                *ngFor="let ciudad of filteredCities | async"
+                [value]="ciudad.ciudadID"
+              >
+                {{ ciudad.nombre }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="content-boton">
+          <button
+            type="button"
+            class="btn boton btn-deshabilitado"
+            [disabled]="formIsValid == false"
+            [ngClass]="{
+              'btn-habilitado': formIsValid,
+              'btn-deshabilitado': !formIsValid
+            }"
+            (click)="buscarTalleres()"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- Existe Taller -->
+    <div>
+      <div *ngIf="!existeTaller" class="space-footer"></div>
+      <div *ngIf="existeTaller" class="separador">
+        <span class="talleres-disponibles text-nowrap mx-3"
+          >Talleres Disponibles</span
+        >
+        <div class="linea-separador"></div>
+      </div>
+      <!-- Buscar -->
+      <div class="tallerFilterContainer" *ngIf="existeTaller">
+        <div class="search-container">
+          <input
+            id="searchbarGenInput"
+            [formControl]="terminosDeBusquedaCtrl"
+            class="searchbar-gen"
+            [ngModel]="terminoDeBusqueda"
+            type="text"
+            placeholder="Buscar..."
+            ngDefaultControl
+          />
+          <span class="search-icon">
+            <i class="bi bi-search"></i>
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3"
+        *ngIf="existeTaller"
+      >
+        <div
+          class="container-card-no-info"
+          *ngIf="
+            (
+              talleres
+              | filter
+                : (terminoDeBusqueda.length >= cantidadMinBuscar
+                    ? terminoDeBusqueda
+                    : '')
+            ).length == 0
+          "
+        >
+          <img class="ico-no-info" [src]="icoNoTaller" alt="icono no info" />
+          <p class="no-info-letra">
+            ¡Oops! No encontramos ningún <br />
+            resultado para tu búsqueda.
+          </p>
+        </div>
+        <div
+          class=""
+          *ngFor="
+            let taller of talleres
+              | paginate : config
+              | filter
+                : (terminoDeBusqueda.length >= cantidadMinBuscar
+                    ? terminoDeBusqueda
+                    : '')
+          "
+        >
+          <div
+            *ngIf="
+              configurarPaginacion(
+                (
+                  talleres
+                  | filter
+                    : (terminoDeBusqueda!.length >= cantidadMinBuscar
+                        ? terminoDeBusqueda
+                        : '')
+                ).length
+              )
+            "
+          ></div>
+          <!-- Cards -->
+          <!-- containerCards -->
+          <div class="col-12col-md-6">
+            <div class="cardInfoTalleres">
+              <div class="card-info">
+                <span class="nombreTaller">{{ taller.nombre }}</span>
+                <span class="direccionTaller">{{ taller.direccion }}</span>
+                <span class="telefonoTaller">{{ taller.telefono }}</span>
+                <span class="horarioTaller">{{ taller.horariosAtencion }}</span>
+              </div>
+
+              <div class="comoLlegar-content">
+                <div class="">
+                  <i class="bi bi-geo-alt fs-1 text-white"></i>
+                </div>
+
+                <a
+                  class="ubComoLlegar"
+                  [href]="ubicarTaller(taller)"
+                  target="_blank"
+                  >Cómo llegar</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="paginate-container">
+        <pagination-template
+          *ngIf="
+            talleres &&
+            talleres.length > 0 &&
+            (talleres | filter : terminoDeBusqueda).length > 0
+          "
+          #p="paginationApi"
+          [id]="config.id"
+          (pageChange)="config.currentPage = $event"
+        >
+          <div class="d-flex justify-content-between">
+            <div
+              class="col-4 col-md-1 pagination-previous"
+              [class.disabled]="p.isFirstPage()"
+              [ngClass]="{
+                'pagination-btn-navigation-disable': p.isFirstPage()
+              }"
+            >
+              <span
+                *ngIf="!p.isFirstPage(); else btnDisabled"
+                (click)="p.previous()"
+              >
+                < Anterior</span
+              >
+              <ng-template #btnDisabled>
+                <span> < Anterior</span>
+              </ng-template>
+            </div>
+            <div class="numeros-paginas">
+              <div class="content-numbers">
+                <div
+                  class="pagination-col-number page-number"
+                  *ngFor="let page of p.pages"
+                  [class.current]="p.getCurrent() === page.value"
+                >
+                  <span
+                    (click)="p.setCurrent(page.value)"
+                    *ngIf="p.getCurrent() !== page.value"
+                    >{{ page.label }}</span
+                  >
+                  <div *ngIf="p.getCurrent() === page.value">
+                    <span class="paginaActiva">{{ page.label }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-4 col-md-1 pr-0 pagination-next"
+              [class.disabled]="p.isLastPage()"
+              [ngClass]="{
+                'pagination-btn-navigation-disable': p.isLastPage()
+              }"
+            >
+              <span
+                *ngIf="!p.isLastPage(); else btnNxtDisabled"
+                (click)="p.next()"
+                >Siguiente ></span
+              >
+              <ng-template #btnNxtDisabled
+                ><span>Siguiente ></span></ng-template
+              >
+            </div>
+          </div>
+        </pagination-template>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div
+  class="modal modal-agregar fade"
+  id="modalAdd"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modalAddLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="title text-center" id="modalAddLabel">
+          ¡Agrega tu vehículo!
+        </h5>
+        <button
+          type="button"
+          class="close"
+          style="margin: -1rem"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-body-agregar modalMisc">
+        <div class="row">
+          <div class="modal-body-text">
+            <label style="text-align: center" class="detail-text">
+              Ingresa la placa de tu vehículo para acceder a nuestros
+              servicios.</label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <input
+            class="text detail-text input-modal placa"
+            maxlength="6"
+            [formControl]="placaCtrl"
+            oninput="this.value = this.value.toUpperCase()"
+            placeholder="PLACA"
+            [ngModel]="placa"
+            ngDefaultControl
+          />
+        </div>
+        <hr />
+      </div>
+      <div
+        class="modal-footer modalMisc"
+        style="margin: auto; margin-bottom: 1em"
+      >
+        <button
+          type="button"
+          class="btn detail-text btn-cancel-modal"
+          data-dismiss="modal"
+          (click)="confirmarCancelar()"
+        >
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn detail-text d-inline btn-add-modal"
+          (click)="registrarPlaca()"
+          data-dismiss="modal"
+        >
+          Añadir <img class="d-inline pb-1" [src]="icoAgregar" alt="añadir" />
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<app-footer></app-footer>

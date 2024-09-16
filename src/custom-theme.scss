@@ -1,0 +1,75 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$AutoGestionFrontRefactor-primary: mat.define-palette(mat.$indigo-palette);
+$AutoGestionFrontRefactor-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$AutoGestionFrontRefactor-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$AutoGestionFrontRefactor-theme: mat.define-light-theme((
+  color: (
+    primary: $AutoGestionFrontRefactor-primary,
+    accent: $AutoGestionFrontRefactor-accent,
+    warn: $AutoGestionFrontRefactor-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($AutoGestionFrontRefactor-theme);
+
+mat-select {
+  &.form-control.ng-invalid.ng-dirty,
+  .form-control.ng-invalid.ng-touched,
+  .form-control-mat-select.ng-invalid.dirty,
+  .form-control-mat-select.ng-invalid.ng-touched,
+  .inputHora .ng-form-submitted .form-control.ng-invalid {
+    background-image: none !important;
+    border-radius: 4px !important;
+    border: solid 1px #d90b0b !important;
+    background-color: #ffffff !important;
+  }
+}
+.form-control-mat-select .mat-select-arrow-wrapper {
+  background-image: url("/assets/images/flecha.png");
+
+ }
+
+ .form-control-mat-select .mat-select-arrow {
+   opacity: 0;
+ }
+ ::ng-deep .mat-form-field {
+  .mat-input-element {
+      color: rgb(245, 248, 250);
+  }
+  .mat-form-field-label {
+      color: slategray;
+  }
+  .mat-form-field-underline {
+      background-color: slategray;
+  }
+  .mat-form-field-ripple {
+      background-color: slategray;
+  }
+  .mat-form-field-required-marker {
+      color: slategray;
+  }
+}
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+

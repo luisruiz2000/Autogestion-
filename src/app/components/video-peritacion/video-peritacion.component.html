@@ -1,0 +1,281 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<app-spinner></app-spinner>
+<div>
+  <div class="containerr">
+    <p class="regresar">
+      <span (click)="regresar()" class="home">Home</span>
+      <i class="bi bi-chevron-right"></i>
+      <span>Video Peritación</span>
+    </p>
+    <div class="seccionEncabezado">
+      <div class="title-video">Video Peritación Asistida</div>
+      <div class="contenerdor-mensaje-llamar">
+        <div class="textoInformacion-movil d-flex align-items-center me-2 text-label">
+          <div class="me-1">
+            <img src="assets/images/icon-infov.svg" alt="alerta" />
+          </div>
+          <label>Para solicitar tu cita de <span>video peritación asistida</span>
+            comunícate al:</label>
+        </div>
+        <div class="col-1 pl-0">
+          <img class="imgLlamar" [src]="icoLlamar" alt="alerta" />
+        </div>
+      </div>
+    </div>
+
+    <div class="text-title">
+      <p>
+        La video peritación asistida es un servicio qu ete ofrecemos para
+        evaluar y documentar daños, incidentes o situaciones específicas a
+        través de videos grabados. Esta herramienta permite a los peritos,
+        investigadores o ajustadores de seguros realizar una inspección visual
+        detallada sin necesidad de estar físicamente presentes en el lugar del
+        evento.
+      </p>
+    </div>
+
+    <!--Seleccionar Vehículo peritaje-->
+    <div *ngIf="!sinVehiculos" class="container-form">
+      <div class="content-input">
+        <div class="container-form-label">
+          <label for="Vehiculo" class="form-label">Vehículo *</label>
+        </div>
+      </div>
+      <!-- <div class="container-form-select me-2">
+        <select id="Vehiculo" class="form-select" name="selectVehiculoPeritaje" (change)="obtenerDatosVehiculo($event)">
+          <option class=".placeholder" value="" disabled selected>
+            Seleccionar Vehiculo
+          </option>
+          <option *ngFor="let vehiculo of vehiculo" [value]="vehiculo">
+            {{ vehiculo.marca }} - {{ vehiculo.placa }}
+          </option>
+        </select>
+      </div> -->
+
+      <!-- ************************************************* -->
+      <div ngbAccordion #accordionVehiculo="ngbAccordion" class="container-form-select">
+        <div ngbAccordionItem="first" class="cp-acordeonSelect">
+          <div class="documentacin-parent-select margin-left: .5rem;">
+            <div class="label-helpSelect-placeholder m-" [ngClass]="{
+        'label-helpSelect-placeholder':
+          labelVehiculoSeleccionado ===
+          'Seleccione Vehiculo',
+        'label-helpSelect':
+          labelVehiculoSeleccionado !==
+          'Seleccione Vehiculo'
+      }">
+              {{ labelVehiculoSeleccionado }}
+            </div>
+            <button ngbAccordionToggle class="buttonAcordeonSelect" (click)="switchImgAngleSelectVehiculoAcordeon()">
+              <img class="alerta-icon" alt="" [src]="imgAngleAcordeonSelectVehiculocCurrent" />
+            </button>
+          </div>
+          <div ngbAccordionCollapse>
+            <div class="contenedorAcordeonSelect">
+              <div class="container" style="overflow-y: auto">
+
+                <div *ngFor="let vehiculo of vehiculo" value="vehiculo">
+                  <button class="maestro-config-reglas" class="maestro-config-reglas"
+                    (click)="switchImgAngleSelectVehiculoAcordeon();seleccionarVehiculo(vehiculo.marca + '-' + vehiculo.placa); accordionVehiculo.collapseAll()">
+                    {{ vehiculo.marca }} - {{ vehiculo.placa }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ************************************************* -->
+
+
+
+      <!-- Vehiculo inmovilizado -->
+      <div class="content-input">
+        <div class="container-form-label">
+          <label for="select2" class="form-label">¿Tu vehículo se encuentra inmovilizado? *</label>
+        </div>
+      </div>
+      <!-- <div class="container-form-select">
+        <select id="select2" class="form-select text-secondary" (change)="obtenerInfoVehiculo($event)">
+          <option value="" disabled selected>Si/No</option>
+          <option value="S">Sí</option>
+          <option value="N">No</option>
+        </select>
+      </div> -->
+
+      <div ngbAccordion #accordionVehiculoInmovi="ngbAccordion" class="container-form-select">
+        <div ngbAccordionItem="first" class="cp-acordeonSelect">
+          <div class="documentacin-parent-select">
+            <div class="label-helpSelect-placeholder" [ngClass]="{
+        'label-helpSelect-placeholder':
+          labelVehiculoInmoviSeleccionado ===
+          'Si/No',
+        'label-helpSelect':
+          labelVehiculoInmoviSeleccionado !==
+          labelVehiculoInmoviSeleccionado
+      }">
+              {{ labelVehiculoInmoviSeleccionado }}
+            </div>
+            <button ngbAccordionToggle class="buttonAcordeonSelect"
+              (click)="switchImgAngleSelectVehiculoInmoviAcordeon()">
+              <img class="alerta-icon" alt="" [src]="imgAngleAcordeonSelectVehiculoInmoviCurrent" />
+            </button>
+          </div>
+          <div ngbAccordionCollapse>
+            <div class="contenedorAcordeonSelect">
+              <div class="container" style="overflow-y: auto">
+
+                <div>
+                  <button class="maestro-config-reglas" class="maestro-config-reglas"
+                    (click)="this.switchImgAngleSelectVehiculoInmoviAcordeon();seleccionarVehiculoInmovilizado('S'); accordionVehiculoInmovi.collapseAll()">
+                    Si
+                  </button>
+                  <button class="maestro-config-reglas" class="maestro-config-reglas"
+                    (click)="accordionVehiculoInmovi.collapseAll();switchImgAngleSelectVehiculoInmoviAcordeon();seleccionarVehiculoInmovilizado('N')">
+                    No
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-btn ms-">
+        <button class="btn boton btn-deshabilitado w-100" (click)="continuar()" [disabled]="habilitarBotonContinuar()"
+          [ngClass]="{
+            'btn-habilitado': !habilitarBotonContinuar(),
+            'btn-deshabilitado': habilitarBotonContinuar()
+          }">
+          Continuar
+        </button>
+      </div>
+    </div>
+
+    <!-- Mensaje: mensajeTipoVehiculo -->
+    <div *ngIf="esVehiculoPesado" class="d-flex">
+      <span class="mensaje-form">
+        <i class="bi bi-exclamation-circle-fill text-warning fs-3"></i>
+        <span class="text-mensaje-warning">{{ mensajeTipoVehiculo }}</span>
+      </span>
+    </div>
+
+    <!-- Mensaje:  Este servicio está disponible para vehículos que se puedan movilizar por sus propios medios.-->
+    <div *ngIf="estaInmovilizado" class="d-flex">
+      <span class="mensaje-form">
+        <i class="bi bi-exclamation-circle-fill text-warning fs-3"></i>
+        <span class="text-mensaje-warning">Este servicio está disponible para vehículos que se puedan movilizar
+          por sus propios medios.</span>
+      </span>
+    </div>
+    <!-- Espacion para el footer -->
+    <div *ngIf="!mostrarPasos" class="space-footer"></div>
+
+    <div class="content-fases" *ngIf="mostrarPasos">
+      <div class="border-left-icon pt-2">
+        <!--1 AGENDAR CITA-->
+        <div class="left-icon">
+          <img src="assets/images/videoPeritacion/Iconos/calendar.png" alt="calendario">
+        </div>
+        <span class="info-fase"> 1. Agendar cita</span>
+        <p class="content-text-fases">{{ mensajeAgendarCita }}</p>
+      </div>
+
+      <!--2. Confirmación-->
+      <div class="border-left-icon pt-2">
+        <div class="left-icon">
+          <img src="assets/images/videoPeritacion/Iconos/phone_in_talk.png" alt="Telefono">
+
+        </div>
+        <span class="info-fase px2">2. Confirmación</span>
+        <p class="content-text-fases">{{ mensajeAgendarCita }}</p>
+      </div>
+
+      <!--3 DATOS EN CORREO-->
+      <div class="border-left-icon pt-2">
+        <!--2. Confirmación-->
+        <div class="left-icon">
+          <img src="assets/images/videoPeritacion/Iconos/Component 4.png" alt="Carta/correo">
+        </div>
+        <span class="info-fase px2">3. Datos en correo</span>
+        <p class="content-text-fases">{{ mensajeCorreo }}</p>
+      </div>
+
+      <!--4 INGRESAR AL LINK-->
+      <div class="border-left-icon pt-2">
+        <div class="left-icon">
+          <img src="assets/images/videoPeritacion/Iconos/Vector.png" alt="Puntero">
+        </div>
+        <span class="info-fase px2">4. Ingresar al Link</span>
+        <p class="content-text-fases">
+          A través de este
+          <a class="url-video-peritacion" href="{{ urlVideoPeritacion }}" target="_blank">link</a>
+          podrás ingresar a la plataforma de video peritación asistida.
+        </p>
+      </div>
+
+      <!--5 VIDEO PERITACION-->
+      <div class="border-left-icon pt-2">
+        <!--2. Confirmación-->
+        <div class="left-icon">
+          <img src="assets/images/videoPeritacion/Iconos/Path 19654.png" alt="Camara Video">
+        </div>
+        <span class="info-fase px2">5. Video peritación</span>
+        <p class="content-text-fases">{{ mensajeVideoPeritacion }}</p>
+      </div>
+
+      <!--6 FINALIZACION-->
+      <div class="border-left-icon pt-2">
+        <div class="left-icon last-child-icon">
+          <img src="assets/images/videoPeritacion/Iconos/Check.png" alt="Puntero">
+        </div>
+        <span class="info-fase px2">6. Finalización</span>
+        <p class="m-0 content-text-fases">{{ mensajeFinalizar }}</p>
+      </div>
+      <br />
+      <br />
+    </div>
+
+    <!-- Modal de agrear vehiculo -->
+    <div #modalAdd class="modal modal-agregar fade" id="modalAdd" tabindex="-1" role="dialog"
+      aria-labelledby="modalAddLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header modalMisc">
+            <h5 class="title-head" id="modalAddLabel">¡Agrega tu vehículo!</h5>
+            <button type="button" class="close" style="margin: -1rem" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body modal-body-agregar modalMisc">
+            <div class="row">
+              <div class="modal-body-text">
+                <label style="text-align: center" class="detail-text">
+                  Ingresa la placa de tu vehículo para acceder a nuestros
+                  servicios.</label>
+              </div>
+            </div>
+            <div class="row">
+              <input class="text input-modal detail-text placa" maxlength="6"
+                oninput="this.value = this.value.toUpperCase()" placeholder="PLACA" [(ngModel)]="placa" />
+            </div>
+            <hr />
+          </div>
+
+          <div class="modal-footer modalMisc modal-footer-add" style="margin: auto">
+            <button type="button" class="btn detail-text btn-cancel-modal" data-dismiss="modal"
+              (click)="confirmarCancelar()">
+              Cancelar
+            </button>
+            <button type="button" class="btn detail-text btn-add-modal" (click)="registrarPlaca()" data-dismiss="modal">
+              Añadir
+              <img class="d-inline pb-1" [src]="icoAgregar" alt="añadir" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

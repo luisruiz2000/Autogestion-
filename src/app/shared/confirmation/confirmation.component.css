@@ -1,0 +1,193 @@
+.letraTitulo{
+ margin-top: 1em;
+ color:#1f4c38;
+  font-family: "Futura Std Heavy", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  font-stretch: center;
+  font-style: center;
+  line-height: 1.27;
+  letter-spacing: center;
+  text-align: center !important;
+
+}
+.ico_aprobado {
+    padding-top: 2em;
+    object-fit: contain;
+    text-align: center;
+  }
+.ico_aprobado img{
+  width: 37.4px;
+  height: 37.4px;
+  }
+
+  .rectnguloGrande {
+    position: relative;
+    margin-bottom: 25.5px;
+    width: 100%;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #fafafa;
+    padding: 1.5em;
+  }
+  .subTitulo{
+      padding-top: 1.5em;
+      font-family: "Futura Std Heavy", sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.27;
+      letter-spacing: center;
+      text-align: center;
+      color: #1f4c38;
+  }
+  .contenido{
+        font-family: "Neris Light", sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.4;
+        letter-spacing: normal;
+        text-align: center;
+        color: #626366;
+  }
+  .rectnguloPequeño {
+    margin: 20px auto 0 auto;
+    width: 159px;
+    height: 38px;
+    border-radius: 5px;
+    text-emphasis: center;
+    background-color: #ededed;
+  }
+  .estado{
+    width: 123px;
+    height: 23px;
+    font-family: "Neris Semibold", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: center;
+    color: #626366;
+  }
+  .text-style{
+    padding-left: 10px;
+    padding-top: 8px;
+    font-family: "Neris Semibold", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  .text-estado{
+    color: #67bc47;
+  }
+
+  .text-recibido{
+    color:gray
+  }
+
+  .text-volver{
+  margin-top: 30px;
+  width: 50px;
+  height: 24px;
+  font-family: "Neris Light", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #67bc47;
+  }
+  .text{
+  color: #1f4c38;
+  padding-top: 13.5px;
+  font-family: "Neris Semibold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: center;
+  }
+  .btn-volver {
+    background-color: transparent;
+    border-color: transparent;
+    color: #67bc47;
+  }
+.solicitud-docs-pendientes{
+  color: #f89a3b;
+}
+.solicitud-declinada{
+  color: #d90b0b;
+}
+.list-documentos{
+  margin-left: 5em;
+}
+.puntoNaranja{
+  width: 7px;
+  height: 7px;
+  background-color: #f89a3b;
+  border-radius: 5px;
+  float: right;
+  margin-top: 0.7em;
+}
+.texto-documento{
+  line-height: 1.73;
+}
+.camposInfoContacto {
+  max-width: 28.5em;
+  position: absolute;
+  border-color: #67bc47;
+  background: none;
+  margin-left: auto;
+  background-color: #ffffff;
+  top: -2.5em;
+  right: 0;
+}
+.textoInformacion {
+  font-family: "Neris Semibold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  font-stretch: normal;
+  font-style: normal;
+}
+.imgLlamar {
+  width: 60px;
+  height: 60px;
+}
+.lineaSeparador{
+  width: 20% !important;
+  position: center;
+}
+
+@media(max-width: 768px) {
+  .letraTitulo{
+    font-size: 18px;
+  }
+  .subTitulo{
+    font-size: 18px;
+  }
+  .list-documentos{
+    margin-left: 0;
+  }
+  .camposInfoContacto {
+    border: none;
+    top: -2.5em;
+    background: none;
+  }
+  .imgLlamar{
+    width: 4.5em;
+    height: 4.5em;
+  }
+}

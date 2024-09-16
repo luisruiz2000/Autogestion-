@@ -1,0 +1,156 @@
+
+<app-plantilla-general></app-plantilla-general>
+          
+          <div class="hom2">
+              
+              <div class="miga-de-pan-parent">
+                  <div class="miga-de-pan">
+                      <div class="paleta-de-color">Home</div>
+                  </div>
+                  <div class="hola-fabrica-de-container">
+                      <span>¡HOLA! </span>
+                      <span class="fabrica-de-software">{{usuario.nombres }} {{usuario.apellidos}}.</span>
+                  </div>
+                  <div class="img-home2-1-parent">
+                    @if(currentSizeScreen === "Large"){
+                      <img class="img-home2-1-icon" alt="" src="assets/images/home.svg">
+                      
+                      <!--<img class="instance-child" alt="" src="assets/images/Rectangle 23958.svg">
+                      
+                      <img class="instance-item" alt="" src="assets/images/Group 24119.png">-->
+                    }
+                    @else {
+                        <img class="img-home2-1-icon" alt="" src="assets/images/home_smart.svg"> 
+                    } 
+                      
+                     <!-- <div class="component-43-parent">
+                          <img class="component-43-icon" alt="" src="assets/images/Component 43.svg">
+                          
+                          <div class="recuerda-que-en">Recuerda que en cualquier momento puedes comunicarte con nuestra línea de atención al cliente</div>
+                          <div class="phone-in-talk-parent">
+                              <img class="phone-in-talk-icon" alt="" src="assets/images/phone_in_talk.svg">
+                              
+                              <div class="div">#345</div>
+                          </div>
+                      </div>
+                      <b class="mis-productos">
+                          <p class="mis">MIS</p>
+                          <p class="mis">PRODUCTOS</p>
+                      </b>-->
+                  </div>
+                  <div class="cp-cont-productos-parent">
+                      <div class="cp-cont-productos">
+                          <div class="group-24121xr-parent">
+                              <img class="group-24121xr-icon" alt="" src="assets/images/Group 24121Xr.svg">
+                              
+                              <div class="autos-wrapper">
+                                  <div class="autos">AUTOS</div>
+                              </div>
+                              
+                          </div>
+                          <div class="frame-child">
+                        </div>
+                          <div class="frame-parent">
+                              <div class="resumen-de-producto-wrapper">
+                                  <div class="resumen-de-producto">RESUMEN DE PRODUCTO</div>
+                              </div>
+                              <div class="frame-group">
+                                  <div class="frame-container">
+                                      <div class="n-productos-wrapper">
+                                          <div class="n-productos">N. Productos</div>
+                                      </div>
+                                      <div class="wrapper">
+                                          <div class="div1">{{numeroAutos}}</div>
+                                      </div>
+                                  </div>
+                                  <div class="enlace-icon-izq-parent">
+                                        <div class="enlace-icon-izq">
+                                          <div class="label-btn" >
+                                            <a (click)="verDetalle()">Admin. Autos</a>
+                                          </div>
+                                        </div>
+                                      <div class="cp-btn-primary-hover1">
+                                          <button class="cp-boton-principal-variaciones" (click)="verServicios()">
+                                              <label  class="continuar">Servicios</label>
+                                          </button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="cp-cont-productos">
+                          <div class="group-24121xr-parent">
+                              <img class="frame-item" alt="" src="assets/images/Group 24189.svg">
+                              
+                              <div class="autos-wrapper">
+                                  <div class="hogar">Hogar</div>
+                              </div>
+                              
+                          </div>
+                          <div class="frame-child">
+                         </div>
+                          <div class="frame-parent">
+                              <div class="resumen-de-producto-wrapper">
+                                  <div class="resumen-de-producto">RESUMEN DE PRODUCTO</div>
+                              </div>
+                              <div class="frame-group">
+                                  <div class="frame-container">
+                                      <div class="n-productos-wrapper">
+                                          <div class="n-productos">N. Productos</div>
+                                      </div>
+                                      <div class="wrapper">
+                                          <div class="div1">{{this.numeroHogares}}</div>
+                                      </div>
+                                  </div>
+                                  <div class="enlace-icon-izq-parent">
+                                    <div class="enlace-icon-izq">
+                                        <div class="label-btn" >
+                                          <a (click)="verHogares()">Admin. Hogar</a>
+                                        </div>
+                                      </div>
+                                      <div class="cp-btn-primary-hover1">
+                                          <!--<div class="cp-boton-principal-variaciones">
+                                              <div class="continuar">Servicios</div>
+                                          </div>
+                                        -->
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="frame-parent3">
+                      <div class="acerca-de-nuestra-web-parent">
+                          <div class="n-productos">Acerca de nuestra web</div>
+                          <div class="recuerda-que-para-container">
+                              <p class="mis">Recuerda que para una mejor experiencia al usar nuestra plataforma debes tener en cuenta la</p>
+                              <p class="mis">versión de tu navegador.</p>
+                          </div>
+                      </div>
+                      <div class="navegadores-en-los-que-puedes-parent">
+                          <div class="n-productos">Navegadores en los que puedes explorar nuestra web</div>
+                          <div class="google-chrome-3-parent">
+                              <img class="google-chrome-3-icon" alt="" src="assets/images/google-chrome 3.svg">
+                              
+                              <img class="vector-icon" alt="" src="assets/images/Vector.svg">
+                              
+                              <img class="vector-icon1" alt="" src="assets/images/Vector (2).svg">
+                              
+                              <img class="vector-icon1" alt="" src="assets/images/Vector (3).svg">
+                              
+                              <img class="vector-icon1" alt="" src="assets/images/Vector (4).svg">
+                              
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             
+              
+              
+          </div>
+          <app-footer></app-footer>
+          
+         
+          
+          
+         

@@ -1,0 +1,208 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<app-spinner></app-spinner>
+<div class="fondo">
+  <div class="col-12 d-flex justify-content-center contenedor-logo">
+    <img [src]="urlLogo" alt="logo">
+  </div>
+  <div class="abs-center">
+    <div class="card col-md-6 col-sm-10">
+      <div class="card-body">
+        <div class="row">
+          <button class="btn-volver col-12 col-xl-3 col-lg-3 col-md-3" [routerLink]="urlLogin!" routerLinkActive="router-link-active">
+            <img [src]="icoVolver" alt="volver">
+            Volver
+          </button>
+          <div class="col-12 col-xl-6 col-lg-6 col-md-6">
+            <h5 class="card-title">Queremos conocerte, por favor ingresa tus datos.</h5>
+          </div>
+
+        </div>
+        <div class="margen-formulario">
+        <!--<div class="col-12 col-xl-6 col-lg-6 col-md-6">-->
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" form action="?" method="POST" *ngIf="profileForm"  class="prev-form">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-12 col-xl-6 col-lg-6 col-md-6">  
+                  <div class="select_wrapper">
+                    <label for="nombre" class="labelRegistro" [ngClass]="{ 'ng-invalid': nombre!.invalid && (nombre!.dirty || nombre!.touched) }">
+                      Nombres
+                    </label>
+                  </div>
+                  <div class="form-control-wrapper">
+                    <div>
+                        <input type="text"  required class="form-control input" id="nombre"  name="nombre"
+                          formControlName="nombre" />
+                          <span
+                            *ngIf="(nombre?.invalid && nombre?.dirty) || (nombre?.invalid && nombre?.touched) || (nombre?.invalid && submit)"
+                            class="error-icon-hover-area"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Nombres requerido.">
+                        </span>
+                    </div>
+                  </div> 
+                </div> 
+                <div class="col-12 col-xl-6 col-lg-6 col-md-6">
+                  <div class="select_wrapper">
+                    <label for="apellido" class="labelRegistro" [ngClass]="{ 'ng-invalid': apellido!.invalid && (apellido!.dirty || apellido!.touched) }">
+                      Apellidos
+                    </label>
+                  </div>
+                  <div class="form-control-wrapper">
+                    <div>
+                        <input type="text"  required class="form-control input" id="apellido"  name="apellido"
+                          formControlName="apellido" />
+                          <span
+                            *ngIf="(apellido?.invalid && apellido?.dirty) || (apellido?.invalid && apellido?.touched) || (apellido?.invalid && submit)"
+                            class="error-icon-hover-area"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Apellidos requerido.">
+                        </span>
+                     </div>
+                  </div> 
+                </div>
+              </div>   
+              <div class="row pt-3">
+                <div class="col-12 col-xl-6 col-lg-6 col-md-6">
+                  <div class="select_wrapper">
+                    <label for="nombre" class="labelRegistro" [ngClass]="{ 'ng-invalid': nombre!.invalid && (nombre!.dirty || nombre!.touched) }">
+                      Tipo de documento
+                    </label>
+                  </div>
+                  <div class="form-control-wrapper">
+                    <div>
+                      <mat-select  formControlName="tipodoc" placeholder="Seleccione" required class="form-control-select"
+                            (selectionChange)="cambiarDocumento($event)"
+                            [ngClass]="{'ng-invalid': tipodoc!.invalid && submit || tipodoc!.invalid && tipodoc!.dirty || tipodoc!.invalid && tipodoc!.touched}">
+                            <mat-option *ngFor="let tipo of tiposDocumento" [value]="tipo!.codigo" class="text-registo">{{tipo!.nombre}}</mat-option>
+                      </mat-select>
+                    </div>
+                  </div>    
+                </div>
+                <div class="col-12 col-xl-6 col-lg-6 col-md-6 margen-campos">
+                  <div class="select_wrapper">
+                     <label for="numeroId" class="labelRegistro" [ngClass]="{ 'ng-invalid': numeroId!.invalid && (numeroId!.dirty || numeroId!.touched) }">
+                        Número de identificación
+                      </label>
+                  </div> 
+                  <div class="form-control-wrapper">
+                    <div>
+                      <input   maxlength="12" formControlName="numeroId" required (keypress)="validarFormatoDoc($event)" minlength="4" class="form-control input">
+                    </div>
+                  </div>    
+                </div>
+              </div>   
+              
+              <div class="row pt-3">
+                <div class="col-12 col-xl-6 col-lg-6 col-md-6">
+                  <div class="select_wrapper">
+                    <label for="celular" class="labelRegistro" [ngClass]="{ 'ng-invalid': celular!.invalid && (celular!.dirty || celular!.touched) }">
+                      Celular
+                    </label>
+                  </div>
+                  <div class="form-control-wrapper">
+                    <div>
+                      <input    formControlName="celular" required [max]="maxCelular" [min]=0 (keypress)="soloNumeros($event)" class="form-control input">
+      
+                    </div>
+                  </div>    
+                </div>
+                <div class="col-12 col-xl-6 col-lg-6 col-md-6 margen-campos">
+                  <div class="select_wrapper">
+                     <label for="email" class="labelRegistro" [ngClass]="{ 'ng-invalid': correo!.invalid && (correo!.dirty || correo!.touched) }">
+                      Correo electrónico
+                      </label>
+                  </div> 
+                  <div class="form-control-wrapper">
+                    <div>
+                      <input  type="email"    formControlName="correo" autocomplete="username" id="email" name="email" required class="form-control input">
+                    </div>
+                  </div>    
+                </div>
+              </div>
+              <div class="row pt-3">
+                <div class="col-12 col-xl-6 col-lg-6 col-md-6">
+                  <div class="select_wrapper">
+                    <label for="contrasena" class="labelRegistro" [ngClass]="{ 'ng-invalid': contrasena!.invalid && (contrasena!.dirty || contrasena!.touched) }">
+                      Contraseña
+                    </label>
+                  </div>
+                  <div class="form-control-wrapper">
+                    <div class="input-group">
+                      <input id="confContrasena" type="{{ocultarMostrarPassword}}"    [type]="hide ? 'password' : 'text'"  class="form-control-input input" formControlName="contrasena" required
+                      [ngClass]="{ 'inputFieldInvalid': contrasena!.invalid && (contrasena!.dirty || contrasena!.touched) }"
+                      >
+                      <div class="input-group-append">
+                        <button type="button" class="btn btn-show-pwd-disabled input-group-text"
+                          [ngClass]="{'btn-show-pwd-enable': showEnableBtnPwd, 'ng-user-invalid': contrasena!.invalid && (contrasena!.touched || contrasena!.dirty || submit)}" (click)="cambiarTipo('contrasena')">
+                        </button>
+                      </div>
+                      <div class="tooltip-test">
+                        &nbsp;<img [src]="iconoPregunta" alt="iconoAyuda">
+                        <span class="tooltip-text">{{tooltipContrasena}}</span>
+                      </div>
+                    </div>
+                  </div>    
+                </div>
+                <div class="col-12 col-xl-6 col-lg-6 col-md-6 margen-campos">
+                  <div class="select_wrapper">
+                     <label for="email" class="labelRegistro" [ngClass]="{ 'ng-invalid': confContrasena!.invalid && (confContrasena!.dirty || confContrasena!.touched) }">
+                      Confirmar Contraseña
+                      </label>
+                  </div> 
+                  <div class="form-control-wrapper">
+                    <div class="input-group">
+                      <input id="confContrasena"  type="{{ocultarMostrarConfPassword}}"   formControlName="confContrasena" required class="form-control-input input"
+                      [ngClass]="{ 'inputFieldInvalid': confContrasena!.invalid && (confContrasena!.dirty || confContrasena!.touched) }">
+                      <div class="input-group-append">
+                        <button type="button" class="btn btn-show-pwd-disabled input-group-text"
+                          [ngClass]="{'btn-show-pwd-enable': showEnableBtnPwd, 'ng-user-invalid': confContrasena!.invalid && (confContrasena!.touched || confContrasena!.dirty || submit)}" (click)="cambiarTipo('confContrasena')">
+                        </button>
+                      </div>
+                      <div class="tooltip-test">
+                        &nbsp;<img [src]="iconoPregunta" alt="iconoAyuda">
+                        <span class="tooltip-text">{{tooltipContrasena}}</span>
+                      </div>
+                    </div>
+                  </div>    
+                </div>
+              </div>
+           
+            </div>
+            
+            <div class="row pt-3">
+              <div class = "col-12 container-error-message text-danger text-center" *ngIf="(contrasena!.value!=confContrasena!.value)">
+                <label class="label-error content-login font-weight-bold">
+                  Las contraseñas no coinciden
+                </label>
+              </div>
+            </div>
+            <div class="pt-3 col-12">
+              <mat-checkbox  color="primary" class="checkTerminos" formControlName="terminos"
+                          >
+                <button class="btn btn-link labelTerminosYCondiciones" (click)="tyc()">
+                <u>Confirmo que conozco términos y condiciones y acepto el tratamiento de Datos Personales</u></button><br>
+              </mat-checkbox>
+            </div>
+            <div class="d-flex justify-content-center mt-3 mb-4" *ngIf="siteKey">
+              <re-captcha formControlName="captcha"  [siteKey]="siteKey" required>
+              </re-captcha>
+            </div>
+            <div class = "captcha-message-error col-12 container-error-message text-danger text-center" *ngIf="(captcha!.invalid && submit)">
+              <label class="label-error content-login font-weight-bold">
+                Debe solucionar el captcha
+              </label>
+            </div>
+            <div class="divBotonRegistro mt-2">
+              <button type="submit"  class="btn btn-primary botonRegistro">Registrarme</button>
+            </div>
+        
+          </form>
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,280 @@
+<app-plantilla-general></app-plantilla-general>
+
+<div class="contenedor">
+  <div class="container pb-2" >
+    <div class="row pt-2 pb-2" >
+      <div class="col">
+        <div class="contenedor-inner">
+          <div class="miga-de-pan-wrapper">
+            <div class="miga-de-pan">
+              <div class="paleta-de-color" (click)="redireccionar('/home/false')">Home</div>
+              <img class="angle-right-icon" alt="" src="assets/images/angle-right.svg">
+              <div class="paleta-de-color1" (click)="redireccionar('/servicios')">Servicios</div>
+              <img class="angle-right-icon" alt="" src="assets/images/angle-right.svg">
+              <div class="paleta-de-color2">Seguimiento siniestros</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-parent">
+          <div class="radicacin-de-siniestros-parent">
+            <div class="radicacin-de-siniestros">Seguimiento a la reparación</div>
+          </div>
+          <div class="vehculo-parent-reparacion">
+            <div class="vehculo">VEHÍCULO</div>
+            <div class="vehculo">{{marca}}</div>
+            <div class="vehculo">{{placa}}</div>
+          </div>
+          <div class="frame-group">
+            <div class="component-43-parent">
+                <img class="component-43-icon" alt="" src="assets/images/radicacion/Component 43.svg">
+                
+                <div class="para-solicitar-tu">Para  solicitar tu cita de video peritación asistida comunícate al:</div>
+            </div>
+            <div class="group-parent">
+                <img class="group-icon" alt="" src="assets/images/radicacion/Group 24160.svg">
+                
+                <div class="div">#345</div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div class="row pb-4   pt-4">
+      <div class="col-1" align="left">
+        <div class="cp-return-parent-repa"  id="frameContainer" (click)="redireccionar('/autogestion/seguimiento-siniestro')">
+          <div class="cp-return-repa" >
+            <img class="arrow-left-icon" alt="" src="assets/images/seguimiento/Arrow-left.svg">
+          </div>
+          <div class="btn-enlace"  >
+            <a class="label-btn" [routerLink]="'/autogestion/seguimiento-siniestro'">Volver</a>
+          </div>
+        </div>
+      </div>
+    <div class="col-5" align="right">
+      <div class="n-de-radicado-parent">
+        <div class="n-de-radicado">N° de radicado:</div>
+        <div class="div-repa">{{numeroRadicado}}</div>
+      </div>
+    </div>
+    <div class="col-5" align="center">
+      <div class="fecha-de-solicitud-parent">
+        <div class="fecha-de-solicitud">Fecha de Solicitud:</div>
+        <div class="div-repa">{{fechaRadicado}}</div>
+      </div>
+    </div>
+    <div class="col-1 d-flex align-items-end" aligh="right">
+      <div class="ingreso-20062024">Ingreso: {{fechaIngreso}}</div>
+    </div>
+    </div>
+    <div class="row pb-2">
+      <div class="col">
+        <div class="items-parent-repa">
+          <div class="items-repa">
+            <div class="webitem">
+              <div class="vector-wrapper-repa">
+                <img class="vector-icon-repa" alt="" src="assets/images/seguimiento/bandera_inicio_blanca.svg">
+              </div>
+              <img class="webitem-child-repa" alt="" src="assets/images/seguimiento/barra_vertical.svg">
+            </div>
+            <div class="webitem">
+              <div  [ngClass]="{'vector-wrapper-repa': objNumFasesImgClass.numFaseRepuestos <= this.numFaseCurrent, 'vector-container-repa': objNumFasesImgClass.numFaseRepuestos > this.numFaseCurrent}">
+                <img class="car-repair-icon" alt="" [src]="objNumFasesImgClass.numFaseRepuestos <= this.numFaseCurrent ? objNumFasesImgClass.imgRepuestosPass :  objNumFasesImgClass.imgRepuestosNoPass">
+              </div>
+              <img class="webitem-child-repa" alt="" src="assets/images/seguimiento/barra_vertical.svg">
+            </div>
+            <div class="webitem">
+              <div  [ngClass]="{'vector-wrapper-repa': objNumFasesImgClass.numFaseLatoneria <= this.numFaseCurrent, 'vector-container-repa': objNumFasesImgClass.numFaseLatoneria > this.numFaseCurrent}">
+                <img class="car-repair-icon" alt="" [src]="objNumFasesImgClass.numFaseLatoneria <= this.numFaseCurrent ? objNumFasesImgClass.imgCarRepairPass :  objNumFasesImgClass.imgCarRepairNoPass">
+              </div>
+              <img class="webitem-child-repa" alt="" src="assets/images/seguimiento/barra_vertical.svg">
+            </div>
+            <div class="webitem">
+              <div  [ngClass]="{'vector-wrapper-repa': objNumFasesImgClass.numFasePintura <= this.numFaseCurrent, 'vector-container-repa': objNumFasesImgClass.numFasePintura > this.numFaseCurrent}">
+                <img class="car-repair-icon" alt="" [src]="objNumFasesImgClass.numFasePintura <= this.numFaseCurrent ? objNumFasesImgClass.imgFormatPaintPass :  objNumFasesImgClass.imgFormatPaintNoPass">
+              </div>
+              <img class="webitem-child-repa" alt="" src="assets/images/seguimiento/barra_vertical.svg">
+            </div>
+            <div class="webitem">
+              <div  [ngClass]="{'vector-wrapper-repa': objNumFasesImgClass.numFaseFin <= this.numFaseCurrent, 'vector-container-repa': objNumFasesImgClass.numFaseFin > this.numFaseCurrent}">
+                <img class="car-repair-icon" alt="" [src]="objNumFasesImgClass.numFaseFin <= this.numFaseCurrent ? objNumFasesImgClass.imgFinPass :  objNumFasesImgClass.imgFinNoPass">
+              </div>
+              <img class="webitem-child-repa" alt="" src="assets/images/seguimiento/barra_vertical.svg">
+            </div>
+            <div class="webitem">
+              <div  [ngClass]="{'vector-wrapper-repa': objNumFasesImgClass.numfaseEntregado <= this.numFaseCurrent, 'vector-container-repa': objNumFasesImgClass.numfaseEntregado > this.numFaseCurrent}">
+                <img class="car-repair-icon" alt="" [src]="objNumFasesImgClass.numfaseEntregado <= this.numFaseCurrent ? objNumFasesImgClass.imgEntregadoPass :  objNumFasesImgClass.imgEntregadoNoPass">
+              </div>
+              <img class="webitem-child-repa" alt="" src="assets/images/seguimiento/barra_vertical.svg">
+            </div>
+          </div>
+          <div class="frame-wrapper-repa">
+            <div class="wrapper-repa" [ngStyle]="{'width': avanceReparacion + '%'}">
+            <div class="div-repa-progress" >{{avanceReparacion}}%</div>
+            </div>
+          </div>
+          <div class="vehiculo-autogestion-7-parent">
+            <img class="vehiculo-autogestion-7" [ngStyle]="{'left': posLeftCar()+ '%'}" alt="" src="assets/images/seguimiento/Vehiculo autogestion 3.svg">
+           
+          </div> 
+        </div>
+      </div>
+    </div> 
+    
+   
+        <div class="stepper-components pb-2">
+          <div class="frame-parent-stepper">
+            <div class="vector-parent-stepper">
+              <img class="vector-icon-stepper" alt="" src="assets/images/seguimiento/bandera_inicio_gris.svg">
+              <div class="buy-now-pay-stepper">Inicio</div>
+              <img class="nodes-icon-stepper" alt="" [src]="[objNumFasesImgClass.numFaseInicio < numFaseCurrent ? objNumFasesImgClass.iconPass : objNumFasesImgClass.numFaseInicio === numFaseCurrent ? objNumFasesImgClass.iconCurrent : objNumFasesImgClass.iconNoPass]">
+            </div>
+            <div class="tu-vehculo-empez-stepper">Tu vehículo empezó a ser reparado</div>
+          </div>
+          <div class="cont-stepper">
+            <div class="tallerseleccionado-stepper">
+              <div class="requerimos-ms-documentacin-p-parent-stepper">
+                <div class="requerimos-ms-documentacin-stepper">{{nombreTaller}}</div>
+                <div class="requerimos-ms-documentacin1-stepper">{{direccionTaller}}</div>
+                <div class="requerimos-ms-documentacin1-stepper">{{horariosAtencion}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div  [ngClass]="[objNumFasesImgClass.numFaseRepuestos <= numFaseCurrent ? objNumFasesImgClass.classPass2 : objNumFasesImgClass.classNoPass2]">       
+          <div class="frame-parent-stepper">
+            <div class="vector-parent-stepper">
+              <img class="vector-icon-stepper" alt="" src="assets/images/seguimiento/repuestos_gris.svg">
+              <div class="buy-now-pay-stepper">Repuestos</div>
+              <img class="nodes-icon-stepper" alt="" [src]="[objNumFasesImgClass.numFaseRepuestos < numFaseCurrent ? objNumFasesImgClass.iconPass : objNumFasesImgClass.numFaseRepuestos === numFaseCurrent ? objNumFasesImgClass.iconCurrent : objNumFasesImgClass.iconNoPass]">
+            </div>
+            <div class="estamos-gestionando-la-nopass">Estamos gestionando la instalación de los repuestos para tu vehículo.</div>
+          </div>
+
+          @if(objNumFasesImgClass.numFaseRepuestos <= numFaseCurrent){
+          <div class="cont-foto">
+            <div class="contcam-foto">
+              <div class="foto-foto" id="fOTOContainer">
+                <img class="image-37-icon-foto" alt="" [src]="imagenEtapaRepuestos1" (click)="openDialogImage(imagenEtapaRepuestos1)">
+              </div>
+              <div class="foto-foto">
+                <img class="image-37-icon-foto" alt="" [src]="imagenEtapaRepuestos2" (click)="openDialogImage(imagenEtapaRepuestos2)">
+              </div>
+            </div>
+          </div>
+        }
+        </div>
+        <div  [ngClass]="[objNumFasesImgClass.numFaseLatoneria <= numFaseCurrent ? objNumFasesImgClass.classPass2 : objNumFasesImgClass.classNoPass2]">       
+          <div class="frame-parent-stepper">
+            <div class="vector-parent-stepper">
+              <img class="vector-icon-stepper" alt="" src="assets/images/seguimiento/car_repair_gris.svg">
+              <div class="buy-now-pay-stepper">Latoner&iacute;a</div>
+              <img class="nodes-icon-stepper" alt="" [src]="[objNumFasesImgClass.numFaseLatoneria < numFaseCurrent ? objNumFasesImgClass.iconPass : objNumFasesImgClass.numFaseLatoneria === numFaseCurrent ? objNumFasesImgClass.iconCurrent : objNumFasesImgClass.iconNoPass]">
+            </div>
+            <div class="estamos-gestionando-la-nopass">La carrocería de tu vehículo está siendo reparada.</div>
+          </div>
+          @if(objNumFasesImgClass.numFaseLatoneria <= numFaseCurrent){
+          <div class="cont-foto">
+            <div class="contcam-foto">
+              <div class="foto-foto" id="fOTOContainer">
+                <img class="image-37-icon-foto" alt="" [src]="imagenEtapaLatoneria1" (click)="openDialogImage(imagenEtapaLatoneria1)">
+              </div>
+              <div class="foto-foto">
+                <img class="image-37-icon-foto" alt="" [src]="imagenEtapaLatoneria2" (click)="openDialogImage(imagenEtapaLatoneria2)">
+              </div>
+            </div>
+          </div>
+        }
+        </div>
+        <div  [ngClass]="[objNumFasesImgClass.numFasePintura <= numFaseCurrent ? objNumFasesImgClass.classPass2 : objNumFasesImgClass.classNoPass2]">
+          <div class="frame-parent-stepper">
+            <div class="vector-parent-stepper">
+              <img class="vector-icon-stepper" alt="" src="assets/images/seguimiento/format_paint_gris.svg">
+              <div class="buy-now-pay-stepper">Pintura</div>
+              <img class="nodes-icon-stepper" alt="" [src]="[objNumFasesImgClass.numFasePintura < numFaseCurrent ? objNumFasesImgClass.iconPass : objNumFasesImgClass.numFasePintura === numFaseCurrent ? objNumFasesImgClass.iconCurrent : objNumFasesImgClass.iconNoPass]">
+            </div>
+            <div class="estamos-gestionando-la-nopass">Estamos terminando los detalles finales de tu vehículo.</div>
+          </div>
+          @if(objNumFasesImgClass.numFasePintura <= numFaseCurrent){
+          <div class="cont-foto">
+            <div class="contcam-foto">
+              <div class="foto-foto" id="fOTOContainer">
+                <img class="image-37-icon-foto" alt="" [src]="imagenEtapaPintura1" (click)="openDialogImage(imagenEtapaPintura1)">
+              </div>
+              <div class="foto-foto">
+                <img class="image-37-icon-foto" alt="" [src]="imagenEtapaPintura2" (click)="openDialogImage(imagenEtapaPintura2)">
+              </div>
+            </div>
+          </div>
+        }
+        </div>
+        <div  [ngClass]="[objNumFasesImgClass.numFaseFin <= numFaseCurrent ? objNumFasesImgClass.classPass2 : objNumFasesImgClass.classNoPass2]">
+          <div class="frame-parent-stepper">
+            <div class="vector-parent-stepper">
+              <img class="vector-icon-stepper" alt="" src="assets/images/seguimiento/banderafin_gris.svg">
+              <div class="buy-now-pay-stepper">Finalizado</div>
+              <img class="nodes-icon-stepper" alt="" [src]="[objNumFasesImgClass.numFaseFin < numFaseCurrent ? objNumFasesImgClass.iconPass : objNumFasesImgClass.numFaseFin === numFaseCurrent ? objNumFasesImgClass.iconCurrent : objNumFasesImgClass.iconNoPass]">
+            </div>
+            <div class="estamos-gestionando-la-nopass">Tu vehículo está listo. Recuerda llamar al taller para acordar la fecha y hora de entrega.</div>
+          </div>
+          @if(objNumFasesImgClass.numFaseFin <= numFaseCurrent){
+          <div class="cont-foto">
+            <div class="contcam-foto">
+              <div class="foto-foto" id="fOTOContainer" (click)="openDialogImage(imagenEtapaFinalizado1)">
+                <img class="image-37-icon-foto" alt="" [src]="imagenEtapaFinalizado1">
+              </div>
+              <div class="foto-foto" (click)="openDialogImage(imagenEtapaFinalizado2)">
+                <img class="image-37-icon-foto" alt="" [src]="imagenEtapaFinalizado2">
+              </div>
+            </div>
+          </div>
+         }
+        </div>
+        <div  [ngClass]="[objNumFasesImgClass.numfaseEntregado <= numFaseCurrent ? objNumFasesImgClass.classPass2 : objNumFasesImgClass.classNoPass2]">
+          <div class="frame-parent-stepper">
+            <div class="vector-parent-stepper">
+              <img class="vector-icon-stepper" alt="" src="assets/images/seguimiento/Check_gris.svg">
+              <div class="buy-now-pay-stepper">Entregado</div>
+              <img class="nodes-icon-stepper" alt="" [src]="[objNumFasesImgClass.numfaseEntregado <= numFaseCurrent ? objNumFasesImgClass.iconPass : objNumFasesImgClass.iconNoPass]">
+            </div>
+            <div class="estamos-gestionando-la-nopass"> Nos alegra que tu vehículo ya esté en casa. califica tu experiencia en el proceso de reparación.</div>
+          </div>
+          @if(objNumFasesImgClass.numfaseEntregado <= numFaseCurrent){
+          <div class="cont-calendar">
+            <div class="calendar-parent-calendar">
+              <img class="calendar-icon-calendar" alt="" src="assets/images/seguimiento/calendar_entregado.svg">
+              <div class="frame-parent-calendar">
+                <div class="entregado-el-da-wrapper-calendar">
+                  <div class="entregado-el-da-calendar">Entregado el día:</div>
+                </div>
+                <div class="wrapper-calendar">
+                  <div class="div-calendar">{{fechaEntrega}}</div>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+        }
+        
+        </div>
+     
+      
+      
+   </div>
+</div> 
+
+<ng-template let-data #callDialogImage >
+  <div class="cp-modalfixed-modal">
+    <div class="head">
+      <div class="header-wrapper-modal">
+        <div class="header-modal">Detalle de imagen.</div>
+      </div>
+      <img class="times-icon-modal" alt="" src="assets/images/seguimiento/Times_dialog.svg" (click)="closeDialog()">
+    </div>
+    <div class="foto-wrapper-modal">
+      <div class="foto-modal">
+        <img class="image-37-icon-modal" alt="" [src]="imageCurrent">
+      </div>
+    </div>
+  </div>
+</ng-template>
+<app-footer></app-footer>    

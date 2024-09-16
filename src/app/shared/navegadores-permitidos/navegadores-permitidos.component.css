@@ -1,0 +1,180 @@
+
+.carousel .carousel-indicators li {
+  width: 0.4375em;
+  height: 0.4375em;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  background-color: #67bc47;
+}
+
+.carousel-indicators li {
+  background-color: #d3d3d3;
+}
+
+.content-carrusel-navegadores{
+  height: 108%;
+}
+.centrar-contenido{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centrar-vertical{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.mat-dialog-general-navegadores{
+  width: 31.1875em;
+  height: 25.6875em;
+  border-radius: 1.25em !important;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  border: solid 1px #d3d3d3;
+  background-color: #ffffff;
+}
+.mat-dialog-general-navegadores .mat-dialog-container{
+  margin: auto !important;
+  border-radius: 1.25em !important;
+  overflow: hidden;
+}
+.mat-dialog-general-navegadores .mat-dialog-icon-close {
+  z-index: 3;
+  width: 1.125em;
+  height: 1.125em;
+  float: right;
+  font-size: 1.4375em;
+  font-weight: 700;
+  line-height: 0.6;
+  opacity: 0.8;
+  cursor: pointer;
+  color: #1f4c38;
+  text-shadow: 0 1px 0 #ffffff;
+  position: absolute;
+  margin-left: 94.5%;
+}
+.logo-navegador{
+  width: 9.5625em;
+  height: 9.5625em;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.imagen-navegador{
+  max-width: 7rem;
+  max-height: 7rem;
+  margin: auto;
+  text-align: center;
+  align-content: center;
+  width: 73.2%;
+  height: 73.2%;
+  padding-top: 13%;
+}
+.version-navegador{
+  font-family: "Neris light", Trebuchet MS, Arial, sans-serif !important;
+  font-size: 1em;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #707070;
+}
+.navegador{
+  font-family: "Neris Semibold", Trebuchet MS, Arial, sans-serif !important;
+  font-size: 1.25em;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #707070;
+}
+.informacion-navegador{
+  margin-top: 1em;
+  display: block;
+  max-width: 9em;
+  max-height: 3.0625em;
+}
+.footer-navegador{
+  bottom: 0;
+  margin-top:2.1875rem;
+  max-width: 24.9375rem;
+  width: 99%;
+  height: 5.5625rem;
+  border-radius: 10px;
+  border: solid 1px #67bc47;
+}
+.Acerca-de-nuestra-web {
+  max-width: 19.125rem;
+  height: 2.5rem;
+  font-family: "Neris Black", Trebuchet MS, Arial, sans-serif !important;
+  font-size: 1.5rem;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  color: #67bc47;
+  background:white;
+  margin:-1.25rem auto -0.3125rem auto;
+}
+
+.text-style-1 {
+  color: #2a523b !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+  top:20%;
+}
+.resumen-navegador{
+  max-width: 21.125rem;
+  max-height: 4.125rem;
+  font-family: "Neris Light", Arial, Helvetica, sans-serif !important;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: center;
+  color: #707070;
+}
+.iconoNavegadores {
+  width: 7rem;
+  height: 7rem;
+}
+@media(min-width: 319px) and (max-width: 478px) {
+  .Acerca-de-nuestra-web {
+    height: 0.9rem;
+    font-size: 1.2rem;
+    margin-top: -0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .resumen-navegador{
+    font-size: 0.7rem;
+  }
+  .resumen-navegador > br{
+    display: none;
+  }
+}
+@media(max-width: 318px) {
+.Acerca-de-nuestra-web {
+    max-width: 10.5rem;
+    height: 0.5rem;
+    font-size: 0.9375rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .resumen-navegador{
+    font-size: 0.5625rem;
+  }
+  .resumen-navegador > br{
+    display: none;
+  }
+}

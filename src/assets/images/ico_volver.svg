@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46">
+    <g id="prefix__ico_volver" transform="translate(.333)">
+        <path id="prefix__bg" d="M0 0H46V46H0z" transform="translate(-.333)" style="fill:none"/>
+        <path id="prefix__icon" d="M7.561 16.394L.422 9.122a.924.924 0 01-.41-.922.9.9 0 01.25-.51l.032-.031a.9.9 0 01.092-.081L7.561.264a.873.873 0 011.251 0L8.843.3a.913.913 0 010 1.274L3.1 7.422h15.32a.924.924 0 110 1.848H3.132l5.711 5.818a.913.913 0 010 1.274l-.031.032a.873.873 0 01-1.251 0z" transform="translate(12.96 14.106)" style="fill:#67bc47"/>
+    </g>
+</svg>

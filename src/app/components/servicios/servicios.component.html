@@ -1,0 +1,262 @@
+<app-plantilla-general></app-plantilla-general>
+<div class="contenedor">
+  <div class="contenedor-inner">
+    <div class="miga-de-pan-wrapper">
+      <div class="miga-de-pan">
+        <div class="paleta-de-color" id="paletaDeColor">
+          <a style="color: #9b4cba" [routerLink]="['/home/false']">Home</a>
+        </div>
+        <img
+          class="angle-right-icon"
+          alt=""
+          src="assets/images/angle-right.svg"
+        />
+
+        <div class="paleta-de-color1">Servicios</div>
+      </div>
+    </div>
+  </div>
+  <div class="simplifica-tus-procesos">
+    Simplifica tus procesos con nuestro módulo de servicios
+  </div>
+  <div class="supporting-text">
+    Descubre cómo nuestro módulo de servicios te permite radicar y hacer
+    seguimiento a siniestros, así como consultar talleres de manera eficiente y
+    oportuna.
+  </div>
+  <div class="cp-targeta99-parent">
+    <div class="cp-targeta99">
+      <div class="radicar-siniestro">Radicar Siniestro</div>
+      <div class="enva-tus-solicitudes">
+        Envía tus solicitudes de manera rápida y sencilla.
+      </div>
+      <div class="cp-btn-contorno-variaciones-wrapper">
+        <div
+          class="cp-btn-contorno-variaciones"
+          id="cPBtnContornoVariacionesContainer"
+        >
+          <div class="cp-boton-principal-variaciones">
+            <button class="continuar" (click)="radicar()">Radicar</button>
+          </div>
+        </div>
+      </div>
+      <div class="contract-edit-wrapper">
+        <img
+          class="contract-edit-icon"
+          alt=""
+          src="assets/images/contract_edit.svg"
+        />
+      </div>
+    </div>
+    <div class="cp-targeta99">
+      <div class="radicar-siniestro">Seguimiento a siniestro</div>
+      <div class="enva-tus-solicitudes">
+        Mantén el control de tus solicitudes y el estado en que se encuentran.
+      </div>
+      <div class="cp-btn-contorno-variaciones-wrapper">
+        <div
+          class="cp-btn-contorno-variaciones"
+          id="cPBtnContornoVariacionesContainer"
+        >
+          <div class="cp-boton-principal-variaciones">
+            <button class="continuar" (click)="seguimiento()">Consultar</button>
+          </div>
+        </div>
+      </div>
+      <div class="contract-edit-wrapper">
+        <img
+          class="contract-edit-icon"
+          alt=""
+          src="assets/images/Component 28.svg"
+        />
+      </div>
+    </div>
+    <div class="cp-targeta99">
+      <div class="radicar-siniestro">Talleres Previsora</div>
+      <div class="enva-tus-solicitudes">
+        Conoce el listado de talleres que están vinculados a La Previsora.
+      </div>
+      <div class="cp-btn-contorno-variaciones-wrapper">
+        <div
+          class="cp-btn-contorno-variaciones"
+          id="cPBtnContornoVariacionesContainer"
+        >
+          <div class="cp-boton-principal-variaciones">
+            <div class="continuar">Consular</div>
+          </div>
+        </div>
+      </div>
+      <div class="contract-edit-wrapper">
+        <img
+          class="contract-edit-icon"
+          alt=""
+          src="assets/images/Path 19642.svg"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="component-alert1-estticasweb-wrapper">
+    <div class="component-alert1-estticasweb">
+      <div class="container-icon">
+        <img
+          class="component-44-icon"
+          alt=""
+          src="assets/images/Component 44.svg"
+        />
+      </div>
+      <div class="conoce-cmo-puedes">
+        Conoce cómo puedes radicar tu siniestro con La Previsora
+      </div>
+      <div class="aqu" id="aquText">aquí</div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+<div id="gIFSWEBContainer" class="popup-overlay" style="display: none">
+  <div class="gifs-web2">
+    <img class="prototipo-app-mvil-32" alt="" src="Prototipo App Móvil 3.png" />
+  </div>
+</div>
+
+<div id="gIFSWEBContainer" class="popup-overlay" style="display: none">
+  <div class="gifs-web1">
+    <img class="prototipo-app-mvil-31" alt="" src="Prototipo App Móvil 3.png" />
+  </div>
+</div>
+
+<div id="gIFSWEBContainer" class="popup-overlay" style="display: none">
+  <div class="gifs-web">
+    <img class="prototipo-app-mvil-3" alt="" src="Prototipo App Móvil 3.png" />
+  </div>
+</div>
+
+<div
+  id="modalPasosRadicarContainer"
+  class="popup-overlay"
+  style="display: none"
+>
+  <div class="modalpasosradicar">
+    <div class="frame-parent">
+      <div class="contract-edit-container">
+        <img class="call-quality-icon" alt="" src="contract_edit.svg" />
+      </div>
+      <div class="frame-wrapper">
+        <div class="frame-group">
+          <div class="header-wrapper">
+            <div class="header">Radica tu siniestro</div>
+          </div>
+          <div class="supporting-text1">Paso 1</div>
+        </div>
+      </div>
+      <img class="path-19705-icon" alt="" src="Path 19705.svg" />
+    </div>
+    <div class="frame-container">
+      <div class="frame-div">
+        <div class="header-container">
+          <div class="header1">
+            Ingresa a uno de nuestros canales disponibles para radicar tu
+            solicitud.
+          </div>
+        </div>
+        <div class="frame-parent1">
+          <div class="call-quality-parent">
+            <img class="call-quality-icon" alt="" src="call_quality.svg" />
+
+            <div class="header2">
+              Ingresa a uno de nuestros canales disponibles para radicar tu
+              solicitud.
+            </div>
+          </div>
+          <div class="frame-parent2">
+            <div class="vector-wrapper">
+              <img class="vector-icon" alt="" src="Vector.svg" />
+            </div>
+            <div class="header2">Radicar siniestro a través del app.</div>
+          </div>
+          <div class="frame-parent2">
+            <div class="desktop-mac-wrapper">
+              <img class="desktop-mac-icon" alt="" src="desktop_mac.svg" />
+            </div>
+            <div class="header2">Radicar siniestro a través de la web.</div>
+          </div>
+        </div>
+      </div>
+      <div class="cp-dotsweb-wrapper">
+        <div class="cp-dotsweb">
+          <img class="statedotsweb-icon" alt="" src="StateDotsWeb.svg" />
+
+          <img class="statedotsweb-icon" alt="" src="StateDotsWeb.svg" />
+
+          <img class="statedotsweb-icon" alt="" src="StateDotsWeb.svg" />
+
+          <img class="statedotsweb-icon" alt="" src="StateDotsWeb.svg" />
+
+          <img class="statedotsweb-icon" alt="" src="StateDotsWeb.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var paletaDeColor = document.getElementById("paletaDeColor");
+  if (paletaDeColor) {
+    paletaDeColor.addEventListener("click", function (e) {
+      // Add your code here
+    });
+  }
+
+  var cPBtnContornoVariacionesContainer = document.getElementById(
+    "cPBtnContornoVariacionesContainer"
+  );
+  if (cPBtnContornoVariacionesContainer) {
+    cPBtnContornoVariacionesContainer.addEventListener("click", function () {
+      var popup = document.getElementById("gIFSWEBContainer");
+      if (!popup) return;
+      var popupStyle = popup.style;
+      if (popupStyle) {
+        popupStyle.display = "flex";
+        popupStyle.zIndex = 100;
+        popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+        popupStyle.alignItems = "center";
+        popupStyle.justifyContent = "center";
+      }
+      popup.setAttribute("closable", "");
+
+      var onClick =
+        popup.onClick ||
+        function (e) {
+          if (e.target === popup && popup.hasAttribute("closable")) {
+            popupStyle.display = "none";
+          }
+        };
+      popup.addEventListener("click", onClick);
+    });
+  }
+
+  var aquText = document.getElementById("aquText");
+  if (aquText) {
+    aquText.addEventListener("click", function () {
+      var popup = document.getElementById("modalPasosRadicarContainer");
+      if (!popup) return;
+      var popupStyle = popup.style;
+      if (popupStyle) {
+        popupStyle.display = "flex";
+        popupStyle.zIndex = 100;
+        popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+        popupStyle.alignItems = "center";
+        popupStyle.justifyContent = "center";
+      }
+      popup.setAttribute("closable", "");
+
+      var onClick =
+        popup.onClick ||
+        function (e) {
+          if (e.target === popup && popup.hasAttribute("closable")) {
+            popupStyle.display = "none";
+          }
+        };
+      popup.addEventListener("click", onClick);
+    });
+  }
+</script>

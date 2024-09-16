@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-mdc-snack-bar-container {
+  --mat-mdc-snack-bar-button-color: #ffff;
+  --mat-mdc-snack-bar--color: #ffff;
+
+  --mat-simple-snackbar-action>button {
+    color: red
+  }
+
+  ;
+
+
+
+  &.app-notification-error {
+    --mdc-snackbar-container-color: #f23a2f;
+    --mdc-snackbar-supporting-text-color: #ffff;
+  }
+
+  &.app-notification-success {
+    --mdc-snackbar-supporting-text-color: #ffff;
+    --mdc-snackbar-container-color: #43a446;
+
+    .mat-simple-snackbar-action {
+      color: white !important;
+    }
+  }
+
+  &.app-notification-warning {
+    --mdc-snackbar-supporting-text-color: #1b1a1a;
+    --mdc-snackbar-container-color: #ebeb1c;
+  }
+}
+
+::ng-deep .mat-form-field {
+  .mat-input-element {
+    color: rgb(242, 244, 247);
+  }
+
+  .mat-form-field-label {
+    color: rgb(241, 243, 245);
+  }
+
+  .mat-form-field-underline {
+    background-color: rgb(245, 247, 248);
+  }
+
+  .mat-form-field-ripple {
+    background-color: rgb(242, 243, 245);
+  }
+
+  .mat-form-field-required-marker {
+    color: rgb(235, 239, 243);
+  }
+}
+
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-label {
+    color: #ff884d;
+  }
+
+  .mat-form-field-ripple {
+    background-color: #ff884d;
+  }
+
+  .mat-form-field-required-marker {
+    color: #ff884d;
+  }
+
+  .mat-input-element {
+    color: #ff884d;
+  }
+}
+
+
+.mat-divider .mat-divider-vertical {
+  border-top-width: 4px;
+
+  &.divider-1 {
+    border-color: purple;
+  }
+
+  ;
+
+  &.divider-2 {
+    border-radius: 4px;
+    border-color: green;
+  }
+}
+
+::ng-deep .mat-select-content {
+  width: 2000px;
+  background-color: red;
+  font-size: 10px;
+}
+
+.mat-select-content {
+  width: 2000px !important;
+  background-color: red !important;
+  font-size: 10px !important;
+}
+
+.form-control-mat-select {
+  font-style: normal !important;
+  font-family: "Neris Light", Arial, Helvetica, sans-serif !important;
+
+}
+
+.form-control.ng-invalid.ng-dirty,
+.form-control.ng-invalid.ng-touched,
+.form-control-mat-select.ng-invalid.dirty,
+.form-control-mat-select.ng-invalid.ng-touched,
+.inputHora .ng-form-submitted .form-control.ng-invalid {
+  background-image: none !important;
+  border-radius: 4px !important;
+  border: solid 1px #d90b0b !important;
+  background-color: #ffffff !important;
+}
+
+input,
+mat-select {
+  height: 30px !important;
+  font-size: 12px !important;
+}
+
+.mat-select-placeholder#vehiculoSiniestrado {
+  color: #626366 !important;
+}
+
+.mat-select-placeholder {
+  color: #c3c4c3;
+  font-family: "Neris Light", Trebuchet MS, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.mat-select-value {
+  color: #626366
+}
+
+.form-control-mat-select {
+  font-style: normal !important;
+  font-family: "Neris Light", Arial, Helvetica, sans-serif !important;
+
+}
+
+.selectDepartamento {
+  width: 50% !important;
+  height: 137px;
+  font-style: normal !important;
+}
+
+.selectCiudad,
+.selectDepartamento {
+  width: 100% !important;
+  margin-left: 0px !important;
+}
+
+.form-control-mat-select .mat-select-arrow-wrapper {
+  background-image: url("/assets/images/flecha.png");
+
+}

@@ -1,0 +1,28 @@
+.estilosSpinner {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(74, 74, 74, 0.8);
+    z-index: 99999;
+  }
+
+  .cargaSpinner {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  .spinner {
+    background-image: url(/assets/images/logo2.gif);
+    background-position: center;
+    margin: auto;
+    background-size: 121px;
+    background-repeat: no-repeat;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+  }

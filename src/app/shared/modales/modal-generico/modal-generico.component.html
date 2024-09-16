@@ -1,0 +1,54 @@
+<div class="container">
+  <i [ngClass]="data.icono"></i>
+  <div
+    mat-dialog-title
+    class="mat-dialog-title"
+    [ngClass]="data.claseTitulo"
+    *ngIf="data.titulo!.length > 0"
+  >
+    {{ data.titulo }}
+  </div>
+
+  <div mat-dialog-content class="">
+    <div
+      class="mat-dialog-subtitle"
+      [ngClass]="data.claseSubtitulo"
+      *ngIf="data.subtitulo !== '' && data.subtitulo!.length > 0"
+    >
+      {{ data.subtitulo }}
+    </div>
+    <div
+      class="mat-dialog-text"
+      *ngIf="data.contenido !== '' && data.contenido!.length > 0"
+    >
+      {{ data.contenido }}
+    </div>
+    <div
+      class="mat-dialog-text"
+      *ngIf="data.html !== '' && data.html!.length > 0"
+      [innerHTML]="data.html"
+    ></div>
+
+    <div>
+      <div
+        mat-dialog-actions
+        class="mat-dialog-buttons"
+        [ngClass]="data.claseBotones"
+        *ngIf="data.botones!.length > 0"
+      >
+        <button
+          type="button"
+          name="{{ boton.nombre }}"
+          id="{{ boton.nombre }}"
+          *ngFor="let boton of data.botones"
+          mat-button
+          class="btn-cancel-dialog mx-2"
+          [ngClass]="boton.clase"
+          (click)="funcionGenerica(boton.retorno)"
+        >
+          {{ boton.nombre }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

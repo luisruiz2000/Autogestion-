@@ -1,0 +1,155 @@
+<app-spinner></app-spinner>
+
+<section class="container-login">
+  <div class="containerImg">
+    <img
+      alt="Responsive image"
+      class="img-fluid w-100"
+      src="assets/images/Frame 1620.png"
+    />
+  </div>
+
+  <!-- Formulario -->
+  <div class="formulario">
+    <form
+      class="formularioContent"
+      [formGroup]="formularioLogin"
+      (submit)="ingresar()"
+      id="login-form"
+    >
+      <div class="titleContent">
+        <h2 class="fw-bold">
+          ¡Bienvenido a <br />
+          Autogestion!
+        </h2>
+      </div>
+      <p class="text">
+        Ingrese su correo electrónico y su contraseña para continuar.
+      </p>
+
+      <!-- Input Email -->
+      <div class="mb-4">
+        <div class="select_wrapper fw-medium mb-2">
+          <i class="bi bi-envelope me-2"></i>
+          <label
+            for="email"
+            [ngClass]="{
+              'ng-invalid': email!.invalid && (email!.dirty || email!.touched)
+            }"
+            class="form-label"
+          >
+            Correo electrónico*
+            <span class="tooltip-text"
+              >Ingresa tu dirección de correo electrónico</span
+            >
+          </label>
+        </div>
+
+        <div>
+          <input
+            id="email"
+            type="email"
+            required
+            class="form-control input"
+            id="email"
+            name="email"
+            formControlName="email"
+            (keyup.enter)="ingresar()"
+            [(ngModel)]="autenticacion.username"
+          />
+          <span
+            *ngIf="
+              (email?.invalid && email?.dirty) ||
+              (email?.invalid && email?.touched) ||
+              (email?.invalid && submit)
+            "
+            class="error-icon-hover-area"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Ingrese un correo electrónico válido."
+          ></span>
+        </div>
+        <!-- Validaciones campo correo electrónico -->
+        <div
+          class="container-error-message text-danger text-center"
+          *ngIf="
+            (email?.invalid && email?.dirty) ||
+            (email?.invalid && email?.touched) ||
+            (email?.invalid && submit)
+          "
+        >
+          <label class="label-error content-login font-weight-bold">
+            Ingrese un correo electrónico válido.
+          </label>
+        </div>
+      </div>
+      <!-- Input Contraseña -->
+      <div id="contrasea1Container">
+        <div class="select_wrapper fw-medium mb-2">
+          <div class="">
+            <i class="bi bi-key me-2"></i>
+            <label
+              for="contrasena"
+              class="labelRegistro"
+              [ngClass]="{
+                'ng-invalid':
+                  contrasena!.invalid &&
+                  (contrasena!.dirty || contrasena!.touched)
+              }"
+            >
+              Contraseña*
+            </label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="d-flex w-100 align-items-center">
+            <input
+              id="confContrasena"
+              type="{{ ocultarMostrarPassword }}"
+              [type]="hide ? 'password' : 'text'"
+              class="form-control-input input"
+              formControlName="contrasena"
+              required
+              [ngClass]="{
+                inputFieldInvalid:
+                  contrasena!.invalid &&
+                  (contrasena!.dirty || contrasena!.touched)
+              }"
+            />
+            <i
+              [ngClass]="{
+                'bi bi-eye-slash': !showEnableBtnPwd,
+                'bi bi-eye': showEnableBtnPwd
+              }"
+              (click)="cambiarTipo('contrasena')"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <div class="btn-enlace-parent">
+        <div class="btn-enlace">
+          <div class="label-btn">Olvidé mi contraseña</div>
+        </div>
+
+        <!-- BOTONES  -->
+        <div class="containerBtns mt-3">
+          <button
+            class="btn btn-ingresar"
+            type="submit"
+            [disabled]="!formularioLogin.valid"
+            [class]="formularioLogin.valid ? 'btn-valid' : 'btn-invalid'"
+          >
+            Ingresar
+          </button>
+          <div class="btn-registrar">Registrarse</div>
+        </div>
+
+        <!-- BOTONES  -->
+
+        <div class="versin-1311">Versión 1.31.1</div>
+      </div>
+    </form>
+  </div>
+</section>
+<app-footer></app-footer>
